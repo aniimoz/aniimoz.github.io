@@ -27,16 +27,35 @@ It is a static website repo. There is no backend, no server, and no secrets.
 
 ## Current state
 
-Minimal — the repo currently contains only `README.md` and this `CLAUDE.md`.
-Site content (starting with `index.html`) is yet to be added.
+The homepage (`index.html`) is the **Aniimo type-chart app**: pick 1–2 elements
+to see what they counter / are countered by, plus a full 9×9 effectiveness
+matrix. All client-side, no build.
+
+```
+index.html              ← the app (homepage)
+assets/css/styles.css   ← styles
+assets/js/data.js       ← ELEMENTS + 9×9 MATRIX + mult() (source of truth)
+assets/js/app.js        ← UI logic (vanilla, IIFE)
+assets/elements/*.png   ← 9 element images (ASCII slugs)
+```
+
+Data is derived from `D:\Projects\aniimo\Aniimo-He-Tuong-Khac.md` (the game's
+"Tra Cứu Tương Khắc" screen). If `MATRIX` changes, re-verify against that file's
+section 4 before pushing.
+
+## Repo skills
+
+`.claude/skills/` holds two skills that fire automatically for site work:
+- **`static-site`** — building/editing this no-build HTML/CSS/JS site, asset rules.
+- **`github-pages`** — deploying, verifying the live site, limits, custom domains.
 
 ## Conventions
 
 - Keep the site **static and dependency-light**; prefer plain HTML/CSS/JS unless
   the user explicitly asks for a framework or static-site generator.
-- Test changes by opening the HTML files locally in a browser before pushing,
-  since a push to `main` publishes immediately.
-- Keep assets in sensible folders (e.g. `assets/`, `css/`, `js/`, `img/`).
+- Test changes in a browser (locally via `python -m http.server`, or the live
+  site) before/after pushing, since a push to `main` publishes immediately.
+- Asset filenames: lowercase ASCII slugs, no spaces or Vietnamese diacritics.
 
 ## Git & commits (must follow)
 

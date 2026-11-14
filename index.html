@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aniimo · Tra cứu Tương Khắc</title>
+  <meta name="description" content="Công cụ tra cứu hệ tương khắc game Aniimo: chọn 1–2 hệ để xem nó khắc gì, bị gì khắc, cùng ma trận khắc hệ 9×9 đầy đủ." />
+  <meta name="color-scheme" content="dark light" />
+  <!-- Open Graph / chia sẻ -->
+  <meta property="og:title" content="Aniimo · Tra cứu Tương Khắc" />
+  <meta property="og:description" content="Chọn và xem các hệ Aniimo khắc nhau — công, thủ, hệ kép và ma trận 9×9." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="assets/elements/lua.png" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Aniimo <span class="accent">· Tương Khắc</span></h1>
+    <p class="tagline">Chọn một hệ để xem nó <b>khắc</b> gì và <b>bị khắc</b> bởi gì. Thêm hệ phụ để tính hệ kép.</p>
+    <nav class="mode-switch" role="tablist" aria-label="Chế độ xem">
+      <button id="tab-lookup" class="mode-btn is-active" role="tab" aria-selected="true">🔎 Tra cứu hệ</button>
+      <button id="tab-matrix" class="mode-btn" role="tab" aria-selected="false">▦ Ma trận 9×9</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ======= CHẾ ĐỘ TRA CỨU ======= -->
+    <section id="view-lookup" class="view">
+      <div class="picker-block">
+        <h2 class="block-title">Hệ chính <span class="hint">— bấm để chọn</span></h2>
+        <div id="primary-grid" class="element-grid" role="listbox" aria-label="Chọn hệ chính"></div>
+      </div>
+
+      <div class="picker-block" id="secondary-block">
+        <h2 class="block-title">Hệ phụ <span class="hint">— tùy chọn, để tính hệ kép</span></h2>
+        <div id="secondary-grid" class="chip-row" aria-label="Chọn hệ phụ"></div>
+      </div>
+
+      <div id="detail" class="detail" aria-live="polite">
+        <div class="empty-state">⬆️ Chọn một hệ chính để bắt đầu.</div>
+      </div>
+    </section>
+
+    <!-- ======= CHẾ ĐỘ MA TRẬN ======= -->
+    <section id="view-matrix" class="view is-hidden">
+      <div class="matrix-legend">
+        <span><b class="sym s">▲</b> Siêu hiệu quả ×1.6</span>
+        <span><b class="sym n">·</b> Trung tính ×1.0</span>
+        <span><b class="sym w">▼</b> Không hiệu quả ×0.625</span>
+      </div>
+      <p class="matrix-note">Hàng = hệ <b>tấn công</b> · Cột = hệ <b>phòng thủ</b>. Rê chuột / chạm vào ô để tô sáng.</p>
+      <div class="matrix-scroll">
+        <table id="matrix-table" class="matrix-table"></table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Dữ liệu từ màn <b>“Tra Cứu Tương Khắc”</b> trong game Aniimo · hệ kép theo tổng hợp cộng đồng (game chưa công bố công thức chính thức).</p>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
