@@ -1,71 +1,48 @@
 ---
 name: screenshot-test
-description: Use when taking screenshots to visually test this site at realistic desktop AND mobile sizes — especially on a large/ultrawide monitor where full-window captures come out huge with big empty margins. Covers standard viewport sizes, resizing the browser before capturing, the maximized-window gotcha, verifying the real viewport, and a crop fallback. Triggers include "screenshot the site", "test on mobile", "check responsive", "chụp màn hình test", "chụp mobile và desktop".
+description: Use when taking screenshots to visually test this site at standard desktop AND mobile sizes — regardless of how big the user's monitor is (their screen is a 3440px ultrawide, so normal browser captures come out huge with empty margins). Runs headless Chrome with DevTools device emulation via the bundled screenshot.mjs. Triggers include "screenshot the site", "test on mobile", "check responsive", "chụp màn hình test", "chụp mobile và desktop".
 ---
 
 # Screenshot testing (desktop + mobile)
 
-Goal: capture the site at **standard viewport sizes** so screenshots are legible and actually exercise the responsive breakpoints — not a full-screen shot of a huge monitor where the ~1040px content floats in empty margins.
+Capture the site at **fixed standard viewports**, independent of the user's monitor or window state. Use the bundled script — it is the primary method.
 
-Browser tools: `claude-in-chrome` (load with ToolSearch first). Key tools: `resize_window`, `computer` (screenshot), `javascript_tool`, `navigate`, `tabs_context_mcp`, `tabs_close_mcp`.
+## Primary method: `screenshot.mjs` (headless Chrome + device emulation)
 
-## Standard sizes to capture
+```bash
+# both sizes, viewport only
+node .claude/skills/screenshot-test/screenshot.mjs https://aniimoz.github.io/ --out <scratchpad>/shots
 
-| Target | width × height | Why |
-|---|---|---|
-| **Desktop** | **1366 × 768** | Most common laptop; shows the 2-column panel layout |
-| Desktop (alt) | 1280 × 800 | Smaller baseline |
-| **Mobile** | **390 × 844** | iPhone 12–15; triggers this site's mobile layout |
-| Mobile (alt) | 360 × 800 | Common Android width |
+# full-page, after interacting (e.g. select the 4th element = Lửa)
+node .claude/skills/screenshot-test/screenshot.mjs https://aniimoz.github.io/ --out <scratchpad>/shots --full \
+  --eval "document.querySelectorAll('.el-card')[3].click()"
 
-This site's **mobile breakpoint is `max-width: 680px`** (`assets/css/styles.css`). Any width ≤ 680 shows the mobile layout: panels stack, the element grid gets smaller cells, hero images shrink. So a capture at 390 px proves the mobile design; a capture ≥ ~700 px proves desktop.
-
-## The core procedure
-
-```
-1. resize_window({ width, height, tabId })
-2. VERIFY it actually applied (see gotcha) — javascript_tool: window.innerWidth
-3. navigate / reload so layout settles at the new width
-4. computer screenshot  (save_to_disk: true if sending to the user)
-5. repeat for the next size
-6. tabs_close_mcp any tab you created
+# local dev server instead of the live site
+node .claude/skills/screenshot-test/screenshot.mjs http://localhost:8000 --only mobile
 ```
 
-Capture desktop first, then mobile, from the same tab.
+| Size | Viewport | DPR | Output file |
+|---|---|---|---|
+| Desktop | **1366 × 768** | 1 | `desktop-1366x768.png` |
+| Mobile | **390 × 844** | 2 (crisp, 780px-wide image) | `mobile-390x844.png` |
 
-## ⚠️ Gotcha: a MAXIMIZED window ignores resize (big/ultrawide monitors)
+Options: `--out DIR` · `--only desktop|mobile` · `--full` (whole page height) · `--eval "JS"` (run before capture: click, open the matrix tab, pick a secondary type…) · `--wait MS` (default 800, for images) · `--chrome PATH`.
 
-`resize_window` returns "Successfully resized…" **even when nothing changed.** On a maximized Chrome window (the default on large/ultrawide screens), Chrome ignores the width/height, so the viewport stays at full monitor width and the screenshot is just a downscaled picture of the whole screen. Opening a **new** window via `tabs_context_mcp` does **not** help — new windows inherit the maximized state.
+Needs only **Node ≥ 22** (built-in `fetch`/`WebSocket`) and Chrome or Edge — no npm install. Each line it prints reports the **actual** viewport, e.g. `viewport 390x844`; if that number isn't the target, the shot isn't valid.
 
-**Always verify** after resizing, before trusting the shot:
+Then: `Read` the PNGs to inspect them yourself, and `SendUserFile` them (desktop + mobile together) so the user can review. Write outputs to the scratchpad, never into the repo (a push publishes everything).
 
-```js
-// javascript_tool on the tab
-JSON.stringify({ w: window.innerWidth, h: window.innerHeight })
-```
+### Useful `--eval` snippets for this site
+- Select an element: `document.querySelectorAll('.el-card')[i].click()` (order: Băng, Nước, Điện, Lửa, Cỏ, Thổ, Phong, Ám, Ánh sáng)
+- Add a secondary type: `…[3].click(); document.querySelectorAll('#secondary-grid .chip')[6].click()` (index 0 = "Không")
+- Matrix view: `document.getElementById('tab-matrix').click()`
 
-- If `w` ≈ your target (e.g. ~1366 or ~390) → good, screenshot.
-- If `w` still equals the monitor width (e.g. 3440, 2560, 1920) → **the window is maximized; resize was a no-op.**
+## Why not the other ways (verified in this repo)
 
-### Un-maximize so resize can work (do this once per session)
+- **`chrome --headless --window-size=390,844 --screenshot`** — Chrome clamps the headless window to a **minimum 500 px** width (measured: 390 → 500×749), so the "mobile" shot overflows and gets cut on the right. Fine for desktop only.
+- **claude-in-chrome `resize_window`** — returns "Successfully resized" but is a **no-op on a maximized window** (`window.innerWidth` stayed 3440). New windows from `tabs_context_mcp` open maximized too, and these tools can't un-maximize. Also its screenshots are a downscaled picture of the whole 3440px screen.
+- Use the real browser (claude-in-chrome) for **interactive** checks — clicking, console errors — not for size-accurate screenshots.
 
-Chrome can only be resized to arbitrary sizes while **restored** (not maximized). These tools cannot un-maximize a window — a page-targeted key event can't drive OS window management — so it takes one manual/OS action:
+## Breakpoint reference
 
-- **Windows:** double-click the Chrome title bar, or press **Win + ↓** (restore).
-- **macOS:** click the green button with **Option held** → un-zoom, or drag the window smaller.
-
-After the window is restored once, `resize_window` works for the rest of the session and re-verifying `innerWidth` will show the real target width.
-
-## Fallback when you cannot un-maximize (desktop only)
-
-For a clean **desktop** shot without resizing, crop to the content column with the `computer` **`zoom`** action (`region: [x0,y0,x1,y1]` in the screenshot's coordinate frame) around the centered ~1040px content. This removes the empty margins. It does **not** help mobile — the mobile layout needs a genuinely narrow viewport, so mobile testing requires the window to be restored and resized.
-
-## Example (one desktop + one mobile capture)
-
-```
-resize_window(1366, 768, tab) → js: innerWidth (expect ~1366) → navigate(site) → screenshot(save_to_disk)
-resize_window(390, 844, tab)  → js: innerWidth (expect ~390)  → navigate(site) → screenshot(save_to_disk)
-tabs_close_mcp(tab)
-```
-
-Send both with SendUserFile (desktop + mobile side by side) so the responsive design can be reviewed at a glance.
+This site's mobile breakpoint is `max-width: 680px` (`assets/css/styles.css`). At 390px expect: 3-column element grid, panels stacked in one column, smaller hero images. At 1366px expect: 6-column grid, attack/defense panels side by side. Check for horizontal overflow (anything cut off on the right) on mobile.
