@@ -1,0 +1,4448 @@
+{
+  "source": "https://wiki.aniimo.com/vi",
+  "note": "Dữ liệu tổng hợp tự động từ Aniimo Wiki chính thức. Bản quyền nội dung và hình ảnh thuộc nhà phát hành Aniimo.",
+  "updatedAt": "2026-11-15T00:22:55.656Z",
+  "count": 130,
+  "elements": [
+    "bang",
+    "nuoc",
+    "dien",
+    "lua",
+    "co",
+    "tho",
+    "phong",
+    "am",
+    "anh-sang"
+  ],
+  "aniimo": [
+    {
+      "no": "001",
+      "name": "Emberpup",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "lua"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Năng động và tràn đầy sức sống, những sinh vật này thích đi theo Flameruff. Khi bộ lông xù như than của chúng bắt đầu cháy, chúng sẽ lớn lên.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10051.png",
+      "url": "https://wiki.aniimo.com/vi/item/001/basic-form",
+      "stats": {
+        "hp": 67,
+        "physicalAttack": 90,
+        "magicAttack": 40,
+        "physicalDefense": 60,
+        "magicDefense": 57,
+        "haste": 68,
+        "total": 382
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "001",
+      "name": "Reefish",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300301,
+      "region": "Quần Đảo Sóng Biển Thì Thầm",
+      "elements": [
+        "tho",
+        "nuoc"
+      ],
+      "roles": [
+        "energy"
+      ],
+      "description": "Chúng đào xuống lòng đất để ngụy trang thành san hô và cắn bất kỳ con mồi nào đến gần. Tuy nhiên, đôi lúc chúng mất kiên nhẫn và ló đầu ra quan sát.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10381.png",
+      "url": "https://wiki.aniimo.com/vi/item/001/basic-form/300301",
+      "stats": {
+        "hp": 83,
+        "physicalAttack": 82,
+        "magicAttack": 50,
+        "physicalDefense": 75,
+        "magicDefense": 79,
+        "haste": 84,
+        "total": 453
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "002",
+      "name": "Flameruff",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 2,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "lua"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Là loài sống theo bầy đàn, coi trọng lòng trung thành và sự đoàn kết, những kẻ săn mồi này có ánh mắt điềm tĩnh, tập trung, che giấu trái tim rực lửa của chúng.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10052.png",
+      "url": "https://wiki.aniimo.com/vi/item/002/basic-form",
+      "stats": {
+        "hp": 85,
+        "physicalAttack": 111,
+        "magicAttack": 45,
+        "physicalDefense": 72,
+        "magicDefense": 63,
+        "haste": 80,
+        "total": 456
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "002",
+      "name": "Coraliz",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300301,
+      "region": "Quần Đảo Sóng Biển Thì Thầm",
+      "elements": [
+        "tho",
+        "nuoc"
+      ],
+      "roles": [
+        "energy"
+      ],
+      "description": "Chúng thích vùi mình trong cát, bắt chước những cụm san hô. Chúng dùng ánh sáng từ san hô trên đầu và lưng để dụ sinh vật khác rồi bất ngờ tấn công.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10383.png",
+      "url": "https://wiki.aniimo.com/vi/item/002/basic-form/300301",
+      "stats": {
+        "hp": 97,
+        "physicalAttack": 105,
+        "magicAttack": 50,
+        "physicalDefense": 82,
+        "magicDefense": 90,
+        "haste": 101,
+        "total": 525
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "003",
+      "name": "Scorchhowl",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "lua"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Những vết cháy trên cơ thể chúng là bằng chứng cho những chiến thắng trong các trận chiến. Chúng tìm kiếm những đối thủ mạnh để khuất phục.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10053.png",
+      "url": "https://wiki.aniimo.com/vi/item/003/basic-form",
+      "stats": {
+        "hp": 95,
+        "physicalAttack": 119,
+        "magicAttack": 52,
+        "physicalDefense": 80,
+        "magicDefense": 75,
+        "haste": 90,
+        "total": 511
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "003",
+      "name": "Hypnowl",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300301,
+      "region": "Quần Đảo Sóng Biển Thì Thầm",
+      "elements": [
+        "phong"
+      ],
+      "roles": [
+        "energy"
+      ],
+      "description": "Sở hữu đôi tai siêu thính, nó có thể nghe thấy mọi âm thanh nhỏ nhất xung quanh. Ngay khi phát hiện kẻ xâm nhập, nó khóa mục tiêu bằng đôi mắt to rồi phóng ra những luồng sóng thôi miên khiến đối phương rối trí.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10571.png",
+      "url": "https://wiki.aniimo.com/vi/item/003/basic-form/300301",
+      "stats": {
+        "hp": 87,
+        "physicalAttack": 92,
+        "magicAttack": 43,
+        "physicalDefense": 68,
+        "magicDefense": 60,
+        "haste": 93,
+        "total": 443
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "004",
+      "name": "Inferlupa",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "lua",
+        "am"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Thảm bại sau trận chiến với đối thủ mạnh, Flameruff hấp thụ linh hồn của những đồng đội cũng ngã xuống trong nỗi cay đắng và lấy khát vọng trả thù làm động lực.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10055.png",
+      "url": "https://wiki.aniimo.com/vi/item/004/basic-form",
+      "stats": {
+        "hp": 95,
+        "physicalAttack": 89,
+        "magicAttack": 108,
+        "physicalDefense": 70,
+        "magicDefense": 80,
+        "haste": 99,
+        "total": 541
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "004",
+      "name": "Mesmerowl",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300301,
+      "region": "Quần Đảo Sóng Biển Thì Thầm",
+      "elements": [
+        "phong"
+      ],
+      "roles": [
+        "energy"
+      ],
+      "description": "Mesmerowl vỗ đôi cánh lông vũ bên tai khi tuần tra lãnh thổ ở tầm thấp. Mỗi khi phóng ra sóng thôi miên, chùm lông phát sáng ở đuôi nó lại đung đưa như quả lắc, khiến đối thủ càng thêm phần choáng váng.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10573.png",
+      "url": "https://wiki.aniimo.com/vi/item/004/basic-form/300301",
+      "stats": {
+        "hp": 111,
+        "physicalAttack": 110,
+        "magicAttack": 50,
+        "physicalDefense": 70,
+        "magicDefense": 70,
+        "haste": 109,
+        "total": 520
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "004",
+      "name": "Inferlupa",
+      "form": "Prismana Form",
+      "formVi": "Hình Thái Prismana",
+      "stage": 3,
+      "regionId": 1000,
+      "region": "Kỷ Vật Mùa Giải 1",
+      "elements": [
+        "lua",
+        "am"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Được Prismana thúc đẩy, ngọn lửa báo thù cháy ngày càng mãnh liệt, thiêu đốt cơ thể Inferlupa. Những cái đầu linh hồn lơ lửng bên cạnh nó phát ra những tiếng hú điên cuồng, giải phóng luồng khí lạnh lẽo của áp lực áp đảo khiến người ta khiếp sợ.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1005503.png",
+      "url": "https://wiki.aniimo.com/vi/item/004/prismana-form/1000",
+      "stats": {
+        "hp": 95,
+        "physicalAttack": 89,
+        "magicAttack": 108,
+        "physicalDefense": 70,
+        "magicDefense": 80,
+        "haste": 99,
+        "total": 541
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "005",
+      "name": "Celestis",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "am"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Chúng mê thức ăn! Khi lùng sục trong rừng tìm thức ăn, ngôi sao phát sáng trên đầu chúng thường bị nhầm là sao chổi. Chúng thích tích trữ thức ăn, dùng chính thức ăn để trang trí cho tổ của mình.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10011.png",
+      "url": "https://wiki.aniimo.com/vi/item/005/basic-form",
+      "stats": {
+        "hp": 81,
+        "physicalAttack": 106,
+        "magicAttack": 46,
+        "physicalDefense": 58,
+        "magicDefense": 58,
+        "haste": 80,
+        "total": 429
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "005",
+      "name": "Dewlop",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300301,
+      "region": "Quần Đảo Sóng Biển Thì Thầm",
+      "elements": [
+        "nuoc"
+      ],
+      "roles": [
+        "sup"
+      ],
+      "description": "Dewlop hoạt động quanh các vùng nước. Với cơ thể gần như hoàn toàn được cấu tạo từ nước, nó có thể dễ dàng thay đổi hình dạng. Có lẽ là do bản tính, nó luôn muốn hòa mình vào bất kỳ vùng nước nào mà nó bắt gặp.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10651.png",
+      "url": "https://wiki.aniimo.com/vi/item/005/basic-form/300301",
+      "stats": {
+        "hp": 76,
+        "physicalAttack": 98,
+        "magicAttack": 42,
+        "physicalDefense": 68,
+        "magicDefense": 64,
+        "haste": 89,
+        "total": 437
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "006",
+      "name": "Stellarys",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "am"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Chúng thích hành động đơn độc và thường di chuyển vào ban đêm. Hình dáng của chúng tựa như những pháp sư bí ẩn khoác trên mình tấm áo choàng dệt từ muôn vì sao, và chúng có khả năng dịch chuyển bằng năng lượng tâm linh.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10012.png",
+      "url": "https://wiki.aniimo.com/vi/item/006/basic-form",
+      "stats": {
+        "hp": 95,
+        "physicalAttack": 125,
+        "magicAttack": 54,
+        "physicalDefense": 68,
+        "magicDefense": 69,
+        "haste": 94,
+        "total": 505
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "006",
+      "name": "Dewple",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300301,
+      "region": "Quần Đảo Sóng Biển Thì Thầm",
+      "elements": [
+        "nuoc"
+      ],
+      "roles": [
+        "sup"
+      ],
+      "description": "Được cấu thành từ nhiều Dewlop, các cá thể Dewple đôi khi có thể trôi tách nhau ra, nhưng chúng không bao giờ thực sự rời xa nhau. Chúng luôn di chuyển đồng nhịp khi đi theo cá thể lớn nhất.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10653.png",
+      "url": "https://wiki.aniimo.com/vi/item/006/basic-form/300301",
+      "stats": {
+        "hp": 105,
+        "physicalAttack": 115,
+        "magicAttack": 50,
+        "physicalDefense": 80,
+        "magicDefense": 75,
+        "haste": 90,
+        "total": 515
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "007",
+      "name": "Chirpi",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "phong"
+      ],
+      "roles": [
+        "sup"
+      ],
+      "description": "Chúng thường lơ lửng ở độ cao thấp, chú ý đến mọi chuyển động trên bãi biển và gây náo loạn.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10181.png",
+      "url": "https://wiki.aniimo.com/vi/item/007/basic-form",
+      "stats": {
+        "hp": 97,
+        "physicalAttack": 83,
+        "magicAttack": 43,
+        "physicalDefense": 67,
+        "magicDefense": 69,
+        "haste": 93,
+        "total": 452
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "007",
+      "name": "Coinwisp",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300301,
+      "region": "Quần Đảo Sóng Biển Thì Thầm",
+      "elements": [
+        "am"
+      ],
+      "roles": [
+        "energy"
+      ],
+      "description": "Chiếc mũ của Coinwisp trông hệt như một đồng xu vàng khổng lồ. Nó thường trốn bên trong, tinh nghịch dụ các sinh vật khác đuổi theo mình. Khi nguy hiểm ập đến, nó ném chiếc mũ đi để đánh lạc hướng đối thủ, rồi lẻn đi mất.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10631.png",
+      "url": "https://wiki.aniimo.com/vi/item/007/basic-form/300301",
+      "stats": {
+        "hp": 85,
+        "physicalAttack": 95,
+        "magicAttack": 45,
+        "physicalDefense": 68,
+        "magicDefense": 60,
+        "haste": 87,
+        "total": 440
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "008",
+      "name": "Tromber",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "phong"
+      ],
+      "roles": [
+        "sup"
+      ],
+      "description": "Chúng thích vui chơi và tạo ra âm nhạc đầy nhịp điệu, vì vậy đừng ngạc nhiên khi bạn được thưởng thức một bản giao hưởng hoành tráng.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10184.png",
+      "url": "https://wiki.aniimo.com/vi/item/008/basic-form",
+      "stats": {
+        "hp": 113,
+        "physicalAttack": 119,
+        "magicAttack": 51,
+        "physicalDefense": 79,
+        "magicDefense": 81,
+        "haste": 88,
+        "total": 531
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "008",
+      "name": "Pouchwisp",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300301,
+      "region": "Quần Đảo Sóng Biển Thì Thầm",
+      "elements": [
+        "am"
+      ],
+      "roles": [
+        "energy"
+      ],
+      "description": "Cơ thể nó giống như một chiếc túi đựng tiền xu khổng lồ siêu đàn hồi, vốn là nơi trú ngụ của cả một đàn Pennywisp. Trông có vẻ như nó đang hào phóng tung xu vàng khắp nơi, nhưng thực ra chỉ là đang thả các Pennywisp ra ngoài dạo chơi mà thôi.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10633.png",
+      "url": "https://wiki.aniimo.com/vi/item/008/basic-form/300301",
+      "stats": {
+        "hp": 101,
+        "physicalAttack": 110,
+        "magicAttack": 50,
+        "physicalDefense": 80,
+        "magicDefense": 70,
+        "haste": 109,
+        "total": 520
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "008",
+      "name": "Pouchwisp",
+      "form": "Prismana Form",
+      "formVi": "Hình Thái Prismana",
+      "stage": 3,
+      "regionId": 1000,
+      "region": "Kỷ Vật Mùa Giải 1",
+      "elements": [
+        "am"
+      ],
+      "roles": [
+        "energy"
+      ],
+      "description": "Năng Lượng Thần Diệu bị hút vào bụng Pouchwisp. Khi nguồn năng lượng dồi dào ấy ngưng tụ thành những tinh thể rực rỡ, các hoa văn vàng kiểu sa nở rộ khắp cơ thể nó. Ngay cả những Pennywisp sống trên người nó cũng tỏa ra ánh vàng rực rỡ.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1063303.png",
+      "url": "https://wiki.aniimo.com/vi/item/008/prismana-form/1000",
+      "stats": {
+        "hp": 101,
+        "physicalAttack": 110,
+        "magicAttack": 50,
+        "physicalDefense": 80,
+        "magicDefense": 70,
+        "haste": 109,
+        "total": 520
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "009",
+      "name": "Cornet",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "phong"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Chúng có thể tạo ra những âm thanh lớn và chói tai vang vọng khắp bãi biển chỉ để thu hút sự chú ý.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10185.png",
+      "url": "https://wiki.aniimo.com/vi/item/009/basic-form",
+      "stats": {
+        "hp": 96,
+        "physicalAttack": 121,
+        "magicAttack": 54,
+        "physicalDefense": 74,
+        "magicDefense": 70,
+        "haste": 94,
+        "total": 509
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "009",
+      "name": "Bubbeep",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300301,
+      "region": "Quần Đảo Sóng Biển Thì Thầm",
+      "elements": [
+        "co",
+        "nuoc"
+      ],
+      "roles": [
+        "heal"
+      ],
+      "description": "Nó lười biếng vươn những chiếc lông vũ dạng lá ra, còn cái miệng không ngừng nhai nhóp nhép khi biến tảo và chất nhờn thành những bong bóng lơ lửng. Chỉ cần một cái nhún nhẹ, nó đã thong dong trôi đi, cưỡi lên bong bóng tựa như chiếc thuyền nhỏ lướt gió.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10581.png",
+      "url": "https://wiki.aniimo.com/vi/item/009/basic-form/300301",
+      "stats": {
+        "hp": 100,
+        "physicalAttack": 85,
+        "magicAttack": 40,
+        "physicalDefense": 78,
+        "magicDefense": 66,
+        "haste": 81,
+        "total": 450
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "010",
+      "name": "Tubster",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "phong"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Tạo ra âm thanh trầm sâu như kèn tuba, phù hợp với tính cách điềm tĩnh và thân thiện của nó.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10187.png",
+      "url": "https://wiki.aniimo.com/vi/item/010/basic-form",
+      "stats": {
+        "hp": 108,
+        "physicalAttack": 80,
+        "magicAttack": 107,
+        "physicalDefense": 66,
+        "magicDefense": 109,
+        "haste": 80,
+        "total": 550
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "010",
+      "name": "Glameep",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300301,
+      "region": "Quần Đảo Sóng Biển Thì Thầm",
+      "elements": [
+        "co",
+        "nuoc"
+      ],
+      "roles": [
+        "heal"
+      ],
+      "description": "Khoác lên mình lớp lông vũ lá cây xanh tươi, Glameep di chuyển nhẹ nhàng dọc bờ hồ. Nó yêu thích nhất là làn nước trong veo, đặc biệt khi làn nước ấy phản chiếu vẻ đẹp duyên dáng, thong dong của chính mình.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10583.png",
+      "url": "https://wiki.aniimo.com/vi/item/010/basic-form/300301",
+      "stats": {
+        "hp": 117,
+        "physicalAttack": 100,
+        "magicAttack": 50,
+        "physicalDefense": 91,
+        "magicDefense": 80,
+        "haste": 92,
+        "total": 530
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "010",
+      "name": "Glameep",
+      "form": "Prismana Form",
+      "formVi": "Hình Thái Prismana",
+      "stage": 3,
+      "regionId": 1000,
+      "region": "Kỷ Vật Mùa Giải 1",
+      "elements": [
+        "am",
+        "co"
+      ],
+      "roles": [
+        "heal"
+      ],
+      "description": "Prismana đã biến lớp lông vũ lá cây của Glameep thành thứ gì đó trong suốt như thủy tinh, trong khi cành vàng trên đầu nó mọc thành một chiếc vương miện, dường như chính thiên nhiên đã chọn nó để ban phước.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1058301.png",
+      "url": "https://wiki.aniimo.com/vi/item/010/prismana-form/1000",
+      "stats": {
+        "hp": 117,
+        "physicalAttack": 100,
+        "magicAttack": 50,
+        "physicalDefense": 91,
+        "magicDefense": 80,
+        "haste": 92,
+        "total": 530
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "011",
+      "name": "Iris",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "co"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Iris sở hữu cơ thể cực kỳ nhẹ nên thường bị gió nâng lên. Sau đó nó chậm rãi xoáy xuống nhờ lực cản từ chiếc váy cánh hoa, hoặc đơn giản là để mặc bản thân bị gió cuốn đi.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10211.png",
+      "url": "https://wiki.aniimo.com/vi/item/011/basic-form",
+      "stats": {
+        "hp": 69,
+        "physicalAttack": 101,
+        "magicAttack": 50,
+        "physicalDefense": 53,
+        "magicDefense": 53,
+        "haste": 71,
+        "total": 397
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "011",
+      "name": "Popapus",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300301,
+      "region": "Quần Đảo Sóng Biển Thì Thầm",
+      "elements": [
+        "nuoc"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Nó thích sưu tầm những bong bóng đầy màu sắc. Chúng dập dềnh và đung đưa trong túi khí mỗi khi nó di chuyển, và khi cảm hứng chợt đến, nó dùng chính những bong bóng đó để vẽ nguệch ngoạc những điều kỳ diệu nho nhỏ giữa không trung.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10621.png",
+      "url": "https://wiki.aniimo.com/vi/item/011/basic-form/300301",
+      "stats": {
+        "hp": 90,
+        "physicalAttack": 94,
+        "magicAttack": 44,
+        "physicalDefense": 58,
+        "magicDefense": 65,
+        "haste": 90,
+        "total": 441
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "012",
+      "name": "Irisal",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "co"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Dành trọn tâm huyết cho nghệ thuật khiêu vũ, chúng không ngừng rèn giũa kỹ nghệ của mình với hy vọng lan tỏa niềm vui và năng lượng thuần khiết từ những bước nhảy.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10212.png",
+      "url": "https://wiki.aniimo.com/vi/item/012/basic-form",
+      "stats": {
+        "hp": 100,
+        "physicalAttack": 118,
+        "magicAttack": 52,
+        "physicalDefense": 70,
+        "magicDefense": 70,
+        "haste": 94,
+        "total": 504
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "012",
+      "name": "Gachapus",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300301,
+      "region": "Quần Đảo Sóng Biển Thì Thầm",
+      "elements": [
+        "nuoc"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Chỉ cần dùng xúc tu nhanh nhẹn chạm nhẹ, nó có thể bắn ra đủ loại bong bóng gacha từ trên đầu. Chẳng ai biết thứ gì sẽ bật ra tiếp theo - một bất ngờ thú vị hay một sự cố bất ngờ.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10623.png",
+      "url": "https://wiki.aniimo.com/vi/item/012/basic-form/300301",
+      "stats": {
+        "hp": 96,
+        "physicalAttack": 124,
+        "magicAttack": 51,
+        "physicalDefense": 68,
+        "magicDefense": 72,
+        "haste": 95,
+        "total": 506
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "013",
+      "name": "Skippy",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "nuoc"
+      ],
+      "roles": [
+        "heal"
+      ],
+      "description": "Chúng thích ẩn mình dưới nước và quan sát xung quanh bằng chiếc lá sen chẳng có tác dụng ngụy trang mấy.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10041.png",
+      "url": "https://wiki.aniimo.com/vi/item/013/basic-form",
+      "stats": {
+        "hp": 80,
+        "physicalAttack": 70,
+        "magicAttack": 50,
+        "physicalDefense": 66,
+        "magicDefense": 76,
+        "haste": 60,
+        "total": 402
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "013",
+      "name": "Sugarfish",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300301,
+      "region": "Quần Đảo Sóng Biển Thì Thầm",
+      "elements": [
+        "bang"
+      ],
+      "roles": [
+        "energy"
+      ],
+      "description": "Sugarfish thích ở trong bóng râm, nhưng một khi ra ngoài nắng, nó sẽ tiết chất nhầy để bảo vệ làn da mỏng manh, khiến nó trông như đang tan chảy.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10591.png",
+      "url": "https://wiki.aniimo.com/vi/item/013/basic-form/300301",
+      "stats": {
+        "hp": 80,
+        "physicalAttack": 96,
+        "magicAttack": 43,
+        "physicalDefense": 60,
+        "magicDefense": 57,
+        "haste": 103,
+        "total": 439
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "014",
+      "name": "Pranky",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 2,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "nuoc"
+      ],
+      "roles": [
+        "heal"
+      ],
+      "description": "Chúng thích giữ cơ thể mát mẻ và ẩm ướt. Đó là lý do tại sao trên cơ thể chúng có lớp màng bao phủ.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10042.png",
+      "url": "https://wiki.aniimo.com/vi/item/014/basic-form",
+      "stats": {
+        "hp": 109,
+        "physicalAttack": 85,
+        "magicAttack": 50,
+        "physicalDefense": 66,
+        "magicDefense": 98,
+        "haste": 74,
+        "total": 482
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "014",
+      "name": "Sugarslime",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300301,
+      "region": "Quần Đảo Sóng Biển Thì Thầm",
+      "elements": [
+        "bang"
+      ],
+      "roles": [
+        "energy"
+      ],
+      "description": "Sugarslime bản tính vốn ấm áp và cởi mở. Nó thích hớt chất nhầy vào chiếc vỏ mang theo bên mình rồi chia sẻ với các aniimo khác, nhưng vẻ ngoài kỳ lạ của nó thường khiến các aniimo này sợ hãi bỏ chạy. May thay, nó đãng trí đến mức nỗi buồn nhanh chóng tan biến.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10593.png",
+      "url": "https://wiki.aniimo.com/vi/item/014/basic-form/300301",
+      "stats": {
+        "hp": 90,
+        "physicalAttack": 109,
+        "magicAttack": 56,
+        "physicalDefense": 70,
+        "magicDefense": 81,
+        "haste": 115,
+        "total": 521
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "015",
+      "name": "Glacy",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "nuoc",
+        "bang"
+      ],
+      "roles": [
+        "heal"
+      ],
+      "description": "Chúng là những aniimo thanh nhã và tốt bụng, luôn chăm sóc cho các sinh vật yếu thế hơn và sẵn sàng đóng băng bất kỳ ai dám đối đầu với chúng.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10043.png",
+      "url": "https://wiki.aniimo.com/vi/item/015/basic-form",
+      "stats": {
+        "hp": 120,
+        "physicalAttack": 95,
+        "magicAttack": 50,
+        "physicalDefense": 72,
+        "magicDefense": 110,
+        "haste": 88,
+        "total": 535
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "015",
+      "name": "Sugartini",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300301,
+      "region": "Quần Đảo Sóng Biển Thì Thầm",
+      "elements": [
+        "bang"
+      ],
+      "roles": [
+        "sup"
+      ],
+      "description": "Sugartini cực kỳ coi trọng vẻ ngoài. Để tránh làm hỏng diện mạo được chăm chút kỹ lưỡng, nó luôn giữ phong thái vô cùng trang nhã trong mọi hoàn cảnh. Nhưng nếu bạn chỉ ra rằng phần \"tóc mái\" của nó thực chất là mũi, nó sẽ lập tức nổi trận lôi đình.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10594.png",
+      "url": "https://wiki.aniimo.com/vi/item/015/basic-form/300301",
+      "stats": {
+        "hp": 115,
+        "physicalAttack": 115,
+        "magicAttack": 50,
+        "physicalDefense": 71,
+        "magicDefense": 79,
+        "haste": 85,
+        "total": 515
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "016",
+      "name": "Leafy",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "co",
+        "nuoc"
+      ],
+      "roles": [
+        "energy"
+      ],
+      "description": "Chúng sống giữa những đóa sen và dùng chiếc đuôi lá sen để che mặt, đồng thời phô bày vẻ thanh nhã của mình.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10045.png",
+      "url": "https://wiki.aniimo.com/vi/item/016/basic-form",
+      "stats": {
+        "hp": 120,
+        "physicalAttack": 95,
+        "magicAttack": 50,
+        "physicalDefense": 82,
+        "magicDefense": 82,
+        "haste": 106,
+        "total": 535
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "016",
+      "name": "Lilipole",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300301,
+      "region": "Quần Đảo Sóng Biển Thì Thầm",
+      "elements": [
+        "nuoc"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Lanh lợi và tinh nghịch, Lilipole thích vung chiếc đuôi dài như chiếc lá của mình và tung tăng đùa nghịch dưới nước. Dù là đồng loại hay một aniimo tình cờ đi ngang qua, lúc nào cũng có ai đó bị nó bất ngờ té nước.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10541.png",
+      "url": "https://wiki.aniimo.com/vi/item/016/basic-form/300301",
+      "stats": {
+        "hp": 87,
+        "physicalAttack": 65,
+        "magicAttack": 91,
+        "physicalDefense": 65,
+        "magicDefense": 80,
+        "haste": 82,
+        "total": 470
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "017",
+      "name": "Nimbi",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "phong"
+      ],
+      "roles": [
+        "sup"
+      ],
+      "description": "Đừng ngạc nhiên khi thấy chúng trôi nổi giữa mây trời theo từng bầy nhỏ phía trên thảo nguyên.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10261.png",
+      "url": "https://wiki.aniimo.com/vi/item/017/basic-form",
+      "stats": {
+        "hp": 80,
+        "physicalAttack": 84,
+        "magicAttack": 43,
+        "physicalDefense": 69,
+        "magicDefense": 82,
+        "haste": 93,
+        "total": 451
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "017",
+      "name": "Scrubbit",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300301,
+      "region": "Quần Đảo Sóng Biển Thì Thầm",
+      "elements": [
+        "nuoc"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Dù thân hình tròn trịa mũm mĩm, Scrubbit lại nhanh nhẹn đến bất ngờ. Chiếc lá đuôi dài đã rụng mà nó cầm trên tay vừa là khăn chà rửa cơ thể, vừa là công cụ sắc bén để quất vào đối thủ.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10543.png",
+      "url": "https://wiki.aniimo.com/vi/item/017/basic-form/300301",
+      "stats": {
+        "hp": 112,
+        "physicalAttack": 88,
+        "magicAttack": 107,
+        "physicalDefense": 70,
+        "magicDefense": 80,
+        "haste": 85,
+        "total": 542
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "018",
+      "name": "Turbo",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "phong"
+      ],
+      "roles": [
+        "sup"
+      ],
+      "description": "Chúng thích ngủ ẩn mình trong mây, vì dưới tác động của áp suất gió và tĩnh điện, lớp lông xù của chúng dễ dàng hút lấy những thứ bị gió cuốn đi.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10262.png",
+      "url": "https://wiki.aniimo.com/vi/item/018/basic-form",
+      "stats": {
+        "hp": 95,
+        "physicalAttack": 110,
+        "magicAttack": 50,
+        "physicalDefense": 80,
+        "magicDefense": 96,
+        "haste": 87,
+        "total": 518
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "018",
+      "name": "Salabask",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300301,
+      "region": "Quần Đảo Sóng Biển Thì Thầm",
+      "elements": [
+        "co",
+        "nuoc"
+      ],
+      "roles": [
+        "sup"
+      ],
+      "description": "Đầu của Salabask trông như một khúc gỗ trôi dạt phủ đầy rêu. Nó thích ngâm mình dưới nước và chỉ nhô đầu lên khỏi mặt nước để thong dong sưởi nắng. Đôi khi, các aniimo khác nhầm nó là một tấm ván nổi để băng qua sông và chỉ một bước chân bất cẩn cũng đủ để khiến nó bất tỉnh.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10601.png",
+      "url": "https://wiki.aniimo.com/vi/item/018/basic-form/300301",
+      "stats": {
+        "hp": 95,
+        "physicalAttack": 88,
+        "magicAttack": 50,
+        "physicalDefense": 80,
+        "magicDefense": 72,
+        "haste": 62,
+        "total": 447
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "019",
+      "name": "Dreaple",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "am"
+      ],
+      "roles": [
+        "sup"
+      ],
+      "description": "Bộ lông đã hấp thụ năng lượng giấc mơ tạo nên ảo ảnh màu sắc mê hoặc. Khi dùng bộ lông này làm gối, Người Dẫn Đường chìm vào những giấc mộng ngọt ngào.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10263.png",
+      "url": "https://wiki.aniimo.com/vi/item/019/basic-form",
+      "stats": {
+        "hp": 100,
+        "physicalAttack": 110,
+        "magicAttack": 50,
+        "physicalDefense": 77,
+        "magicDefense": 103,
+        "haste": 80,
+        "total": 520
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "019",
+      "name": "Crocobask",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300301,
+      "region": "Quần Đảo Sóng Biển Thì Thầm",
+      "elements": [
+        "co",
+        "nuoc"
+      ],
+      "roles": [
+        "sup"
+      ],
+      "description": "Nó thích nổi bất động trên mặt sông, đắm mình trong ánh nắng và chẳng bận tâm khi bị dùng như khúc gỗ trôi để bước qua. Chỉ cần đừng đứng trên lưng nó quá lâu, bởi nó có thể đột ngột lật úp lại bất cứ lúc nào.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10603.png",
+      "url": "https://wiki.aniimo.com/vi/item/019/basic-form/300301",
+      "stats": {
+        "hp": 110,
+        "physicalAttack": 113,
+        "magicAttack": 50,
+        "physicalDefense": 82,
+        "magicDefense": 80,
+        "haste": 82,
+        "total": 517
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "020",
+      "name": "Hummin",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "co"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Chúng sống theo bầy trên thảo nguyên, thích đào bới tìm thực phẩm dinh dưỡng và rất thích cùng nhau hát lệch tông!",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10201.png",
+      "url": "https://wiki.aniimo.com/vi/item/020/basic-form",
+      "stats": {
+        "hp": 94,
+        "physicalAttack": 68,
+        "magicAttack": 80,
+        "physicalDefense": 71,
+        "magicDefense": 94,
+        "haste": 60,
+        "total": 467
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "020",
+      "name": "Puffby",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300301,
+      "region": "Quần Đảo Sóng Biển Thì Thầm",
+      "elements": [
+        "phong"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Nó bận rộn bay lượn trong đêm, thu thập phấn hoa từ những loài thực vật phát sáng rồi cẩn thận vo thành các viên phấn hoa xinh xắn để mang về tổ. Khi nguy hiểm ập đến, nó vung viên phấn hoa như một thứ vũ khí để đập xuống kẻ thù.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10611.png",
+      "url": "https://wiki.aniimo.com/vi/item/020/basic-form/300301",
+      "stats": {
+        "hp": 112,
+        "physicalAttack": 76,
+        "magicAttack": 80,
+        "physicalDefense": 65,
+        "magicDefense": 66,
+        "haste": 60,
+        "total": 459
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "021",
+      "name": "Hexxin",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "am",
+        "co"
+      ],
+      "roles": [
+        "energy"
+      ],
+      "description": "Chúng tạo ra những âm thanh kỳ quái để khiến kẻ xâm nhập phát điên, hạ thấp phòng bị và thậm chí là bất tỉnh.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10203.png",
+      "url": "https://wiki.aniimo.com/vi/item/021/basic-form",
+      "stats": {
+        "hp": 115,
+        "physicalAttack": 100,
+        "magicAttack": 50,
+        "physicalDefense": 84,
+        "magicDefense": 90,
+        "haste": 115,
+        "total": 554
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "021",
+      "name": "Buffby",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300301,
+      "region": "Quần Đảo Sóng Biển Thì Thầm",
+      "elements": [
+        "phong"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Một aniimo mạnh mẽ và vạm vỡ với sức mạnh phi thường nhưng chẳng hề hung hăng. Nó có trái tim dịu dàng và luôn hành động cẩn trọng. Nó không ngừng tuần tra quanh tổ ngày đêm để bảo vệ cả đàn.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10613.png",
+      "url": "https://wiki.aniimo.com/vi/item/021/basic-form/300301",
+      "stats": {
+        "hp": 126,
+        "physicalAttack": 88,
+        "magicAttack": 103,
+        "physicalDefense": 75,
+        "magicDefense": 77,
+        "haste": 73,
+        "total": 542
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "022",
+      "name": "Tuckin",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "co"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Chúng cần hấp thụ dinh dưỡng từ đất thông qua bộ rễ để duy trì sức sống và rất ghét rời khỏi mặt đất.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10207.png",
+      "url": "https://wiki.aniimo.com/vi/item/022/basic-form",
+      "stats": {
+        "hp": 106,
+        "physicalAttack": 80,
+        "magicAttack": 100,
+        "physicalDefense": 83,
+        "magicDefense": 110,
+        "haste": 71,
+        "total": 550
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "022",
+      "name": "Royalby",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300301,
+      "region": "Quần Đảo Sóng Biển Thì Thầm",
+      "elements": [
+        "phong"
+      ],
+      "roles": [
+        "energy"
+      ],
+      "description": "Là nữ chúa của đàn và đấng cai trị tối cao của tổ ong, Royalby được đồng loại tôn kính. Nó sống trong tổ ong hoàng gia do các ong thợ xây dựng riêng cho và từ đó đưa ra mệnh lệnh chỉ huy cả đàn.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10614.png",
+      "url": "https://wiki.aniimo.com/vi/item/022/basic-form/300301",
+      "stats": {
+        "hp": 104,
+        "physicalAttack": 106,
+        "magicAttack": 53,
+        "physicalDefense": 73,
+        "magicDefense": 73,
+        "haste": 115,
+        "total": 524
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "022",
+      "name": "Royalby",
+      "form": "Prismana Form",
+      "formVi": "Hình Thái Prismana",
+      "stage": 3,
+      "regionId": 1000,
+      "region": "Kỷ Vật Mùa Giải 1",
+      "elements": [
+        "anh-sang",
+        "phong"
+      ],
+      "roles": [
+        "energy"
+      ],
+      "description": "Nó ăn mật hoa thấm đẫm Prismana, trong khi phấn hoa phủ bụi Prismana rơi xuống từ chiếc vương miện. Đôi cánh duyên dáng của ong chúa buông dài phía sau, cùng bộ xiêm y kết từ hoa nở rộ trong Prismana lấp lánh ánh hào quang sang trọng rực rỡ.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1061403.png",
+      "url": "https://wiki.aniimo.com/vi/item/022/prismana-form/1000",
+      "stats": {
+        "hp": 104,
+        "physicalAttack": 106,
+        "magicAttack": 53,
+        "physicalDefense": 73,
+        "magicDefense": 73,
+        "haste": 115,
+        "total": 524
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "023",
+      "name": "Budclaw",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "tho",
+        "co"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Chung thủy suốt đời, chúng luôn xuất hiện theo cặp. Cây hoa hình tim trên mai biểu thị trạng thái hạnh phúc của chúng.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10161.png",
+      "url": "https://wiki.aniimo.com/vi/item/023/basic-form",
+      "stats": {
+        "hp": 76,
+        "physicalAttack": 64,
+        "magicAttack": 84,
+        "physicalDefense": 93,
+        "magicDefense": 65,
+        "haste": 72,
+        "total": 454
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "023",
+      "name": "Saws",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300301,
+      "region": "Quần Đảo Sóng Biển Thì Thầm",
+      "elements": [
+        "nuoc"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Saws rẽ sóng cực kỳ thích đuổi bắt các sinh vật dưới nước. Khi lao đi, chiếc vây lưng có răng cưa của nó có thể nhanh chóng xé toạc mọi thứ cản đường giữa dòng nước cuộn xiết.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10391.png",
+      "url": "https://wiki.aniimo.com/vi/item/023/basic-form/300301",
+      "stats": {
+        "hp": 82,
+        "physicalAttack": 99,
+        "magicAttack": 40,
+        "physicalDefense": 70,
+        "magicDefense": 75,
+        "haste": 70,
+        "total": 436
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "024",
+      "name": "Shrubclaw",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "tho",
+        "co"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Những loài thực vật xanh tốt phủ trên mai chúng chuyển đổi ánh nắng thành dinh dưỡng, nên vào những ngày nắng, chúng thậm chí không cần ăn.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10162.png",
+      "url": "https://wiki.aniimo.com/vi/item/024/basic-form",
+      "stats": {
+        "hp": 95,
+        "physicalAttack": 80,
+        "magicAttack": 104,
+        "physicalDefense": 109,
+        "magicDefense": 77,
+        "haste": 85,
+        "total": 550
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "024",
+      "name": "Whirlbite",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300301,
+      "region": "Quần Đảo Sóng Biển Thì Thầm",
+      "elements": [
+        "nuoc"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Kẻ săn mồi hung tợn với khả năng biến phần hàm dưới có thể kéo dài thành vũ khí sắc bén, nó lướt đi ẩn hiện giữa dải bóng của những con sóng. Khoảnh khắc chiếc vây lưng đáng sợ của nó rẽ nước nhô lên, con mồi đã không còn đường thoát.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10393.png",
+      "url": "https://wiki.aniimo.com/vi/item/024/basic-form/300301",
+      "stats": {
+        "hp": 90,
+        "physicalAttack": 122,
+        "magicAttack": 50,
+        "physicalDefense": 70,
+        "magicDefense": 90,
+        "haste": 86,
+        "total": 508
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "025",
+      "name": "Geoclaw",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "bang"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Chúng sống trong hang động, ăn khoáng vật và dùng lớp mai kết tinh tuyệt đẹp để dụ con mồi.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10163.png",
+      "url": "https://wiki.aniimo.com/vi/item/025/basic-form",
+      "stats": {
+        "hp": 93,
+        "physicalAttack": 80,
+        "magicAttack": 103,
+        "physicalDefense": 113,
+        "magicDefense": 79,
+        "haste": 82,
+        "total": 550
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "025",
+      "name": "Prawnch",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300301,
+      "region": "Quần Đảo Sóng Biển Thì Thầm",
+      "elements": [
+        "bang"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Prawnch chăm chỉ luyện tập giữa dòng nước xiết, giơ cao đôi càng nắm đấm và khiêu chiến mọi đối thủ trong tầm mắt. Nó thậm chí còn coi những sinh vật đi ngang qua là kẻ địch giả tưởng. Càng bị phớt lờ, nó càng ngứa ngáy muốn lao vào giao đấu.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10401.png",
+      "url": "https://wiki.aniimo.com/vi/item/025/basic-form/300301",
+      "stats": {
+        "hp": 88,
+        "physicalAttack": 80,
+        "magicAttack": 81,
+        "physicalDefense": 68,
+        "magicDefense": 67,
+        "haste": 71,
+        "total": 455
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "026",
+      "name": "Sparki",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "lua"
+      ],
+      "roles": [
+        "energy"
+      ],
+      "description": "Dù trông như lửa, những ngọn lửa ấy chỉ là năng lượng đang chảy. Chúng chẳng tỏa ra chút hơi nóng nào – thực ra, chúng hấp thụ nhiệt từ môi trường xung quanh. Đôi khi chúng lợi dụng điều này để ngụy trang thành lửa trại và trêu chọc kẻ khác.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10331.png",
+      "url": "https://wiki.aniimo.com/vi/item/026/basic-form",
+      "stats": {
+        "hp": 69,
+        "physicalAttack": 100,
+        "magicAttack": 41,
+        "physicalDefense": 60,
+        "magicDefense": 67,
+        "haste": 98,
+        "total": 435
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "026",
+      "name": "Jabster",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300301,
+      "region": "Quần Đảo Sóng Biển Thì Thầm",
+      "elements": [
+        "am",
+        "bang"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Là bậc thầy của mọi kiểu tổ hợp đòn đấm bốc, Jabster liên tục mài giũa kỹ thuật chiến đấu. Nó dùng những cú lắc đầu và vẫy đuôi làm động tác giả để đánh lạc hướng đối thủ, rồi bật mạnh nắm đấm càng về phía trước, tung ra đòn kết thúc trận đấu.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10403.png",
+      "url": "https://wiki.aniimo.com/vi/item/026/basic-form/300301",
+      "stats": {
+        "hp": 99,
+        "physicalAttack": 88,
+        "magicAttack": 107,
+        "physicalDefense": 92,
+        "magicDefense": 70,
+        "haste": 86,
+        "total": 542
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "027",
+      "name": "Flamerion",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "lua"
+      ],
+      "roles": [
+        "energy"
+      ],
+      "description": "Chúng chỉ xuất hiện vào ban đêm. Vì cơ thể chúng được tạo thành từ năng lượng dạng khí, chúng có thể phân tách tùy ý và thậm chí tạo ra được các bản sao.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10333.png",
+      "url": "https://wiki.aniimo.com/vi/item/027/basic-form",
+      "stats": {
+        "hp": 80,
+        "physicalAttack": 113,
+        "magicAttack": 50,
+        "physicalDefense": 70,
+        "magicDefense": 89,
+        "haste": 115,
+        "total": 517
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "027",
+      "name": "Jeglid",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300301,
+      "region": "Quần Đảo Sóng Biển Thì Thầm",
+      "elements": [
+        "nuoc"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Khi Jeglid lao vọt khỏi mặt nước, những chiếc vây bay ở hai bên lập tức bắn ra dòng nước tích trữ với uy lực cực mạnh, giúp nó phóng lên không trung và lướt đi. Thân hình của nó vô cùng nhanh nhẹn và tràn đầy sức mạnh.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10691.png",
+      "url": "https://wiki.aniimo.com/vi/item/027/basic-form/300301",
+      "stats": {
+        "hp": 80,
+        "physicalAttack": 80,
+        "magicAttack": 70,
+        "physicalDefense": 77,
+        "magicDefense": 77,
+        "haste": 71,
+        "total": 455
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "028",
+      "name": "Flutternym",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "phong"
+      ],
+      "roles": [
+        "heal"
+      ],
+      "description": "Chúng nhút nhát và sẽ lẩn trốn khi cảm nhận có nguy hiểm, nhưng những chiếc vảy phát sáng mà chúng làm rơi luôn khiến chúng bị lộ.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10231.png",
+      "url": "https://wiki.aniimo.com/vi/item/028/basic-form",
+      "stats": {
+        "hp": 94,
+        "physicalAttack": 81,
+        "magicAttack": 41,
+        "physicalDefense": 68,
+        "magicDefense": 68,
+        "haste": 85,
+        "total": 437
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "028",
+      "name": "Jeburst",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300301,
+      "region": "Quần Đảo Sóng Biển Thì Thầm",
+      "elements": [
+        "nuoc"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Các màng cánh mọc ra từ chi trước của nó vừa nhẹ thoáng vừa bền chắc. Hai cặp cơ quan tích nước phát triển đầy đủ trên cánh có thể phun ra những luồng nước mạnh, đẩy cơ thể nó lao đi như mũi tên, xé toạc áp lực nước, ngược dòng tiến lên và phóng thẳng đến đỉnh thác.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10693.png",
+      "url": "https://wiki.aniimo.com/vi/item/028/basic-form/300301",
+      "stats": {
+        "hp": 104,
+        "physicalAttack": 88,
+        "magicAttack": 106,
+        "physicalDefense": 80,
+        "magicDefense": 80,
+        "haste": 84,
+        "total": 542
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "028",
+      "name": "Jeburst",
+      "form": "Prismana Form",
+      "formVi": "Hình Thái Prismana",
+      "stage": 3,
+      "regionId": 1000,
+      "region": "Kỷ Vật Mùa Giải 1",
+      "elements": [
+        "am",
+        "nuoc"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Dưới ảnh hưởng của Năng Lượng Thần Diệu, đôi cánh của Jeburst chuyển sang sắc màu tĩnh lặng của bầu trời sao thăm thẳm. Jeburst vỗ cánh bay ngược dòng hướng đến những đỉnh cao hơn nữa, lao vào vùng xa xôi nơi những biển sao hội tụ.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1069301.png",
+      "url": "https://wiki.aniimo.com/vi/item/028/prismana-form/1000",
+      "stats": {
+        "hp": 104,
+        "physicalAttack": 88,
+        "magicAttack": 106,
+        "physicalDefense": 80,
+        "magicDefense": 80,
+        "haste": 84,
+        "total": 542
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "029",
+      "name": "Gracewing",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "phong"
+      ],
+      "roles": [
+        "heal"
+      ],
+      "description": "Những kẻ lang thang cô độc. Chúng tạo ảo giác bằng cách rũ lớp vảy từ đôi cánh khi có mối đe dọa đến gần.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10232.png",
+      "url": "https://wiki.aniimo.com/vi/item/029/basic-form",
+      "stats": {
+        "hp": 110,
+        "physicalAttack": 98,
+        "magicAttack": 50,
+        "physicalDefense": 85,
+        "magicDefense": 85,
+        "haste": 104,
+        "total": 532
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "029",
+      "name": "Ekrim",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300301,
+      "region": "Quần Đảo Sóng Biển Thì Thầm",
+      "elements": [
+        "am"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Ekrim thoắt ẩn thoắt hiện có thể khéo léo dùng chiếc móng vuốt ở đuôi chộp lấy kho báu, rồi lập tức biến mất vào màn đêm mà không để lại bất kỳ dấu vết nào.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10444.png",
+      "url": "https://wiki.aniimo.com/vi/item/029/basic-form/300301",
+      "stats": {
+        "hp": 110,
+        "physicalAttack": 88,
+        "magicAttack": 108,
+        "physicalDefense": 76,
+        "magicDefense": 70,
+        "haste": 90,
+        "total": 542
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "029",
+      "name": "Ekrim",
+      "form": "Prismana Form",
+      "formVi": "Hình Thái Prismana",
+      "stage": 3,
+      "regionId": 1000,
+      "region": "Kỷ Vật Mùa Giải 1",
+      "elements": [
+        "lua",
+        "am"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Dưới ảnh hưởng của năng lượng ngũ sắc, khớp cánh của Ekrim mọc ra những mấu xương sắc như dao cạo, còn chóp đuôi biến thành lưỡi dao hình lưỡi hái. Nó tự do lao vun vút trong đêm, cuỗm sạch mọi kho báu còn ẩn giấu trong bóng đêm.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1044403.png",
+      "url": "https://wiki.aniimo.com/vi/item/029/prismana-form/1000",
+      "stats": {
+        "hp": 110,
+        "physicalAttack": 88,
+        "magicAttack": 108,
+        "physicalDefense": 76,
+        "magicDefense": 70,
+        "haste": 90,
+        "total": 542
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "030",
+      "name": "Somniwing",
+      "form": "Prismana Form",
+      "formVi": "Hình Thái Prismana",
+      "stage": 4,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "phong",
+        "co"
+      ],
+      "roles": [
+        "energy"
+      ],
+      "description": "Đôi cánh tráng lệ của chúng phát tán lớp vảy giúp hoa phát triển và lan tỏa sức sống đến mọi nơi chúng bay qua.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10233.png",
+      "url": "https://wiki.aniimo.com/vi/item/030/prismana-form",
+      "stats": {
+        "hp": 111,
+        "physicalAttack": 92,
+        "magicAttack": 50,
+        "physicalDefense": 85,
+        "magicDefense": 85,
+        "haste": 115,
+        "total": 538
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "031",
+      "name": "Eko",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "phong"
+      ],
+      "roles": [
+        "sup"
+      ],
+      "description": "Với đôi tai lớn luôn dựng đứng, chúng cực kỳ nhạy cảm với âm thanh. Chúng sẽ không bỏ lỡ bất kỳ chuyển động nào thu hút sự chú ý của mình, dù gần hay xa.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10441.png",
+      "url": "https://wiki.aniimo.com/vi/item/031/basic-form",
+      "stats": {
+        "hp": 70,
+        "physicalAttack": 108,
+        "magicAttack": 42,
+        "physicalDefense": 70,
+        "magicDefense": 57,
+        "haste": 80,
+        "total": 427
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "032",
+      "name": "Eklue",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "phong"
+      ],
+      "roles": [
+        "sup"
+      ],
+      "description": "Tò mò và háo hức khi tìm kiếm dấu vết cũng như truy đuổi mục tiêu. Chiếc vòng trên đuôi khuếch đại sóng siêu âm, cho phép chúng dễ dàng phát hiện các sinh vật ẩn mình.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10443.png",
+      "url": "https://wiki.aniimo.com/vi/item/032/basic-form",
+      "stats": {
+        "hp": 100,
+        "physicalAttack": 120,
+        "magicAttack": 49,
+        "physicalDefense": 83,
+        "magicDefense": 67,
+        "haste": 91,
+        "total": 510
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "033",
+      "name": "Budsquire",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "co"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Dù mít ướt và nhút nhát nhưng khi bị dồn vào đường cùng, những aniimo này cũng có thể đứng lên chống trả kẻ địch. Nếu điều đó xảy ra, nụ hoa trên đầu chúng sẽ nở rộ.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10321.png",
+      "url": "https://wiki.aniimo.com/vi/item/033/basic-form",
+      "stats": {
+        "hp": 82,
+        "physicalAttack": 107,
+        "magicAttack": 43,
+        "physicalDefense": 59,
+        "magicDefense": 59,
+        "haste": 78,
+        "total": 428
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "034",
+      "name": "Thornblade",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "co"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Những thanh kiếm làm từ thân gai chỉ được rút ra khi bảo vệ bầy đàn khỏi kẻ thù.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10323.png",
+      "url": "https://wiki.aniimo.com/vi/item/034/basic-form",
+      "stats": {
+        "hp": 96,
+        "physicalAttack": 121,
+        "magicAttack": 53,
+        "physicalDefense": 74,
+        "magicDefense": 73,
+        "haste": 92,
+        "total": 509
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "035",
+      "name": "Melloblum",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "co"
+      ],
+      "roles": [
+        "sup"
+      ],
+      "description": "Để dập tắt tranh chấp, chúng rải những cánh hoa thơm ngát, khiến bất kỳ ai chạm vào đều cảm thấy hạnh phúc và mất đi ý chí chiến đấu.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10324.png",
+      "url": "https://wiki.aniimo.com/vi/item/035/basic-form",
+      "stats": {
+        "hp": 95,
+        "physicalAttack": 113,
+        "magicAttack": 91,
+        "physicalDefense": 70,
+        "magicDefense": 70,
+        "haste": 78,
+        "total": 517
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "035",
+      "name": "Melloblum",
+      "form": "Prismana Form",
+      "formVi": "Hình Thái Prismana",
+      "stage": 3,
+      "regionId": 1000,
+      "region": "Kỷ Vật Mùa Giải 1",
+      "elements": [
+        "anh-sang",
+        "co"
+      ],
+      "roles": [
+        "sup"
+      ],
+      "description": "Prismana biến chiếc váy hoa trắng tinh thành một chiếc váy như pha lê, lấp lánh ánh sáng chói lọi khi đung đưa. Những chiếc gai quấn quanh hoa hồng tạo thành một chiếc vương miện, mỗi đầu nhọn đều được làm dịu thành sự bảo hộ nhẹ nhàng.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1032402.png",
+      "url": "https://wiki.aniimo.com/vi/item/035/prismana-form/1000",
+      "stats": {
+        "hp": 95,
+        "physicalAttack": 113,
+        "magicAttack": 91,
+        "physicalDefense": 70,
+        "magicDefense": 70,
+        "haste": 78,
+        "total": 517
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "036",
+      "name": "Pomegg",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "co"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Để nghỉ ngơi, chúng rút vào trong vỏ và thường bị nhầm là trứng. Chúng sợ chiến đấu nhưng lại thích nơi đông đúc, nhảy múa với những quả cầu cỏ để cổ vũ người khác.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10471.png",
+      "url": "https://wiki.aniimo.com/vi/item/036/basic-form",
+      "stats": {
+        "hp": 74,
+        "physicalAttack": 72,
+        "magicAttack": 91,
+        "physicalDefense": 68,
+        "magicDefense": 65,
+        "haste": 85,
+        "total": 455
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "037",
+      "name": "Pomawk",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "co"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Bờm cao dựng đứng thể hiện bản tính hoang dã, còn tiếng gầm hung dữ để bộc lộ khí chất thực sự. Đuôi của chúng được tạo ra để tích trữ sóng âm và sẽ kích nổ một luồng âm thanh xung kích khi tấn công đối thủ.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10475.png",
+      "url": "https://wiki.aniimo.com/vi/item/037/basic-form",
+      "stats": {
+        "hp": 87,
+        "physicalAttack": 90,
+        "magicAttack": 107,
+        "physicalDefense": 80,
+        "magicDefense": 76,
+        "haste": 100,
+        "total": 540
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "038",
+      "name": "Dewy",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "am"
+      ],
+      "roles": [
+        "sup"
+      ],
+      "description": "Là bạn đồng hành của các nhà điều hương, chúng lưu trữ và lên men hương mật trong cơ thể, biến nó thành nguyên liệu điều chế nước hoa.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10351.png",
+      "url": "https://wiki.aniimo.com/vi/item/038/basic-form",
+      "stats": {
+        "hp": 71,
+        "physicalAttack": 94,
+        "magicAttack": 69,
+        "physicalDefense": 58,
+        "magicDefense": 55,
+        "haste": 94,
+        "total": 441
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "039",
+      "name": "Fragrancier",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "am"
+      ],
+      "roles": [
+        "sup"
+      ],
+      "description": "Chúng rất kén mùi hương, vì vậy chúng thu thập và lưu trữ nhiều loại hương mật trong cơ thể để tạo ra nguyên liệu nước hoa độc đáo.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10352.png",
+      "url": "https://wiki.aniimo.com/vi/item/039/basic-form",
+      "stats": {
+        "hp": 84,
+        "physicalAttack": 111,
+        "magicAttack": 81,
+        "physicalDefense": 68,
+        "magicDefense": 65,
+        "haste": 110,
+        "total": 519
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "040",
+      "name": "Wisptis",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "am"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Nếu cách duy nhất để tiến hóa là đánh bại các Wisptis khác, vậy thì lựa chọn duy nhất là phải giữ móng vuốt luôn sắc bén.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10031.png",
+      "url": "https://wiki.aniimo.com/vi/item/040/basic-form",
+      "stats": {
+        "hp": 77,
+        "physicalAttack": 112,
+        "magicAttack": 43,
+        "physicalDefense": 60,
+        "magicDefense": 54,
+        "haste": 77,
+        "total": 423
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "041",
+      "name": "Ignitis",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "am"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Chúng mài sắc lưỡi dao và chờ đợi khoảnh khắc hoàn hảo, ẩn mình trong bóng tối trong lúc đùa giỡn với con mồi. Là những sát thủ máu lạnh, chúng tìm cách kết liễu mọi trận đấu chỉ bằng một đòn.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10032.png",
+      "url": "https://wiki.aniimo.com/vi/item/041/basic-form",
+      "stats": {
+        "hp": 90,
+        "physicalAttack": 125,
+        "magicAttack": 52,
+        "physicalDefense": 77,
+        "magicDefense": 70,
+        "haste": 91,
+        "total": 505
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "042",
+      "name": "Bonesky",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "bang"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Một chú cún tràn đầy năng lượng với đôi tai to. Chiếc nơ xương băng trên ngực là món đồ chơi yêu thích của nó. Nó ghét những Emberpup không tôn trọng không gian riêng tư.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10131.png",
+      "url": "https://wiki.aniimo.com/vi/item/042/basic-form",
+      "stats": {
+        "hp": 71,
+        "physicalAttack": 88,
+        "magicAttack": 38,
+        "physicalDefense": 56,
+        "magicDefense": 57,
+        "haste": 67,
+        "total": 377
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "043",
+      "name": "Fenrier",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 2,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "bang"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Vì sợ mất đi chiến ý nên nó không thích được vuốt ve. Mỗi khi dẫn dắt chủng tộc đi săn, nó luôn ngậm chặt lưỡi kiếm băng tiên phong đi trước.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10132.png",
+      "url": "https://wiki.aniimo.com/vi/item/043/basic-form",
+      "stats": {
+        "hp": 86,
+        "physicalAttack": 105,
+        "magicAttack": 45,
+        "physicalDefense": 68,
+        "magicDefense": 68,
+        "haste": 81,
+        "total": 453
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "044",
+      "name": "Glynsera",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "bang"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Là những chiến binh kiêu hãnh và đầy tự tin, chúng gieo rắc nỗi kinh hoàng cho kẻ địch bằng những lưỡi đao lạnh lẽo trong miệng.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10133.png",
+      "url": "https://wiki.aniimo.com/vi/item/044/basic-form",
+      "stats": {
+        "hp": 95,
+        "physicalAttack": 118,
+        "magicAttack": 53,
+        "physicalDefense": 72,
+        "magicDefense": 76,
+        "haste": 98,
+        "total": 512
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "044",
+      "name": "Glynsera",
+      "form": "Prismana Form",
+      "formVi": "Hình Thái Prismana",
+      "stage": 3,
+      "regionId": 1000,
+      "region": "Kỷ Vật Mùa Giải 1",
+      "elements": [
+        "anh-sang",
+        "bang"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Prismana biến chóp lông và lưỡi kiếm trong miệng chúng thành màu đỏ để cảnh báo những sinh vật khác.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1013301.png",
+      "url": "https://wiki.aniimo.com/vi/item/044/prismana-form/1000",
+      "stats": {
+        "hp": 95,
+        "physicalAttack": 118,
+        "magicAttack": 53,
+        "physicalDefense": 72,
+        "magicDefense": 76,
+        "haste": 98,
+        "total": 512
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "045",
+      "name": "Bolty",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "dien"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Chúng sống giữa những tán cây. Khi tấn công, những tia lửa vàng lóe lên từ đuôi chúng kèm theo tiếng điện lách tách. Nhanh nhẹn và lẹ làng, chúng rất khó bắt.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10221.png",
+      "url": "https://wiki.aniimo.com/vi/item/045/basic-form",
+      "stats": {
+        "hp": 85,
+        "physicalAttack": 85,
+        "magicAttack": 87,
+        "physicalDefense": 60,
+        "magicDefense": 60,
+        "haste": 73,
+        "total": 450
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "046",
+      "name": "Blazen",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "dien"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Nó tích điện bằng cách vận dụng tĩnh điện sinh ra từ lớp lông đặc biệt có tác dụng thu hút các hạt mang điện trong không khí. Nước làm suy giảm khả năng tích điện, vì vậy nó hiếm khi xuất hiện vào những ngày mưa.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10222.png",
+      "url": "https://wiki.aniimo.com/vi/item/046/basic-form",
+      "stats": {
+        "hp": 112,
+        "physicalAttack": 90,
+        "magicAttack": 104,
+        "physicalDefense": 70,
+        "magicDefense": 70,
+        "haste": 98,
+        "total": 544
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "047",
+      "name": "Squarrel",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "lua"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Squarrel có một chiếc đuôi lớn hình nắm đấm. Chỉ cần bị chà xát nhẹ, bộ lông nhờn trên đuôi nó có thể bùng cháy. Bất kỳ ai để mắt đến những quả thông mà nó tích trữ đều sẽ được nếm thử những nắm đấm lửa thiêu đốt của nó.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10511.png",
+      "url": "https://wiki.aniimo.com/vi/item/047/basic-form",
+      "stats": {
+        "hp": 53,
+        "physicalAttack": 80,
+        "magicAttack": 94,
+        "physicalDefense": 79,
+        "magicDefense": 72,
+        "haste": 77,
+        "total": 455
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "048",
+      "name": "Squashel",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "lua"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Squashel có hai chiếc đuôi hình nắm đấm, giúp sức mạnh của nó được tăng cường vượt bậc. Những quả thông được ném ra với lực đó có uy lực như đạn đại bác – không thể xem thường.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10512.png",
+      "url": "https://wiki.aniimo.com/vi/item/048/basic-form",
+      "stats": {
+        "hp": 110,
+        "physicalAttack": 82,
+        "magicAttack": 108,
+        "physicalDefense": 80,
+        "magicDefense": 80,
+        "haste": 88,
+        "total": 548
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "049",
+      "name": "Susuta",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "nuoc"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Chúng đào bới khắp nơi để tìm quà tặng cho người mình thích, nhưng màn tán tỉnh luôn thất bại vì chúng quá nhút nhát.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10171.png",
+      "url": "https://wiki.aniimo.com/vi/item/049/basic-form",
+      "stats": {
+        "hp": 81,
+        "physicalAttack": 61,
+        "magicAttack": 72,
+        "physicalDefense": 53,
+        "magicDefense": 80,
+        "haste": 64,
+        "total": 411
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "050",
+      "name": "Popota",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 2,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "nuoc"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Chúng lựa vỏ sò rồi chế thành xẻng. Người ta nói rằng khi nhìn thấy người mình yêu, chúng sẽ tạo ra bong bóng màu hồng.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10172.png",
+      "url": "https://wiki.aniimo.com/vi/item/050/basic-form",
+      "stats": {
+        "hp": 92,
+        "physicalAttack": 96,
+        "magicAttack": 80,
+        "physicalDefense": 68,
+        "magicDefense": 68,
+        "haste": 67,
+        "total": 471
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "051",
+      "name": "Piopiota",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "nuoc"
+      ],
+      "roles": [
+        "sup"
+      ],
+      "description": "Những sinh vật nhỏ tự luyến dành rất nhiều thời gian để chải chuốt bộ lông và tạo dáng hoàn hảo.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10173.png",
+      "url": "https://wiki.aniimo.com/vi/item/051/basic-form",
+      "stats": {
+        "hp": 102,
+        "physicalAttack": 108,
+        "magicAttack": 50,
+        "physicalDefense": 99,
+        "magicDefense": 75,
+        "haste": 88,
+        "total": 522
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "052",
+      "name": "Panpanta",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "nuoc"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Dù mạnh mẽ và đầy sức mạnh, chúng chỉ thích ở trong tổ để trang trí hơn là khoe cơ bắp.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10174.png",
+      "url": "https://wiki.aniimo.com/vi/item/052/basic-form",
+      "stats": {
+        "hp": 104,
+        "physicalAttack": 85,
+        "magicAttack": 100,
+        "physicalDefense": 70,
+        "magicDefense": 106,
+        "haste": 80,
+        "total": 545
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "053",
+      "name": "Shelly",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "nuoc"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Ẩn mình giữa những vỏ sò trên bãi biển bằng cách dùng phần phụ mềm mại để giữ các vỏ sò cố định. Chúng luôn đóng kín vào ban ngày.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10191.png",
+      "url": "https://wiki.aniimo.com/vi/item/053/basic-form",
+      "stats": {
+        "hp": 75,
+        "physicalAttack": 90,
+        "magicAttack": 39,
+        "physicalDefense": 56,
+        "magicDefense": 56,
+        "haste": 66,
+        "total": 382
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "054",
+      "name": "Sheldon",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 2,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "nuoc"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Tựa lưng vào chiếc vỏ của mình, chúng ngước nhìn lên bầu trời đêm và chìm vào giấc mộng sâu thẳm do các vì tinh tú dệt nên.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10192.png",
+      "url": "https://wiki.aniimo.com/vi/item/054/basic-form",
+      "stats": {
+        "hp": 90,
+        "physicalAttack": 109,
+        "magicAttack": 44,
+        "physicalDefense": 68,
+        "magicDefense": 68,
+        "haste": 79,
+        "total": 458
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "055",
+      "name": "Sherro",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "nuoc"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Chúng biến lớp vỏ từng bao bọc mình thành kiếm và khiên để bảo vệ những Shelly mong manh dọc bờ biển.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10194.png",
+      "url": "https://wiki.aniimo.com/vi/item/055/basic-form",
+      "stats": {
+        "hp": 100,
+        "physicalAttack": 121,
+        "magicAttack": 50,
+        "physicalDefense": 75,
+        "magicDefense": 75,
+        "haste": 88,
+        "total": 509
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "056",
+      "name": "Baleetle",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "tho"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Ngay từ khi chào đời, nó đã không thể tách rời quả cầu bùn đất của mình, miệt mài lăn đi lăn lại cho tới khi khối bùn ngày càng tròn trịa. Nhưng quả cầu bùn đất mà nó đẩy dường như không đơn giản như vẻ ngoài.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10451.png",
+      "url": "https://wiki.aniimo.com/vi/item/056/basic-form",
+      "stats": {
+        "hp": 76,
+        "physicalAttack": 98,
+        "magicAttack": 42,
+        "physicalDefense": 68,
+        "magicDefense": 68,
+        "haste": 85,
+        "total": 437
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "057",
+      "name": "Waleetle",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "tho"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Chúng di chuyển lùi giống đồng loại của mình, nhưng theo một cách cầu kỳ hơn nhiều.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10453.png",
+      "url": "https://wiki.aniimo.com/vi/item/057/basic-form",
+      "stats": {
+        "hp": 90,
+        "physicalAttack": 120,
+        "magicAttack": 52,
+        "physicalDefense": 80,
+        "magicDefense": 80,
+        "haste": 100,
+        "total": 522
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "057",
+      "name": "Waleetle",
+      "form": "Prismana Form",
+      "formVi": "Hình Thái Prismana",
+      "stage": 3,
+      "regionId": 1000,
+      "region": "Kỷ Vật Mùa Giải 1",
+      "elements": [
+        "am",
+        "tho"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Sau khi hấp thụ Năng Lượng Thần Diệu, bản năng chinh phục tốc độ tối đa của Waleetle bộc phát thành ngọn lửa, thiêu rụi quả cầu bùn đất của nó thành dung nham sôi sục. Khi nó lao đi, tiếng gầm làm rung chuyển không khí, cùng ánh lửa bùng lên dữ dội, như thể nó sắp nghiền nát mọi thứ phía trước.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1045302.png",
+      "url": "https://wiki.aniimo.com/vi/item/057/prismana-form/1000",
+      "stats": {
+        "hp": 90,
+        "physicalAttack": 120,
+        "magicAttack": 52,
+        "physicalDefense": 80,
+        "magicDefense": 80,
+        "haste": 100,
+        "total": 522
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "058",
+      "name": "Bouldus",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "tho"
+      ],
+      "roles": [
+        "sup"
+      ],
+      "description": "Các khoáng chất tích tụ trong quả cầu bùn đất dần kết dính và nén chặt qua những cú xóc nảy liên tục, biến nó thành một quả cầu đá và khơi dậy ý thức bên trong. Chán ngấy việc bị đẩy đi khắp nơi, nó nuốt chửng cơ thể một con côn trùng và cuối cùng có thể tự di chuyển theo ý mình.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10454.png",
+      "url": "https://wiki.aniimo.com/vi/item/058/basic-form",
+      "stats": {
+        "hp": 91,
+        "physicalAttack": 114,
+        "magicAttack": 52,
+        "physicalDefense": 101,
+        "magicDefense": 54,
+        "haste": 104,
+        "total": 516
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "059",
+      "name": "Fentuft",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "dien"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Chúng luôn nở nụ cười đặc trưng và rủ các aniimo khác chơi cùng. Sự tinh nghịch và tham lam của chúng đôi khi có thể khiến chúng gặp rắc rối, nhưng chúng luôn được tha thứ.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10291.png",
+      "url": "https://wiki.aniimo.com/vi/item/059/basic-form",
+      "stats": {
+        "hp": 85,
+        "physicalAttack": 106,
+        "magicAttack": 41,
+        "physicalDefense": 60,
+        "magicDefense": 60,
+        "haste": 77,
+        "total": 429
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "060",
+      "name": "Fenmane",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "dien"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Với bộ lông có khả năng dẫn điện cao, chúng khai thác sức mạnh của sấm sét để mở rộng đôi cánh và lao về phía trước, xua tan màn sương và vực dậy tinh thần.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10293.png",
+      "url": "https://wiki.aniimo.com/vi/item/060/basic-form",
+      "stats": {
+        "hp": 100,
+        "physicalAttack": 125,
+        "magicAttack": 50,
+        "physicalDefense": 70,
+        "magicDefense": 70,
+        "haste": 90,
+        "total": 505
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "061",
+      "name": "Helmut",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "am"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Chiếc mũ giáp cứng cáp đó giữ cho cơ thể mềm nhũn của nó được an toàn, còn những chiếc vuốt có thể kéo dài ở miệng giúp nó săn mồi.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10021.png",
+      "url": "https://wiki.aniimo.com/vi/item/061/basic-form",
+      "stats": {
+        "hp": 60,
+        "physicalAttack": 52,
+        "magicAttack": 60,
+        "physicalDefense": 68,
+        "magicDefense": 48,
+        "haste": 51,
+        "total": 339
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "062",
+      "name": "Pawney",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "am"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Với thanh kiếm gãy và bộ giáp, cùng lòng dũng cảm và sức mạnh được ban cho, nó bảo vệ bạn bè và sẵn sàng thách thức mọi kẻ thù.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10026.png",
+      "url": "https://wiki.aniimo.com/vi/item/062/basic-form",
+      "stats": {
+        "hp": 90,
+        "physicalAttack": 125,
+        "magicAttack": 55,
+        "physicalDefense": 84,
+        "magicDefense": 70,
+        "haste": 81,
+        "total": 505
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "063",
+      "name": "Rookey",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "am"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Mặc dù có kích thước đồ sộ, aniimo này nhút nhát và hiền lành, luôn tránh xung đột. Mỗi khi nguy hiểm đến gần, nó cuộn mình thành một quả cầu, nhưng luôn lấy hết can đảm để chiến đấu khi bạn bè cần được bảo vệ.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10027.png",
+      "url": "https://wiki.aniimo.com/vi/item/063/basic-form",
+      "stats": {
+        "hp": 100,
+        "physicalAttack": 90,
+        "magicAttack": 105,
+        "physicalDefense": 100,
+        "magicDefense": 70,
+        "haste": 75,
+        "total": 540
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "064",
+      "name": "Jawling",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "phong"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Aniimo này thích cắn bất cứ thứ gì nó bắt gặp. Bộ hàm cực kỳ linh hoạt của nó có thể há ra rất rộng. Nó thể hiện tình cảm và niềm vui bằng những cú cắn nhẹ nhàng, và nó đặc biệt thích cắn các vật bằng kim loại vì chúng rất khó bị làm hỏng.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10024.png",
+      "url": "https://wiki.aniimo.com/vi/item/064/basic-form",
+      "stats": {
+        "hp": 78,
+        "physicalAttack": 65,
+        "magicAttack": 76,
+        "physicalDefense": 74,
+        "magicDefense": 51,
+        "haste": 63,
+        "total": 407
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "065",
+      "name": "Helmwhelp",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 2,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "phong"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Một chú rồng non che giấu sự yếu đuối dưới chiếc mũ giáp, khao khát trở nên mạnh mẽ hơn để có thể tự do bay đến mọi nơi trên thế giới tìm kiếm những kho báu ẩn giấu.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10022.png",
+      "url": "https://wiki.aniimo.com/vi/item/065/basic-form",
+      "stats": {
+        "hp": 94,
+        "physicalAttack": 78,
+        "magicAttack": 92,
+        "physicalDefense": 88,
+        "magicDefense": 61,
+        "haste": 76,
+        "total": 489
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "066",
+      "name": "Helgon",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "phong"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Được bao phủ trong lớp giáp cứng, khi đứng yên, chúng trông như những bức tượng cao lớn đang canh giữ kho báu cổ xưa.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10023.png",
+      "url": "https://wiki.aniimo.com/vi/item/066/basic-form",
+      "stats": {
+        "hp": 104,
+        "physicalAttack": 87,
+        "magicAttack": 102,
+        "physicalDefense": 98,
+        "magicDefense": 68,
+        "haste": 84,
+        "total": 543
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "067",
+      "name": "Infergon",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "lua"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Khoác trên mình bộ giáp kim loại nặng nề được tôi luyện trong ngọn lửa thiêu đốt, nó có thể giải phóng cơn thịnh nộ của lửa, biến mọi thứ xung quanh thành dung nham nóng chảy. Nếu không muốn bị thiêu thành tro, hãy tránh xa nó hết mức có thể.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10025.png",
+      "url": "https://wiki.aniimo.com/vi/item/067/basic-form",
+      "stats": {
+        "hp": 95,
+        "physicalAttack": 125,
+        "magicAttack": 50,
+        "physicalDefense": 70,
+        "magicDefense": 85,
+        "haste": 80,
+        "total": 505
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "067",
+      "name": "Infergon",
+      "form": "Prismana Form",
+      "formVi": "Hình Thái Prismana",
+      "stage": 3,
+      "regionId": 1000,
+      "region": "Kỷ Vật Mùa Giải 1",
+      "elements": [
+        "lua",
+        "phong"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Prismana khiến Sức Mạnh Thiêu Đốt của Infergon ngày càng trở nên dữ dội, bùng phát từ lớp giáp thành những ngọn lửa tím rực cháy, như thể muốn thiêu mọi thứ xung quanh thành tro bụi.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_1002503.png",
+      "url": "https://wiki.aniimo.com/vi/item/067/prismana-form/1000",
+      "stats": {
+        "hp": 95,
+        "physicalAttack": 125,
+        "magicAttack": 50,
+        "physicalDefense": 70,
+        "magicDefense": 85,
+        "haste": 80,
+        "total": 505
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "068",
+      "name": "Cubbo",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "tho"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Chúng dành cả ngày trong trạng thái mộng du. Khoảnh khắc bị đánh thức, chúng trở nên kích động và mất kiểm soát. Khi cạn kiệt năng lượng, chúng lại yên bình chìm vào giấc ngủ như một đứa trẻ.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10501.png",
+      "url": "https://wiki.aniimo.com/vi/item/068/basic-form",
+      "stats": {
+        "hp": 92,
+        "physicalAttack": 100,
+        "magicAttack": 42,
+        "physicalDefense": 70,
+        "magicDefense": 61,
+        "haste": 70,
+        "total": 435
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "069",
+      "name": "Grizbo",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "tho"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Ẩn dưới vẻ ngoài hiền lành của chúng là sự kiềm chế không ngừng và tính hung hăng bị dồn nén. Tuy nhiên, khi bị khiêu khích hoặc đói bụng, chúng sẽ mất kiểm soát và rơi vào cơn cuồng loạn.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10503.png",
+      "url": "https://wiki.aniimo.com/vi/item/069/basic-form",
+      "stats": {
+        "hp": 104,
+        "physicalAttack": 124,
+        "magicAttack": 50,
+        "physicalDefense": 83,
+        "magicDefense": 70,
+        "haste": 75,
+        "total": 506
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "070",
+      "name": "Pebbling",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "tho"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Chúng là những nhà địa chất bẩm sinh thích ăn đủ loại quặng. Thứ chúng ăn sẽ quyết định cách chúng phát triển.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10281.png",
+      "url": "https://wiki.aniimo.com/vi/item/070/basic-form",
+      "stats": {
+        "hp": 83,
+        "physicalAttack": 68,
+        "magicAttack": 79,
+        "physicalDefense": 52,
+        "magicDefense": 74,
+        "haste": 56,
+        "total": 412
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "071",
+      "name": "Lavazar",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 2,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "lua",
+        "tho"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Chúng dùng móng vuốt cứng nghiền nát tinh thể rồi ăn để tích trữ nhiệt, khiến những hoa văn đỏ rực xuất hiện trên cơ thể. Dù nhỏ bé, chúng có thể liên tục phun ra luồng lửa nhiệt độ cao từ miệng.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10282.png",
+      "url": "https://wiki.aniimo.com/vi/item/071/basic-form",
+      "stats": {
+        "hp": 99,
+        "physicalAttack": 82,
+        "magicAttack": 93,
+        "physicalDefense": 63,
+        "magicDefense": 80,
+        "haste": 68,
+        "total": 485
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "072",
+      "name": "Magmarex",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "lua",
+        "tho"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Những tinh thể bỏng cháy mọc trên cơ thể chúng tựa như dung nham đông cứng. Nếu nhiệt lượng tích trữ bùng phát, nó có thể nung chảy mọi thứ trên đường đi.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10283.png",
+      "url": "https://wiki.aniimo.com/vi/item/072/basic-form",
+      "stats": {
+        "hp": 110,
+        "physicalAttack": 91,
+        "magicAttack": 104,
+        "physicalDefense": 70,
+        "magicDefense": 89,
+        "haste": 75,
+        "total": 539
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "073",
+      "name": "Geodeback",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 2,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "tho"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Những khoáng chất chúng ăn vào được tinh luyện bên trong cơ thể và biến thành những gai pha lê chứa năng lượng tinh khiết.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10284.png",
+      "url": "https://wiki.aniimo.com/vi/item/073/basic-form",
+      "stats": {
+        "hp": 99,
+        "physicalAttack": 81,
+        "magicAttack": 102,
+        "physicalDefense": 80,
+        "magicDefense": 54,
+        "haste": 70,
+        "total": 486
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "074",
+      "name": "Minespine",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "tho"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Nơi nào có khoáng vật tinh thể, nơi đó có chúng xuất hiện. Những chiếc gai cứng của chúng vừa để tự vệ, vừa để tích trữ năng lượng.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10285.png",
+      "url": "https://wiki.aniimo.com/vi/item/074/basic-form",
+      "stats": {
+        "hp": 110,
+        "physicalAttack": 90,
+        "magicAttack": 105,
+        "physicalDefense": 97,
+        "magicDefense": 60,
+        "haste": 78,
+        "total": 540
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "075",
+      "name": "Cozite",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "tho"
+      ],
+      "roles": [
+        "sup"
+      ],
+      "description": "Cozite đắp bùn lên lớp vỏ của mình từng chút một. Khi gặp nguy hiểm, chúng phun khói từ lỗ phía trên để che phủ xung quanh và ẩn mình.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10431.png",
+      "url": "https://wiki.aniimo.com/vi/item/075/basic-form",
+      "stats": {
+        "hp": 77,
+        "physicalAttack": 87,
+        "magicAttack": 50,
+        "physicalDefense": 67,
+        "magicDefense": 67,
+        "haste": 100,
+        "total": 448
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "076",
+      "name": "Bailite",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "tho"
+      ],
+      "roles": [
+        "sup"
+      ],
+      "description": "Phần thân trên và thân dưới của chúng có thể xoay độc lập, cho phép Bailite dễ dàng quan sát xung quanh và biến thành tháp pháo để xua đuổi đối thủ.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10433.png",
+      "url": "https://wiki.aniimo.com/vi/item/076/basic-form",
+      "stats": {
+        "hp": 90,
+        "physicalAttack": 116,
+        "magicAttack": 50,
+        "physicalDefense": 100,
+        "magicDefense": 83,
+        "haste": 75,
+        "total": 514
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "077",
+      "name": "Bulbly",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "dien"
+      ],
+      "roles": [
+        "sup"
+      ],
+      "description": "Phản ứng đầu tiên của chúng với mọi thứ là bỏ chạy, còn bộ phận giống bóng đèn sẽ thay đổi tùy theo tình trạng sức khỏe của chúng.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10141.png",
+      "url": "https://wiki.aniimo.com/vi/item/077/basic-form",
+      "stats": {
+        "hp": 83,
+        "physicalAttack": 68,
+        "magicAttack": 37,
+        "physicalDefense": 63,
+        "magicDefense": 63,
+        "haste": 90,
+        "total": 404
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "078",
+      "name": "Veilfloat",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 2,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "dien"
+      ],
+      "roles": [
+        "sup"
+      ],
+      "description": "Sinh vật sợ bóng tối có khả năng phát sáng khi màn đêm buông xuống, thậm chí vẫn phát sáng trong khi ngủ.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10142.png",
+      "url": "https://wiki.aniimo.com/vi/item/078/basic-form",
+      "stats": {
+        "hp": 99,
+        "physicalAttack": 93,
+        "magicAttack": 45,
+        "physicalDefense": 72,
+        "magicDefense": 74,
+        "haste": 90,
+        "total": 473
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "079",
+      "name": "Luminelle",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "dien"
+      ],
+      "roles": [
+        "sup"
+      ],
+      "description": "Nó thay đổi ánh sáng để phù hợp với tâm trạng, còn xúc tu của nó tạo ra hoa văn mê hoặc và tung ra các đòn tấn công sốc điện.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10143.png",
+      "url": "https://wiki.aniimo.com/vi/item/079/basic-form",
+      "stats": {
+        "hp": 110,
+        "physicalAttack": 115,
+        "magicAttack": 50,
+        "physicalDefense": 75,
+        "magicDefense": 75,
+        "haste": 90,
+        "total": 515
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "080",
+      "name": "Fahloo",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "nuoc"
+      ],
+      "roles": [
+        "energy"
+      ],
+      "description": "Chúng xoa dầu lên cơ thể để tạo ra lớp bọt dày. Lớp bọt này giúp làm sạch và bảo vệ chúng, nhưng đôi khi cũng khiến chúng vô tình bị trượt ngã.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10481.png",
+      "url": "https://wiki.aniimo.com/vi/item/080/basic-form",
+      "stats": {
+        "hp": 102,
+        "physicalAttack": 76,
+        "magicAttack": 44,
+        "physicalDefense": 68,
+        "magicDefense": 76,
+        "haste": 93,
+        "total": 459
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "081",
+      "name": "Erlath",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "nuoc"
+      ],
+      "roles": [
+        "energy"
+      ],
+      "description": "Lông vũ của chúng liên tục tiết dầu, tạo ra đủ loại bong bóng chỉ với một chút ma sát. Theo bản năng, chúng dùng lớp bọt mềm mại và dày đặc nhất để bảo vệ các Fahloo trên lưng.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10483.png",
+      "url": "https://wiki.aniimo.com/vi/item/081/basic-form",
+      "stats": {
+        "hp": 120,
+        "physicalAttack": 90,
+        "magicAttack": 50,
+        "physicalDefense": 80,
+        "magicDefense": 90,
+        "haste": 110,
+        "total": 540
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "082",
+      "name": "Besauce",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 300001,
+      "region": "Bình Nguyên Gió Hôn",
+      "elements": [
+        "dien"
+      ],
+      "roles": [
+        "energy"
+      ],
+      "description": "Bị ám ảnh bởi nhịp đập của chính trái tim mình, Besauce không ngừng tìm kiếm những nhịp điệu để át đi âm thanh đó. Nó thích hòa mình theo âm nhạc và đặc biệt say mê dòng nhạc tiên phong.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10122.png",
+      "url": "https://wiki.aniimo.com/vi/item/082/basic-form",
+      "stats": {
+        "hp": 88,
+        "physicalAttack": 92,
+        "magicAttack": 90,
+        "physicalDefense": 75,
+        "magicDefense": 75,
+        "haste": 118,
+        "total": 538
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "10001",
+      "name": "Irisalis",
+      "form": "Prismana Form",
+      "formVi": "Hình Thái Prismana",
+      "stage": 4,
+      "regionId": 1000,
+      "region": "Kỷ Vật Mùa Giải 1",
+      "elements": [
+        "co"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Chúng hấp thụ màu sắc của thế gian để làm y phục cỏ hoa, mang sức sống rực rỡ sắc màu đến với thiên nhiên. Nếu cánh hoa tàn úa, chúng có thể nở rộ lần nữa bằng cách trở về vòng tay của đất mẹ.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10213.png",
+      "url": "https://wiki.aniimo.com/vi/item/10001/prismana-form/1000",
+      "stats": {
+        "hp": 90,
+        "physicalAttack": 130,
+        "magicAttack": 56,
+        "physicalDefense": 78,
+        "magicDefense": 78,
+        "haste": 108,
+        "total": 540
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "10002",
+      "name": "Dazmand",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 1000,
+      "region": "Kỷ Vật Mùa Giải 1",
+      "elements": [
+        "dien"
+      ],
+      "roles": [
+        "sup"
+      ],
+      "description": "Chúng có các chi linh hoạt và thích khoe những cú đá hào nhoáng với bất kỳ ai đang nhìn. Chúng đội lớp da lột lên đầu như một chiếc mũ trùm thật ngầu.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10474.png",
+      "url": "https://wiki.aniimo.com/vi/item/10002/basic-form",
+      "stats": {
+        "hp": 100,
+        "physicalAttack": 108,
+        "magicAttack": 55,
+        "physicalDefense": 81,
+        "magicDefense": 90,
+        "haste": 88,
+        "total": 522
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "10003",
+      "name": "Fulmintis",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 1000,
+      "region": "Kỷ Vật Mùa Giải 1",
+      "elements": [
+        "dien"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Từ một Wisptis bị gãy chi trước, nó đã tiến hóa sau khi hấp thụ sức mạnh sấm sét. Những lưỡi kiếm ngược được tái tạo sắc bén đến kinh ngạc và lóe lên ánh điện rực rỡ.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10033.png",
+      "url": "https://wiki.aniimo.com/vi/item/10003/basic-form",
+      "stats": {
+        "hp": 99,
+        "physicalAttack": 130,
+        "magicAttack": 50,
+        "physicalDefense": 66,
+        "magicDefense": 70,
+        "haste": 105,
+        "total": 520
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "10004",
+      "name": "Hoptail",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 1000,
+      "region": "Kỷ Vật Mùa Giải 1",
+      "elements": [
+        "phong",
+        "dien"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Chúng dùng bộ lông đặc biệt để thu nạp các hạt mang điện trong không khí nhằm tạo ra và tích trữ điện năng.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10223.png",
+      "url": "https://wiki.aniimo.com/vi/item/10004/basic-form/1000",
+      "stats": {
+        "hp": 95,
+        "physicalAttack": 125,
+        "magicAttack": 50,
+        "physicalDefense": 65,
+        "magicDefense": 85,
+        "haste": 85,
+        "total": 505
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "10006",
+      "name": "Hypnyto",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 1000,
+      "region": "Kỷ Vật Mùa Giải 1",
+      "elements": [
+        "phong"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Lười biếng nhưng tinh ranh, Hypnyto thích nằm dài trong những chiếc tổ mềm mại, ấm cúng. Cặp hoạt tiết giống đôi mắt trên cánh giúp tăng hiệu quả thôi miên khi nó phát ra sóng thôi miên.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10574.png",
+      "url": "https://wiki.aniimo.com/vi/item/10006/basic-form/1000",
+      "stats": {
+        "hp": 103,
+        "physicalAttack": 130,
+        "magicAttack": 50,
+        "physicalDefense": 70,
+        "magicDefense": 70,
+        "haste": 97,
+        "total": 520
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "10007",
+      "name": "Jaguaraun",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 1000,
+      "region": "Kỷ Vật Mùa Giải 1",
+      "elements": [
+        "dien"
+      ],
+      "roles": [
+        "break"
+      ],
+      "description": "Bộ lông cổ của Jaguaraun cực kỳ dày và chứa đầy Nguyên Tố Lôi dồi dào. Bên dưới lớp lông ấy, một luồng khí đen cuộn trào như đám mây giông đang tích tụ. Khi bứt tốc lao đi, nó lao vụt qua cùng tiếng gầm vang đội của một cơn bão sấm sét.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10713.png",
+      "url": "https://wiki.aniimo.com/vi/item/10007/basic-form/1000",
+      "stats": {
+        "hp": 110,
+        "physicalAttack": 90,
+        "magicAttack": 106,
+        "physicalDefense": 77,
+        "magicDefense": 72,
+        "haste": 85,
+        "total": 540
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "11001",
+      "name": "Tinh Linh Nuôi Chung",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 3,
+      "regionId": 1000,
+      "region": "Kỷ Vật Mùa Giải 1",
+      "elements": [
+        "lua"
+      ],
+      "roles": [
+        "sup"
+      ],
+      "description": "Tinh Linh Nuôi Chung đến từ Đảo Tinh Linh và có thể hấp thụ năng lượng từ các tương tác với người và Aniimo. Có càng nhiều sinh vật tụ tập đông vui và náo nhiệt, chúng càng tràn đầy năng lượng.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_69993.png",
+      "url": "https://wiki.aniimo.com/vi/item/11001/basic-form",
+      "stats": {
+        "hp": 107,
+        "physicalAttack": 113,
+        "magicAttack": 50,
+        "physicalDefense": 60,
+        "magicDefense": 88,
+        "haste": 99,
+        "total": 517
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "no": "99996",
+      "name": "Lunara",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": null,
+      "region": null,
+      "elements": [
+        "anh-sang"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Đôi mắt chúng lấp lánh ánh xanh thẳm của mặt trăng và những hoa văn bí ẩn sẽ xuất hiện khi chúng thi triển sức mạnh.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10371.png",
+      "url": "https://wiki.aniimo.com/vi/item/99996/basic-form",
+      "stats": {
+        "hp": 100,
+        "physicalAttack": 116,
+        "magicAttack": 64,
+        "physicalDefense": 72,
+        "magicDefense": 72,
+        "haste": 90,
+        "total": 514
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    },
+    {
+      "no": "99998",
+      "name": "Helion",
+      "form": "Basic Form",
+      "formVi": "Hình Thái Cơ Bản",
+      "stage": 1,
+      "regionId": null,
+      "region": null,
+      "elements": [
+        "anh-sang"
+      ],
+      "roles": [
+        "dps"
+      ],
+      "description": "Nhiệt huyết và tự tin, chúng luôn đứng ra bảo vệ bạn bè vào những thời khắc quan trọng, thể hiện một sức mạnh đáng kinh ngạc.",
+      "image": "https://worldx-website-cdn.aniimo.com/official-website/worldx/wiki_stage/init/Wiki_Aniimo_10361.png",
+      "url": "https://wiki.aniimo.com/vi/item/99998/basic-form",
+      "stats": {
+        "hp": 100,
+        "physicalAttack": 116,
+        "magicAttack": 64,
+        "physicalDefense": 72,
+        "magicDefense": 72,
+        "haste": 90,
+        "total": 514
+      },
+      "weightKg": {
+        "min": 23.4,
+        "max": 34.93
+      },
+      "heightM": null
+    }
+  ]
+}
