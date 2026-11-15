@@ -4,7 +4,7 @@
 
   const IMG = (id) => `assets/icons/${id}.png`;
   // roles: vai trò đang lọc (rỗng = tất cả); giữ nguyên khi đổi hệ
-  const state = { primary: null, secondary: null, aniimo: null, aniimoError: false, aniimoUpdated: null, sort: "power", roles: new Set() };
+  const state = { primary: null, secondary: null, aniimo: null, aniimoError: false, aniimoUpdated: null, sort: "power", roles: new Set(), stages: new Set() };
 
   /* ---------- dữ liệu aniimo (crawl từ wiki bởi workflow "Crawl") ---------- */
   const WIKI_HOST = "https://wiki.aniimo.com/";
@@ -192,14 +192,20 @@
         { label: `${p.name} + hệ khác`, hint: "bấm để tính theo cặp hệ", items: state.aniimo.filter((a) => a.elements.length === 2 && has(a, p.id)) },
       ];
     }
-    // ---- lọc theo vai trò (nhiều lựa chọn, kiểu "hoặc"; rỗng = tất cả) ----
+    // ---- bộ lọc: vai trò & giai đoạn ----
+    // Trong một bộ lọc: chọn nhiều = "hoặc"; giữa hai bộ lọc: "và". Rỗng = tất cả (mặc định).
+    // Số trên mỗi nút tính theo bộ lọc CÒN LẠI (vd. đang lọc Hồi máu → nút giai đoạn chỉ đếm healer).
     const allItems = groups.flatMap((g) => g.items);
     const totalAll = allItems.length;
-    const roleCount = {};
-    allItems.forEach((a) => a.roles.forEach((r) => { roleCount[r] = (roleCount[r] || 0) + 1; }));
     const roleOn = state.roles.size > 0;
+    const stageOn = state.stages.size > 0;
     const roleMatch = (a) => !roleOn || a.roles.some((r) => state.roles.has(r));
-    groups = groups.map((g) => ({ ...g, items: g.items.filter(roleMatch) }));
+    const stageMatch = (a) => !stageOn || state.stages.has(String(a.stage));
+    const roleCount = {}, stageCount = {};
+    allItems.filter(stageMatch).forEach((a) => a.roles.forEach((r) => { roleCount[r] = (roleCount[r] || 0) + 1; }));
+    allItems.filter(roleMatch).forEach((a) => { if (a.stage != null) stageCount[a.stage] = (stageCount[a.stage] || 0) + 1; });
+    const anyFilter = roleOn || stageOn;
+    groups = groups.map((g) => ({ ...g, items: g.items.filter((a) => roleMatch(a) && stageMatch(a)) }));
     const total = groups.reduce((n, g) => n + g.items.length, 0);
 
     const sortBtn = (key, label) => h("button", {
@@ -207,31 +213,45 @@
       onclick: () => { state.sort = key; renderDetail(); },
     }, label);
     sec.appendChild(h("div", { class: "suggest-head" }, [
-      h("h3", { class: "suggest-title" }, [`🐾 ${title}`, h("span", { class: "count" }, roleOn ? `${total}/${totalAll}` : String(total))]),
+      h("h3", { class: "suggest-title" }, [`🐾 ${title}`, h("span", { class: "count" }, anyFilter ? `${total}/${totalAll}` : String(total))]),
       h("div", { class: "sort-switch", role: "group", "aria-label": "Sắp xếp" }, [sortBtn("power", "Mạnh nhất"), sortBtn("no", "Số hiệu")]),
     ]));
     sec.appendChild(h("p", { class: "suggest-note" }, "Mỗi hình thái tính là một aniimo riêng — nhiều hình thái (Cao Nguyên, Ban Đêm, Prismana…) mang thêm hệ khác bản cơ bản."));
 
-    if (totalAll) {
-      const knownRoles = ROLE_ORDER.concat(Object.keys(roleCount).filter((r) => !ROLE_ORDER.includes(r)));
-      const toggleRole = (r) => { state.roles.has(r) ? state.roles.delete(r) : state.roles.add(r); renderDetail(); };
-      sec.appendChild(h("div", { class: "role-filter", role: "group", "aria-label": "Lọc theo vai trò" }, [
-        h("span", { class: "role-filter-label" }, "Vai trò:"),
+    // Một hàng nút lọc: "Tất cả" + từng giá trị kèm số lượng
+    function filterRow(label, set, keys, counts, text, allCount) {
+      const on = set.size > 0;
+      return h("div", { class: "role-filter", role: "group", "aria-label": `Lọc theo ${label.toLowerCase()}` }, [
+        h("span", { class: "role-filter-label" }, `${label}:`),
         h("button", {
-          class: "role-chip" + (roleOn ? "" : " is-active"), type: "button", "aria-pressed": roleOn ? "false" : "true",
-          onclick: () => { state.roles.clear(); renderDetail(); },
-        }, ["Tất cả", h("span", { class: "rc-count" }, String(totalAll))]),
-        ...knownRoles.map((r) => {
-          const n = roleCount[r] || 0;
-          const active = state.roles.has(r);
+          class: "role-chip" + (on ? "" : " is-active"), type: "button", "aria-pressed": on ? "false" : "true",
+          onclick: () => { set.clear(); renderDetail(); },
+        }, ["Tất cả", h("span", { class: "rc-count" }, String(allCount))]),
+        ...keys.map((k) => {
+          const n = counts[k] || 0;
+          const active = set.has(String(k));
           return h("button", {
             class: "role-chip" + (active ? " is-active" : "") + (n ? "" : " is-empty"), type: "button",
             "aria-pressed": active ? "true" : "false",
-            title: n ? `Lọc ${ROLE_LABEL[r] || r}` : `Không có aniimo ${ROLE_LABEL[r] || r} cho lựa chọn này`,
-            onclick: () => toggleRole(r),
-          }, [`${ROLE_ICON[r] || "•"} ${ROLE_LABEL[r] || r}`, h("span", { class: "rc-count" }, String(n))]);
+            title: n ? `Lọc: ${text(k, true)}` : `Không có aniimo ${text(k, true)} cho lựa chọn này`,
+            onclick: () => { set.has(String(k)) ? set.delete(String(k)) : set.add(String(k)); renderDetail(); },
+          }, [text(k), h("span", { class: "rc-count" }, String(n))]);
         }),
-      ]));
+      ]);
+    }
+
+    if (totalAll) {
+      const roleKeys = ROLE_ORDER.concat(Object.keys(roleCount).filter((r) => !ROLE_ORDER.includes(r)));
+      sec.appendChild(filterRow("Vai trò", state.roles, roleKeys, roleCount,
+        (r, plain) => (plain ? "" : `${ROLE_ICON[r] || "•"} `) + (ROLE_LABEL[r] || r),
+        allItems.filter(stageMatch).length));
+      // Giai đoạn: lấy theo dữ liệu (hiện có 1–4), luôn hiện đủ các giai đoạn của toàn bộ dữ liệu
+      const stageKeys = [...new Set(state.aniimo.map((a) => a.stage).filter((v) => v != null))].sort((a, b) => a - b);
+      if (stageKeys.length) {
+        sec.appendChild(filterRow("Giai đoạn", state.stages, stageKeys, stageCount,
+          (st, plain) => (plain ? `giai đoạn ${st}` : `Giai đoạn ${st}`),
+          allItems.filter(roleMatch).length));
+      }
     }
 
     if (!totalAll) {
@@ -239,10 +259,12 @@
         ? `Chưa có aniimo nào mang đúng cặp hệ ${p.name} / ${s.name} trên wiki.`
         : `Chưa có aniimo nào mang hệ ${p.name} trên wiki.`));
     } else if (!total) {
-      const names = [...state.roles].map((r) => ROLE_LABEL[r] || r).join(", ");
+      const parts = [];
+      if (roleOn) parts.push(`vai trò ${[...state.roles].map((r) => ROLE_LABEL[r] || r).join(", ")}`);
+      if (stageOn) parts.push(`giai đoạn ${[...state.stages].sort().join(", ")}`);
       sec.appendChild(h("div", { class: "empty-state" }, [
-        `Không có aniimo ${s ? `${p.name} / ${s.name}` : p.name} nào có vai trò ${names}. `,
-        h("button", { class: "link-btn", type: "button", onclick: () => { state.roles.clear(); renderDetail(); } }, "Bỏ lọc vai trò"),
+        `Không có aniimo ${s ? `${p.name} / ${s.name}` : p.name} nào có ${parts.join(" và ")}. `,
+        h("button", { class: "link-btn", type: "button", onclick: () => { state.roles.clear(); state.stages.clear(); renderDetail(); } }, "Bỏ tất cả bộ lọc"),
       ]));
     }
 
@@ -275,6 +297,7 @@
     const img = safeUrl(a.image, CDN_HOST);
     const wiki = safeUrl(a.url, WIKI_HOST);
     const meta = a.roles.map((r) => ROLE_LABEL[r] || r);
+    if (a.stage != null) meta.push(`Giai đoạn ${a.stage}`);
     const isBase = a.baseForm != null ? a.baseForm : a.form === "Basic Form";
     const formLabel = isBase ? null : (a.formVi || a.form || "").replace(/^Hình Thái\s*/i, "").replace(/\s*Form$/i, "");
     const pair = () => {
