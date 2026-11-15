@@ -194,7 +194,15 @@ main { max-width: 1040px; margin: 0 auto; }
 .ani-card.is-pairable:hover, .ani-card.is-pairable:focus-visible {
   transform: translateY(-2px); border-color: color-mix(in srgb, var(--sel) 60%, var(--border)); box-shadow: var(--shadow); outline: none;
 }
+.suggest-note { margin: 2px 0 0; font-size: 0.8rem; color: var(--text-dim); }
+.ani-form {
+  position: absolute; top: 6px; left: 6px; max-width: calc(100% - 64px);
+  font-size: 0.68rem; font-weight: 800; padding: 2px 7px; border-radius: 999px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  background: color-mix(in srgb, var(--sel) 80%, #000); color: #fff;
+}
 .ani-img-wrap {
+  position: relative;
   height: 120px; display: flex; align-items: flex-end; justify-content: center;
   background: radial-gradient(120px 90px at 50% 70%, color-mix(in srgb, var(--sel) 22%, transparent), transparent 70%);
 }

@@ -199,6 +199,7 @@
       h("h3", { class: "suggest-title" }, [`🐾 ${title}`, h("span", { class: "count" }, String(total))]),
       h("div", { class: "sort-switch", role: "group", "aria-label": "Sắp xếp" }, [sortBtn("power", "Mạnh nhất"), sortBtn("no", "Số hiệu")]),
     ]));
+    sec.appendChild(h("p", { class: "suggest-note" }, "Mỗi hình thái tính là một aniimo riêng — nhiều hình thái (Cao Nguyên, Ban Đêm, Prismana…) mang thêm hệ khác bản cơ bản."));
 
     if (!total) {
       sec.appendChild(h("div", { class: "empty-state" }, s
@@ -207,7 +208,9 @@
     }
 
     const byPower = (a, b) => ((b.stats && b.stats.total) || 0) - ((a.stats && a.stats.total) || 0) || a.name.localeCompare(b.name);
-    const byNo = (a, b) => a.no.localeCompare(b.no, "en", { numeric: true }) || a.name.localeCompare(b.name);
+    // "Số hiệu": số hiệu đánh riêng theo vùng → xếp theo vùng, số, rồi bản cơ bản trước các hình thái
+    const byNo = (a, b) => (a.regionId || 0) - (b.regionId || 0) || a.no.localeCompare(b.no, "en", { numeric: true })
+      || ((b.baseForm ? 1 : 0) - (a.baseForm ? 1 : 0)) || (a.form || "").localeCompare(b.form || "");
     groups.forEach((g) => {
       if (!g.items.length) return;
       if (g.label) sec.appendChild(h("div", { class: "suggest-group" }, [
@@ -232,10 +235,9 @@
     const canPair = !s && a.elements.length === 2 && others.length === 1;
     const img = safeUrl(a.image, CDN_HOST);
     const wiki = safeUrl(a.url, WIKI_HOST);
-    const meta = [
-      ...a.roles.map((r) => ROLE_LABEL[r] || r),
-      a.form && a.form !== "Basic Form" ? (a.formVi || a.form).replace(/^Hình Thái\s*/i, "") : null,
-    ].filter(Boolean);
+    const meta = a.roles.map((r) => ROLE_LABEL[r] || r);
+    const isBase = a.baseForm != null ? a.baseForm : a.form === "Basic Form";
+    const formLabel = isBase ? null : (a.formVi || a.form || "").replace(/^Hình Thái\s*/i, "").replace(/\s*Form$/i, "");
     const pair = () => {
       selectSecondary(others[0]);
       document.getElementById("detail").scrollIntoView({ behavior: "smooth", block: "start" });
@@ -249,10 +251,13 @@
       onclick: canPair ? (ev) => { if (!ev.target.closest("a")) pair(); } : null,
       onkeydown: canPair ? (ev) => { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); pair(); } } : null,
     }, [
-      h("div", { class: "ani-img-wrap" }, img ? h("img", {
-        class: "ani-img", src: thumb(img), alt: a.name, loading: "lazy", decoding: "async",
-        onerror: (ev) => { if (!ev.target.dataset.fb) { ev.target.dataset.fb = "1"; ev.target.src = img; } },
-      }) : null),
+      h("div", { class: "ani-img-wrap" }, [
+        img ? h("img", {
+          class: "ani-img", src: thumb(img), alt: formLabel ? `${a.name} (${formLabel})` : a.name, loading: "lazy", decoding: "async",
+          onerror: (ev) => { if (!ev.target.dataset.fb) { ev.target.dataset.fb = "1"; ev.target.src = img; } },
+        }) : null,
+        formLabel ? h("span", { class: "ani-form", title: a.formVi || a.form }, formLabel) : null,
+      ]),
       h("div", { class: "ani-body" }, [
         h("div", { class: "ani-name" }, [
           a.no && !a.no.startsWith("999") ? h("span", { class: "ani-no" }, `#${a.no}`) : null, a.name,
