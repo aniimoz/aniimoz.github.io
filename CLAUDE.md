@@ -38,7 +38,10 @@ secondary types for the chosen primary, plus suggested aniimo for those
 types (filterable by role and stage). The secondary-type ranking
 (`rankSecondaries` in app.js: score = resist steps − weakness steps, ties →
 fewer ×2.56, fewer weaknesses, more distinct resists) reproduces section 7 of
-the source doc exactly (order 9/9, ratings 72/72) — re-check if you change it. All client-side, no build. (There is
+the source doc exactly (order 9/9, ratings 72/72) — re-check if you change it.
+"Không hệ phụ" (the single type, `pairProfile(p, null)`) is ranked in the same
+list with the same comparator; secondaries below it are labelled ▼ worse
+(`compareToMono`), full ties are "= ngang" and placed after it. All client-side, no build. (There is
 no matrix view any more — the user removed it; `MATRIX` in data.js is still
 the data behind every calculation.)
 

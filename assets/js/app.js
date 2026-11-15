@@ -165,9 +165,23 @@
     }
     return { s, W: Wt, R, W2, score: R - Wt, weak, resist };
   }
+  const cmpProfile = (a, b) => b.score - a.score || a.W2 - b.W2 || a.W - b.W || b.resist.length - a.resist.length;
+  // So một cặp hệ với việc giữ hệ đơn — nhất quán với thứ hạng (cùng điểm → phân hạng phụ quyết định)
+  function compareToMono(x, mono) {
+    const d = x.score - mono.score;
+    const c = cmpProfile(x, mono);
+    if (c === 0) return { better: null, cls: "d-same", text: "= Ngang hệ đơn — thêm vào không lợi về phòng thủ" };
+    const better = c < 0;
+    // Cùng điểm → nêu đúng tiêu chí phân hạng phụ đã quyết định (yếu kép → số lần bị khắc → số hệ kháng được)
+    const why = x.W2 !== mono.W2 ? (x.W2 > mono.W2 ? "có yếu kép" : "không có yếu kép")
+      : x.W !== mono.W ? (x.W > mono.W ? "bị khắc nhiều hơn" : "bị khắc ít hơn")
+      : (x.resist.length < mono.resist.length ? "kháng được ít hệ hơn" : "kháng được nhiều hệ hơn");
+    if (better) return { better, cls: "d-up", text: d > 0 ? `▲ Tốt hơn hệ đơn (+${d})` : `▲ Nhỉnh hơn hệ đơn (cùng điểm, ${why})` };
+    return { better, cls: "d-down", text: d < 0 ? `▼ Kém hơn hệ đơn (${d}) — không nên thêm`
+      : `▼ Kém hơn hệ đơn (cùng điểm nhưng ${why}) — không nên thêm` };
+  }
   function rankSecondaries(p) {
-    return ELEMENTS.filter((e) => e.id !== p).map((e) => pairProfile(p, e.id))
-      .sort((a, b) => b.score - a.score || a.W2 - b.W2 || a.W - b.W || b.resist.length - a.resist.length);
+    return ELEMENTS.filter((e) => e.id !== p).map((e) => pairProfile(p, e.id)).sort(cmpProfile);
   }
 
   function renderPairSuggest() {
@@ -177,14 +191,17 @@
     if (!state.primary) return;
     const p = BY_ID[state.primary];
     const ranked = rankSecondaries(p.id);
-    const shown = state.showAllPairs ? ranked : ranked.slice(0, 4);
-    const mono = pairProfile(p.id, null);           // mốc: không thêm hệ phụ
-    const monoRt = ratingOf(mono.score);
-    const nBetter = ranked.filter((x) => x.score > mono.score).length;
-    const nSame = ranked.filter((x) => x.score === mono.score).length;
-    const nWorse = ranked.length - nBetter - nSame;
+    const mono = pairProfile(p.id, null);           // "Không thêm hệ phụ" — xếp hạng CHUNG với các hệ phụ
+    // mono đặt trước: nếu hoà tuyệt đối với một hệ phụ thì "không thêm" đứng trên (sort ổn định)
+    const options = [mono, ...ranked].sort(cmpProfile);
+    const shown = state.showAllPairs ? options : options.slice(0, 4);
+    // Tốt/kém hơn hệ đơn theo đúng VỊ TRÍ xếp hạng (cùng điểm thì phân hạng phụ quyết định)
+    const worseList = ranked.filter((x) => cmpProfile(x, mono) > 0);
+    const nBetter = ranked.filter((x) => cmpProfile(x, mono) < 0).length;
+    const nSame = ranked.length - nBetter - worseList.length;
+    // số aniimo: cặp hệ (s) hoặc chỉ mang hệ chính (s = null)
     const pairCount = (s) => (state.aniimo
-      ? state.aniimo.filter((a) => a.elements.length === 2 && a.elements.includes(p.id) && a.elements.includes(s)).length
+      ? state.aniimo.filter((a) => (s ? a.elements.length === 2 && a.elements.includes(s) : a.elements.length === 1) && a.elements.includes(p.id)).length
       : null);
     const icons = (list) => list.length
       ? list.map((x) => h("span", { class: "ps-ic" + (x.x2 ? " x2" : ""), title: `${BY_ID[x.id].name}${x.x2 ? " (kép)" : ""}` }, [
@@ -197,46 +214,51 @@
         h("span", { class: "ps-title" }, `💡 Hệ phụ nên ghép với ${p.name}`),
         h("span", { class: "ps-note" }, "xếp theo khả năng phòng thủ khi ghép: kháng nhiều, yếu ít, tránh yếu kép (²)"),
       ]),
-      // Mốc so sánh: giữ hệ đơn, không thêm hệ phụ
-      h("button", {
-        type: "button", class: `ps-mono ${monoRt.cls}` + (state.secondary ? "" : " is-selected"),
-        "aria-pressed": state.secondary ? "false" : "true",
-        title: state.secondary ? `Bỏ hệ phụ, quay về ${p.name} đơn` : "Đang xem hệ đơn",
-        onclick: () => selectSecondary(null),
-      }, [
-        h("span", { class: "ps-mono-head" }, [
-          h("span", { class: "ps-mono-title" }, `📌 Không thêm hệ phụ (${p.name} đơn)`),
-          h("span", { class: "ps-rating" }, monoRt.label),
-        ]),
-        h("span", { class: "ps-mono-body" }, [
-          h("span", { class: "ps-row ps-weak" }, [h("span", { class: "ps-lbl" }, "Yếu"), ...icons(mono.weak)]),
-          h("span", { class: "ps-row ps-res" }, [h("span", { class: "ps-lbl" }, "Kháng"), ...icons(mono.resist)]),
-        ]),
-        h("span", { class: "ps-mono-sum" }, [
-          `So với giữ hệ đơn: `,
-          h("b", { class: "d-up" }, `${nBetter} hệ phụ tốt hơn`), " · ",
-          h("b", { class: "d-same" }, `${nSame} ngang`), " · ",
-          h("b", { class: "d-down" }, `${nWorse} kém hơn`),
-          nWorse ? ` — thêm ${ranked.filter((x) => x.score < mono.score).map((x) => BY_ID[x.s].name).join(", ")} còn tệ hơn để ${p.name} đơn.` : ".",
-        ]),
+      h("p", { class: "ps-sum" }, [
+        `So với không thêm hệ phụ: `,
+        h("b", { class: "d-up" }, `${nBetter} hệ phụ tốt hơn`), " · ",
+        nSame ? h("b", { class: "d-same" }, `${nSame} ngang`) : null, nSame ? " · " : null,
+        h("b", { class: "d-down" }, `${worseList.length} kém hơn`),
+        worseList.length ? ` (${worseList.map((x) => BY_ID[x.s].name).join(", ")} — thêm vào còn tệ hơn giữ ${p.name} đơn)` : "",
       ]),
-      h("div", { class: "ps-grid" }, shown.map((x, i) => {
-        const e = BY_ID[x.s];
+      h("div", { class: "ps-grid" }, shown.map((x) => {
+        const rank = options.indexOf(x) + 1;
         const rt = ratingOf(x.score);
-        const selected = state.secondary === x.s;
         const n = pairCount(x.s);
-        const d = x.score - mono.score;
-        const delta = d > 0 ? { cls: "d-up", text: `▲ Tốt hơn hệ đơn (+${d})` }
-          : d < 0 ? { cls: "d-down", text: `▼ Kém hơn hệ đơn (${d}) — không nên thêm` }
-          : { cls: "d-same", text: "= Ngang hệ đơn — thêm vào không lợi về phòng thủ" };
+
+        // Lựa chọn "Không thêm hệ phụ" (hệ đơn)
+        if (!x.s) {
+          const selected = !state.secondary;
+          return h("button", {
+            type: "button", class: `ps-card is-mono ${rt.cls}` + (selected ? " is-selected" : ""), style: `--el:${p.color}`,
+            "aria-pressed": selected ? "true" : "false",
+            title: selected ? `Đang xem ${p.name} đơn` : `Bỏ hệ phụ, quay về ${p.name} đơn`,
+            onclick: () => selectSecondary(null),
+          }, [
+            h("span", { class: "ps-top" }, [
+              h("span", { class: "ps-rank" }, `#${rank}`),
+              h("span", { class: "ps-el ps-el-none", "aria-hidden": "true" }, "∅"),
+              h("span", { class: "ps-name" }, "Không hệ phụ"),
+              h("span", { class: "ps-rating" }, rt.label),
+            ]),
+            h("span", { class: "ps-row ps-weak" }, [h("span", { class: "ps-lbl" }, "Yếu"), ...icons(x.weak)]),
+            h("span", { class: "ps-row ps-res" }, [h("span", { class: "ps-lbl" }, "Kháng"), ...icons(x.resist)]),
+            h("span", { class: "ps-delta d-same" }, `${p.name} đơn — mốc để so sánh`),
+            h("span", { class: "ps-count" }, n == null ? "" : n ? `${n} aniimo chỉ mang hệ ${p.name}` : `chưa có aniimo nào chỉ mang hệ ${p.name}`),
+          ]);
+        }
+
+        const e = BY_ID[x.s];
+        const selected = state.secondary === x.s;
+        const delta = compareToMono(x, mono);
         return h("button", {
-          type: "button", class: `ps-card ${rt.cls}` + (selected ? " is-selected" : "") + (d < 0 ? " is-worse" : ""), style: `--el:${e.color}`,
+          type: "button", class: `ps-card ${rt.cls}` + (selected ? " is-selected" : "") + (delta.better === false ? " is-worse" : ""), style: `--el:${e.color}`,
           "aria-pressed": selected ? "true" : "false",
           title: selected ? "Bỏ chọn hệ phụ này" : `Chọn ${p.name} / ${e.name} để xem chi tiết`,
           onclick: () => selectSecondary(selected ? null : x.s),
         }, [
           h("span", { class: "ps-top" }, [
-            h("span", { class: "ps-rank" }, `#${ranked.indexOf(x) + 1}`),
+            h("span", { class: "ps-rank" }, `#${rank}`),
             h("img", { class: "ps-el", src: IMG(e.id), alt: "" }),
             h("span", { class: "ps-name" }, e.name),
             h("span", { class: "ps-rating" }, rt.label),
@@ -250,7 +272,7 @@
       h("button", {
         type: "button", class: "link-btn ps-more",
         onclick: () => { state.showAllPairs = !state.showAllPairs; renderPairSuggest(); },
-      }, state.showAllPairs ? "Thu gọn" : `Xem cả ${ranked.length} hệ phụ`),
+      }, state.showAllPairs ? "Thu gọn" : `Xem cả ${options.length} lựa chọn`),
     ]));
   }
 
@@ -276,11 +298,12 @@
         tags,
         s ? (() => {
           // So sánh phòng thủ với việc giữ hệ đơn
-          const d = pairProfile(p.id, s.id).score - pairProfile(p.id, null).score;
-          const [cls, txt] = d > 0 ? ["d-up", `▲ Phòng thủ tốt hơn ${p.name} đơn (+${d})`]
-            : d < 0 ? ["d-down", `▼ Phòng thủ kém hơn ${p.name} đơn (${d}) — thêm hệ phụ này còn tệ hơn không thêm`]
-            : ["d-same", `= Phòng thủ ngang ${p.name} đơn — hệ phụ này không thêm lợi thế phòng thủ`];
-          return h("p", { class: `hero-compare ${cls}` }, txt);
+          const c = compareToMono(pairProfile(p.id, s.id), pairProfile(p.id, null));
+          const base = c.text.replace("hệ đơn", `${p.name} đơn`);
+          const txt = c.better === true ? `${base} về phòng thủ`
+            : c.better === false ? `${base.replace(" — không nên thêm", "")} — thêm hệ phụ này còn tệ hơn không thêm`
+            : base;
+          return h("p", { class: `hero-compare ${c.cls}` }, txt);
         })() : null,
       ]),
     ]);
