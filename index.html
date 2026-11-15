@@ -11,7 +11,10 @@
   <meta property="og:description" content="Chọn và xem các hệ Aniimo khắc nhau — công, thủ, hệ kép và ma trận 9×9." />
   <meta property="og:type" content="website" />
   <link rel="icon" type="image/png" href="assets/icons/lua.png" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <!-- __V__ được workflow "Deploy" thay bằng mã commit khi xuất bản → mỗi lần deploy là URL mới,
+       trình duyệt tải bản mới ngay (GitHub Pages cache 10 phút và không cho đổi header). -->
+  <link rel="stylesheet" href="assets/css/styles.css?v=__V__" />
+  <script>window.ASSET_V = "__V__";</script>
 </head>
 <body>
   <header class="site-header">
@@ -59,7 +62,7 @@
     <p>Dữ liệu từ màn <b>“Tra Cứu Tương Khắc”</b> trong game Aniimo · hệ kép theo tổng hợp cộng đồng (game chưa công bố công thức chính thức).</p>
   </footer>
 
-  <script src="assets/js/data.js"></script>
-  <script src="assets/js/app.js"></script>
+  <script src="assets/js/data.js?v=__V__"></script>
+  <script src="assets/js/app.js?v=__V__"></script>
 </body>
 </html>

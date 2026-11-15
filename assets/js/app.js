@@ -2,7 +2,10 @@
 (function () {
   "use strict";
 
-  const IMG = (id) => `assets/icons/${id}.png`;
+  // Phiên bản tài nguyên (mã commit, do workflow Deploy gắn vào index.html) → chống cache cũ
+  const V = typeof window.ASSET_V === "string" && !window.ASSET_V.includes("__") ? window.ASSET_V : "";
+  const withV = (u) => (V ? `${u}?v=${V}` : u);
+  const IMG = (id) => withV(`assets/icons/${id}.png`);
   // roles: vai trò đang lọc (rỗng = tất cả); giữ nguyên khi đổi hệ
   const state = { primary: null, secondary: null, aniimo: null, aniimoError: false, aniimoUpdated: null, sort: "power", roles: new Set(), stages: new Set() };
 
@@ -18,7 +21,7 @@
   const thumb = (u) => u + "?x-oss-process=image/resize,h_220/format,webp";
 
   function loadAniimo() {
-    fetch("assets/data/aniimo.json", { cache: "no-cache" })
+    fetch(withV("assets/data/aniimo.json"), { cache: "no-cache" })
       .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
       .then((d) => {
         state.aniimo = (d.aniimo || []).filter((a) => Array.isArray(a.elements) && a.elements.every((e) => BY_ID[e]));

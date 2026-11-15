@@ -1,40 +1,53 @@
 ---
 name: github-pages
-description: Use when deploying, publishing, or verifying this site on GitHub Pages, or troubleshooting why the live aniimoz.github.io is stale, 404, or unstyled. Covers the push-to-publish model, enabling Pages, build timing, limits, custom domains, and the .nojekyll flag. Triggers include "deploy", "publish", "push the site", "go live", "it's not updating", "check the live site".
+description: Use when deploying, publishing, or verifying this site on GitHub Pages, or troubleshooting why the live aniimoz.github.io is stale, 404, or unstyled. Covers the Actions-based Deploy workflow, cache-busting (?v=__V__), checking deploy status, limits and custom domains. Triggers include "deploy", "publish", "push the site", "go live", "it's not updating", "F5 vẫn cũ", "check the live site".
 ---
 
 # GitHub Pages — publishing aniimoz.github.io
 
-This is a **user site** (`<user>.github.io`), so Pages serves it at the apex URL:
-
-> https://aniimoz.github.io
+User site → served at **https://aniimoz.github.io**.
 
 ## The publish model (know this cold)
 
-- Pages builds and serves from the **root of the `main` branch**. **Every push to `main` is a deploy** — treat `main` as production.
-- A push triggers a Pages build; the live site updates **usually within ~1 minute**, sometimes up to a few. It is **not** instant — if the site looks unchanged right after pushing, wait and hard-refresh (Ctrl+F5) before assuming a bug.
-- Commit/push as the repo owner with **no AI attribution** (see root `CLAUDE.md` and the `git-commit-push` skill). GitHub auth is already set via Git Credential Manager — just `git push`, never re-auth.
+- Pages source is **GitHub Actions** (not "deploy from branch"). The workflow **`.github/workflows/deploy.yml` ("Deploy")** publishes the site:
+  - on every **push to `main`** → treat `main` as production;
+  - **after the "Crawl" workflow completes** (`workflow_run`) — the bot's data commit uses `GITHUB_TOKEN`, which does not trigger push workflows;
+  - manually via Actions → Deploy → Run workflow.
+- Deploy copies the repo into `_site/` **excluding `.git`, `.github`, `.claude`, `CLAUDE.md`**, then replaces `__V__` in `index.html` with the short commit SHA.
+- Live update takes **~30–60 s** after the push (watch the Deploy run).
+- Commit/push as the repo owner with **no AI attribution** (root `CLAUDE.md`, `git-commit-push` skill). Auth is via Git Credential Manager — just `git push`.
 
-## Verifying the live site (do this after every deploy)
+## Cache-busting — why F5 shows the new version
 
-1. Confirm the push landed: `git log origin/main -1`.
-2. Check the Pages build status: `gh api repos/aniimoz/aniimoz.github.io/pages/builds/latest --jq '.status,.error.message'` (status `built` = ok). If `gh` isn't authed, borrow the GCM token for one command (see `git-commit-push`).
-3. Open the real URL in a browser and exercise it (both view modes, a few elements, mobile width). Pages caches hard — **hard-refresh**.
+GitHub Pages sends `Cache-Control: max-age=600` on every file and **custom headers are impossible**. On F5 the browser re-fetches `index.html` but keeps cached CSS/JS for 10 min → new page + old code.
+Fix in place: `index.html` references assets as `styles.css?v=__V__`, `data.js?v=__V__`, `app.js?v=__V__` and sets `window.ASSET_V = "__V__"`; `app.js` appends `?v=<ASSET_V>` to icons and `aniimo.json`. Deploy swaps `__V__` for the SHA, so every deploy = new URLs = fresh files.
 
-## First-time enablement (if the site 404s)
+Rules:
+- **Any new CSS/JS/asset referenced from `index.html` must get `?v=__V__`.** Assets loaded from JS go through `withV()` in `app.js`.
+- Locally `__V__` stays literal — harmless (`http.server` ignores the query; `app.js` ignores an unreplaced value).
+- Don't hand-edit `__V__` into a real value in the repo.
 
-A brand-new repo may not have Pages turned on. Enable it to build from `main` / root:
+## Verifying a deploy
 
 ```bash
-gh api -X POST repos/aniimoz/aniimoz.github.io/pages -f 'source[branch]=main' -f 'source[path]=/' 2>/dev/null \
-  || gh api -X PUT repos/aniimoz/aniimoz.github.io/pages -f 'build_type=legacy' -f 'source[branch]=main' -f 'source[path]=/'
+TOK="$(printf 'protocol=https\nhost=github.com\n\n' | git credential fill | sed -n 's/^password=//p')"
+GH_TOKEN="$TOK" gh run list -R aniimoz/aniimoz.github.io --workflow deploy.yml -L 3
+GH_TOKEN="$TOK" gh run watch <run-id> -R aniimoz/aniimoz.github.io --exit-status
+curl -s https://aniimoz.github.io/ | grep -o 'app.js?v=[0-9a-f]*'   # should equal: git rev-parse --short origin/main
 ```
 
-Then check `gh api repos/aniimoz/aniimoz.github.io/pages --jq '.html_url,.status'`. HTTPS enforcement is on by default for `github.io`.
+Then check the page visually with the `screenshot-test` skill (desktop + mobile).
+
+## If Pages source ever gets reset
+
+```bash
+GH_TOKEN="$TOK" gh api -X PUT repos/aniimoz/aniimoz.github.io/pages -f build_type=workflow
+```
+(Reverting to branch deploy: `-f build_type=legacy -f 'source[branch]=main' -f 'source[path]=/'` — but then `__V__` is served literally and caching problems return.)
 
 ## Limits & gotchas
 
-- **Soft limits:** site ≤ 1 GB, ≤ 100 GB bandwidth/month, ≤ 10 builds/hour. Keep assets lean (optimize images — see `static-site`).
-- **Jekyll runs by default.** This site is plain HTML, so files/folders starting with `_` would be ignored. If you ever add one (or any build you don't want processed), add an empty **`.nojekyll`** file at root to disable Jekyll entirely.
-- **Custom domain (later):** add a `CNAME` file (one line: the domain) at root, set DNS, then re-enable "Enforce HTTPS" in repo Settings → Pages once the cert issues. Not needed while on `aniimoz.github.io`.
-- **Caching:** assets can be cached aggressively by the CDN and the browser; a hard-refresh (or a changed filename) is the reliable way to see updates.
+- **Soft limits:** site ≤ 1 GB, ≤ 100 GB bandwidth/month. Keep assets lean (see `static-site`).
+- `.nojekyll` is added to `_site` by Deploy; no Jekyll processing happens.
+- The `github-pages` environment only allows deployments from `main`.
+- **Custom domain (later):** add a `CNAME` file at root (it is copied into `_site`), set DNS, enable "Enforce HTTPS" in Settings → Pages.

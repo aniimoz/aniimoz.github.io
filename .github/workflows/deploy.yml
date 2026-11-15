@@ -1,0 +1,57 @@
+name: Deploy
+
+# Xuất bản site lên GitHub Pages (Settings → Pages → Source: GitHub Actions).
+# Thay "__V__" trong index.html bằng mã commit → mọi file css/js/json/icon có URL mới mỗi lần deploy,
+# nên trình duyệt tải bản mới ngay sau F5 (GitHub Pages gửi Cache-Control: max-age=600 và không cho đổi).
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  # Commit dữ liệu của workflow Crawl (bằng GITHUB_TOKEN) không tự kích hoạt push → chạy sau khi Crawl xong.
+  workflow_run:
+    workflows: [Crawl]
+    types: [completed]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main   # luôn lấy commit mới nhất (kể cả commit aniimo.json vừa được Crawl đẩy lên)
+
+      - name: Đóng gói site + gắn phiên bản
+        run: |
+          V=$(git rev-parse --short HEAD)
+          mkdir _site
+          rsync -a --exclude='.git' --exclude='.github' --exclude='.claude' --exclude='_site' --exclude='CLAUDE.md' ./ _site/
+          sed -i "s/__V__/$V/g" _site/index.html
+          touch _site/.nojekyll
+          if grep -q "__V__" _site/index.html || ! grep -q "?v=$V" _site/index.html; then
+            echo "::error::Không gắn được phiên bản vào index.html"; exit 1
+          fi
+          echo "Phiên bản: $V"
+          echo "### Deploy \`$V\`" >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

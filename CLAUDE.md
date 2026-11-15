@@ -13,9 +13,14 @@ It is a static website repo. There is no backend, no server, and no secrets.
 
 ## Deployment model (important)
 
-- GitHub Pages builds and serves this site **from the root of the `main` branch**.
-- **Every push to `main` goes live** — usually within a minute, with no separate
-  build or deploy step. Treat `main` as production.
+- Pages source is **GitHub Actions**: `.github/workflows/deploy.yml` publishes
+  on every push to `main` (and after the Crawl workflow). **Every push to `main`
+  goes live** in ~1 minute. Treat `main` as production.
+- **Cache-busting:** Pages caches files 10 min and headers can't be changed, so
+  `index.html` loads assets as `…?v=__V__`; Deploy replaces `__V__` with the
+  commit SHA. New assets referenced from `index.html` must use `?v=__V__`;
+  assets loaded from JS go through `withV()` in `app.js`. See `github-pages` skill.
+- Deploy excludes `.git`, `.github`, `.claude`, `CLAUDE.md` from the published site.
 - `index.html` at the repo root is the site's entry point.
 - The site is static files only (HTML / CSS / JS / images). Use **relative paths**
   for all assets so links work both locally and on the live domain.

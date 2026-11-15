@@ -12,7 +12,7 @@ on:
 
 permissions:
   contents: write   # commit aniimo.json
-  pages: write      # yêu cầu GitHub Pages build lại sau khi commit
+# Xuất bản: workflow "Deploy" tự chạy sau khi Crawl hoàn tất (trigger workflow_run).
 
 concurrency:
   group: crawl
@@ -51,14 +51,6 @@ jobs:
           echo "changed=true" >> "$GITHUB_OUTPUT"
           echo "count=$COUNT" >> "$GITHUB_OUTPUT"
 
-      # Commit bằng GITHUB_TOKEN có thể không tự kích hoạt Pages → yêu cầu build trực tiếp.
-      - name: Yêu cầu GitHub Pages build lại
-        if: steps.commit.outputs.changed == 'true'
-        continue-on-error: true
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" --jq '.status'
-
       - name: Tóm tắt
         if: always()
         run: |
@@ -67,7 +59,7 @@ jobs:
             if [ "${{ steps.commit.outputs.changed }}" = "true" ]; then
               echo "✅ Đã cập nhật \`assets/data/aniimo.json\` — **${{ steps.commit.outputs.count }}** aniimo."
               echo ""
-              echo "Xem: https://aniimoz.github.io/assets/data/aniimo.json (chờ ~1 phút để Pages build)"
+              echo "Workflow **Deploy** sẽ tự chạy tiếp để xuất bản (~1 phút). Xem: https://aniimoz.github.io/"
             elif [ "${{ steps.commit.outputs.changed }}" = "false" ]; then
               echo "ℹ️ Dữ liệu trên wiki không đổi — không có commit mới."
             else
