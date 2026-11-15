@@ -476,6 +476,9 @@
     renderDetail();
     renderMatrix();
     loadAniimo();
+    // Hiện phiên bản đang chạy (mã commit) để biết đã lên bản mới chưa
+    const ver = document.getElementById("site-version");
+    if (ver) ver.textContent = V ? `Phiên bản ${V}` : "Bản chạy trên máy (chưa deploy)";
     document.getElementById("tab-lookup").addEventListener("click", () => setMode("lookup"));
     document.getElementById("tab-matrix").addEventListener("click", () => setMode("matrix"));
   }
