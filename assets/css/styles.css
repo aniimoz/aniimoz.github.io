@@ -31,25 +31,10 @@ body {
 .site-header { max-width: 1040px; margin: 0 auto; padding: 32px 0 8px; text-align: center; }
 .site-header h1 { margin: 0; font-size: clamp(1.8rem, 5vw, 2.6rem); letter-spacing: 0.5px; }
 .site-header h1 .accent { color: #ffb020; }
-.tagline { color: var(--text-dim); margin: 8px auto 20px; max-width: 560px; }
-
-.mode-switch {
-  display: inline-flex; gap: 4px; padding: 4px;
-  background: var(--bg-elev); border: 1px solid var(--border);
-  border-radius: 999px;
-}
-.mode-btn {
-  appearance: none; border: 0; cursor: pointer;
-  background: transparent; color: var(--text-dim);
-  font-size: 0.95rem; font-weight: 600; padding: 9px 18px; border-radius: 999px;
-  transition: background 0.15s, color 0.15s;
-}
-.mode-btn:hover { color: var(--text); }
-.mode-btn.is-active { background: var(--bg-elev-2); color: var(--text); box-shadow: var(--shadow); }
+.tagline { color: var(--text-dim); margin: 8px auto 4px; max-width: 560px; }
 
 main { max-width: 1040px; margin: 0 auto; }
-.view { margin-top: 24px; }
-.is-hidden { display: none !important; }
+.view { margin-top: 16px; }
 
 .block-title { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-dim); margin: 22px 0 10px; }
 .block-title .hint { text-transform: none; letter-spacing: 0; font-weight: 400; opacity: 0.8; }
@@ -245,30 +230,6 @@ main { max-width: 1040px; margin: 0 auto; }
 .suggest-src { margin: 14px 0 0; font-size: 0.75rem; color: var(--text-dim); }
 .suggest-src a { color: inherit; }
 
-/* ---------- Ma trận ---------- */
-.matrix-legend { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; color: var(--text-dim); margin-bottom: 8px; }
-.matrix-legend .sym { font-size: 1.1rem; }
-.matrix-note { text-align: center; color: var(--text-dim); font-size: 0.88rem; margin: 0 0 16px; }
-.sym.s { color: var(--s); } .sym.w { color: var(--w); } .sym.n { color: var(--n); }
-
-.matrix-scroll { overflow-x: auto; width: fit-content; max-width: 100%; margin: 0 auto; border: 1px solid var(--border); border-radius: var(--radius); }
-.matrix-table { border-collapse: collapse; width: auto; }
-.matrix-table th, .matrix-table td { text-align: center; padding: 0; }
-.matrix-table thead th { position: sticky; top: 0; background: var(--bg-elev-2); z-index: 2; }
-.matrix-table th.corner { background: var(--bg-elev); font-size: 0.68rem; color: var(--text-dim); font-weight: 600; line-height: 1.15; padding: 6px; position: sticky; left: 0; z-index: 3; }
-.m-head { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 7px 4px; font-size: 0.72rem; }
-.m-head img { width: 28px; height: 28px; display: block; }
-.matrix-table th.rowhead { position: sticky; left: 0; background: var(--bg-elev-2); z-index: 1; }
-.rowhead .m-head { flex-direction: row; gap: 6px; padding: 6px 10px 6px 8px; white-space: nowrap; }
-.matrix-table td { border: 1px solid var(--border); min-width: 52px; width: 52px; height: 50px; font-size: 1.15rem; font-weight: 700; cursor: default; }
-.matrix-table thead th:not(.corner) { min-width: 52px; }
-td.c-s { background: color-mix(in srgb, var(--s) 16%, transparent); color: var(--s); }
-td.c-w { background: color-mix(in srgb, var(--w) 16%, transparent); color: var(--w); }
-td.c-n { color: var(--n); }
-td.diag { outline: 1px dashed var(--border); outline-offset: -4px; }
-.matrix-table tr.hl th, .matrix-table td.hl { background: color-mix(in srgb, #ffb020 16%, var(--bg-elev-2)); }
-.matrix-table td.cell-hl { background: color-mix(in srgb, #ffb020 30%, transparent) !important; box-shadow: inset 0 0 0 2px #ffb020; }
-
 /* ---------- Footer ---------- */
 .site-footer { max-width: 760px; margin: 40px auto 0; text-align: center; color: var(--text-dim); font-size: 0.82rem; }
 .site-version { margin-top: 6px; font-size: 0.72rem; opacity: 0.6; font-variant-numeric: tabular-nums; }
@@ -287,12 +248,6 @@ td.diag { outline: 1px dashed var(--border); outline-offset: -4px; }
   .ani-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
   .ani-img-wrap { height: 104px; }
   .ani-img { height: 96px; }
-  /* Ma trận: chỉ icon, ô nhỏ để vừa đủ 9 cột trên điện thoại */
-  .matrix-table td { min-width: 33px; width: 33px; height: 34px; font-size: 0.85rem; }
-  .matrix-table thead th:not(.corner) { min-width: 33px; }
-  .m-head, .rowhead .m-head { font-size: 0; gap: 0; padding: 6px 4px; }
-  .m-head img { width: 24px; height: 24px; }
-  .matrix-table th.corner { font-size: 0.55rem; padding: 3px; }
 }
 
 /* ---------- Giao diện sáng (nếu hệ thống ưu tiên) ---------- */

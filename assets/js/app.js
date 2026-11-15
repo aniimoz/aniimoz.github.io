@@ -404,83 +404,15 @@
     renderSecondaryGrid(); renderDetail();
   }
 
-  /* ---------- ma trận 9×9 ---------- */
-  function renderMatrix() {
-    const table = document.getElementById("matrix-table");
-    clear(table);
-
-    const thead = h("thead");
-    const hrow = h("tr");
-    hrow.appendChild(h("th", { class: "corner" }, [document.createTextNode("Công ↓"), h("br"), document.createTextNode("Thủ →")]));
-    ELEMENTS.forEach((d) => {
-      hrow.appendChild(h("th", { "data-col": IDX[d.id] }, h("div", { class: "m-head" }, [
-        h("img", { src: IMG(d.id), alt: "", loading: "lazy" }), d.name,
-      ])));
-    });
-    thead.appendChild(hrow);
-    table.appendChild(thead);
-
-    const tbody = h("tbody");
-    ELEMENTS.forEach((a, r) => {
-      const tr = h("tr");
-      tr.appendChild(h("th", { class: "rowhead" }, h("div", { class: "m-head" }, [
-        h("img", { src: IMG(a.id), alt: "", loading: "lazy" }), a.name,
-      ])));
-      ELEMENTS.forEach((d, c) => {
-        const v = mult(a.id, d.id);
-        const lv = singleLevel(v);
-        const sym = lv.key === "super" ? "▲" : lv.key === "weak" ? "▼" : "·";
-        const cls = "c-" + (lv.key === "super" ? "s" : lv.key === "weak" ? "w" : "n") + (r === c ? " diag" : "");
-        tr.appendChild(h("td", {
-          class: cls, "data-r": r, "data-c": c,
-          title: `${a.name} đánh ${d.name}: ${lv.mx}`,
-        }, sym));
-      });
-      tbody.appendChild(tr);
-    });
-    table.appendChild(tbody);
-
-    // tô sáng hàng + cột khi rê chuột
-    const rows = Array.from(tbody.children);
-    table.addEventListener("mouseover", (ev) => {
-      const td = ev.target.closest("td"); if (!td) return;
-      const r = +td.dataset.r, c = +td.dataset.c;
-      clearHl();
-      rows[r].classList.add("hl");
-      Array.from(rows[r].children).forEach((cell) => cell.classList.add("hl"));
-      rows.forEach((row) => { const cell = row.children[c + 1]; if (cell) cell.classList.add("hl"); });
-      const colHead = hrow.children[c + 1]; if (colHead) colHead.classList.add("hl");
-      td.classList.add("cell-hl");
-    });
-    table.addEventListener("mouseleave", clearHl);
-    function clearHl() {
-      table.querySelectorAll(".hl, .cell-hl").forEach((n) => n.classList.remove("hl", "cell-hl"));
-    }
-  }
-
-  /* ---------- chuyển chế độ ---------- */
-  function setMode(mode) {
-    const lookup = mode === "lookup";
-    document.getElementById("view-lookup").classList.toggle("is-hidden", !lookup);
-    document.getElementById("view-matrix").classList.toggle("is-hidden", lookup);
-    document.getElementById("tab-lookup").classList.toggle("is-active", lookup);
-    document.getElementById("tab-matrix").classList.toggle("is-active", !lookup);
-    document.getElementById("tab-lookup").setAttribute("aria-selected", lookup);
-    document.getElementById("tab-matrix").setAttribute("aria-selected", !lookup);
-  }
-
   /* ---------- khởi tạo ---------- */
   function init() {
     renderPrimaryGrid();
     renderSecondaryGrid();
     renderDetail();
-    renderMatrix();
     loadAniimo();
     // Hiện phiên bản đang chạy (mã commit) để biết đã lên bản mới chưa
     const ver = document.getElementById("site-version");
     if (ver) ver.textContent = V ? `Phiên bản ${V}` : "Bản chạy trên máy (chưa deploy)";
-    document.getElementById("tab-lookup").addEventListener("click", () => setMode("lookup"));
-    document.getElementById("tab-matrix").addEventListener("click", () => setMode("matrix"));
   }
   document.addEventListener("DOMContentLoaded", init);
 })();

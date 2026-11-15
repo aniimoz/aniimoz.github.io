@@ -33,8 +33,10 @@ It is a static website repo. There is no backend, no server, and no secrets.
 ## Current state
 
 The homepage (`index.html`) is the **Aniimo type-chart app**: pick 1–2 elements
-to see what they counter / are countered by, plus a full 9×9 effectiveness
-matrix. All client-side, no build.
+to see what they counter / are countered by, plus suggested aniimo for those
+types (filterable by role and stage). All client-side, no build. (There is
+no matrix view any more — the user removed it; `MATRIX` in data.js is still
+the data behind every calculation.)
 
 ```
 index.html              ← the app (homepage)

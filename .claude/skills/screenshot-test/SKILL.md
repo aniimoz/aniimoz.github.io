@@ -26,7 +26,7 @@ node .claude/skills/screenshot-test/screenshot.mjs http://localhost:8000 --only 
 | Desktop | **1366 × 768** | 1 | `desktop-1366x768.png` |
 | Mobile | **390 × 844** | 2 (crisp, 780px-wide image) | `mobile-390x844.png` |
 
-Options: `--out DIR` · `--only desktop|mobile` · `--full` (whole page height) · `--eval "JS"` (run before capture: click, open the matrix tab, pick a secondary type…) · `--wait MS` (default 800, for images) · `--chrome PATH`.
+Options: `--out DIR` · `--only desktop|mobile` · `--full` (whole page height) · `--eval "JS"` (run before capture: click an element, pick a secondary type, toggle a filter…) · `--wait MS` (default 800, for images) · `--chrome PATH`.
 
 Before capturing, the script forces every `loading="lazy"` image to load and waits for them (max 8 s) — otherwise full-page shots show empty boxes below the first screen. If the page fetches data after load (e.g. `aniimo.json`), give `--eval` a promise that waits, e.g. `"…click(); new Promise(r => setTimeout(r, 1500))"`.
 
@@ -37,7 +37,7 @@ Then: `Read` the PNGs to inspect them yourself, and `SendUserFile` them (desktop
 ### Useful `--eval` snippets for this site
 - Select an element: `document.querySelectorAll('.el-card')[i].click()` (order: Băng, Nước, Điện, Lửa, Cỏ, Thổ, Phong, Ám, Ánh sáng)
 - Add a secondary type: `…[3].click(); document.querySelectorAll('#secondary-grid .chip')[6].click()` (index 0 = "Không")
-- Matrix view: `document.getElementById('tab-matrix').click()`
+- Role / stage filter: `document.querySelectorAll('.role-filter')[0 /*vai trò*/ or 1 /*giai đoạn*/].querySelectorAll('.role-chip')[i].click()` (index 0 = "Tất cả"); wait ~1.5 s after selecting an element so `aniimo.json` has loaded
 
 ## Why not the other ways (verified in this repo)
 
