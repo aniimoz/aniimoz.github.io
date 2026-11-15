@@ -324,17 +324,20 @@
     }
 
     if (totalAll) {
+      // Gom các hàng lọc vào một khối có khoảng cách + đường kẻ ngăn với danh sách bên dưới
+      const filters = h("div", { class: "suggest-filters" });
       const roleKeys = ROLE_ORDER.concat(Object.keys(roleCount).filter((r) => !ROLE_ORDER.includes(r)));
-      sec.appendChild(filterRow("Vai trò", state.roles, roleKeys, roleCount,
+      filters.appendChild(filterRow("Vai trò", state.roles, roleKeys, roleCount,
         (r, plain) => (plain ? "" : `${ROLE_ICON[r] || "•"} `) + (ROLE_LABEL[r] || r),
         allItems.filter(stageMatch).length));
       // Giai đoạn: lấy theo dữ liệu (hiện có 1–4), luôn hiện đủ các giai đoạn của toàn bộ dữ liệu
       const stageKeys = [...new Set(state.aniimo.map((a) => a.stage).filter((v) => v != null))].sort((a, b) => a - b);
       if (stageKeys.length) {
-        sec.appendChild(filterRow("Giai đoạn", state.stages, stageKeys, stageCount,
+        filters.appendChild(filterRow("Giai đoạn", state.stages, stageKeys, stageCount,
           (st, plain) => (plain ? `giai đoạn ${st}` : `Giai đoạn ${st}`),
           allItems.filter(roleMatch).length));
       }
+      sec.appendChild(filters);
     }
 
     if (!totalAll) {

@@ -226,6 +226,13 @@ main { max-width: 1040px; margin: 0 auto; }
 }
 .suggest-note { margin: 2px 0 0; font-size: 0.8rem; color: var(--text-dim); }
 .role-filter { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 12px; }
+.suggest-filters {
+  display: flex; flex-direction: column; gap: 10px;
+  margin: 12px 0 18px; padding-bottom: 16px; border-bottom: 1px solid var(--border);
+}
+.suggest-filters .role-filter { margin-top: 0; }
+.suggest-filters + .suggest-group { margin-top: 0; }
+.suggest-filters + .empty-state { margin-top: 0; }
 .role-filter-label { font-size: 0.8rem; font-weight: 700; color: var(--text-dim); margin-right: 2px; }
 .role-chip {
   appearance: none; cursor: pointer; font: inherit; font-size: 0.82rem; font-weight: 600;
