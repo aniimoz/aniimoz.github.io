@@ -1,0 +1,76 @@
+name: Crawl
+
+# Bấm tay trong tab Actions → "Crawl" → "Run workflow".
+# Tải dữ liệu từ Aniimo Wiki (https://wiki.aniimo.com/vi) và cập nhật assets/data/aniimo.json.
+on:
+  workflow_dispatch:
+    inputs:
+      details:
+        description: "Lấy cả trang chi tiết (chỉ số HP/công/thủ…). Tắt để chạy nhanh, chỉ cập nhật danh sách."
+        type: boolean
+        default: true
+
+permissions:
+  contents: write   # commit aniimo.json
+  pages: write      # yêu cầu GitHub Pages build lại sau khi commit
+
+concurrency:
+  group: crawl
+  cancel-in-progress: false
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Crawl Aniimo Wiki
+        env:
+          CRAWL_DETAILS: ${{ inputs.details }}
+        run: node .github/scripts/crawl-aniimo.mjs
+
+      - name: Commit nếu dữ liệu thay đổi
+        id: commit
+        run: |
+          git add assets/data/aniimo.json
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Không có thay đổi."
+            exit 0
+          fi
+          COUNT=$(node -p "require('./assets/data/aniimo.json').count")
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "data: update aniimo.json from wiki ($COUNT aniimo)"
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+
+      # Commit bằng GITHUB_TOKEN có thể không tự kích hoạt Pages → yêu cầu build trực tiếp.
+      - name: Yêu cầu GitHub Pages build lại
+        if: steps.commit.outputs.changed == 'true'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" --jq '.status'
+
+      - name: Tóm tắt
+        if: always()
+        run: |
+          {
+            echo "## Crawl Aniimo Wiki"
+            if [ "${{ steps.commit.outputs.changed }}" = "true" ]; then
+              echo "✅ Đã cập nhật \`assets/data/aniimo.json\` — **${{ steps.commit.outputs.count }}** aniimo."
+              echo ""
+              echo "Xem: https://aniimoz.github.io/assets/data/aniimo.json (chờ ~1 phút để Pages build)"
+            elif [ "${{ steps.commit.outputs.changed }}" = "false" ]; then
+              echo "ℹ️ Dữ liệu trên wiki không đổi — không có commit mới."
+            else
+              echo "❌ Crawl thất bại — xem log bước *Crawl Aniimo Wiki*. File cũ được giữ nguyên."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
