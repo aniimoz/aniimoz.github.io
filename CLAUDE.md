@@ -33,8 +33,12 @@ It is a static website repo. There is no backend, no server, and no secrets.
 ## Current state
 
 The homepage (`index.html`) is the **Aniimo type-chart app**: pick 1–2 elements
-to see what they counter / are countered by, plus suggested aniimo for those
-types (filterable by role and stage). All client-side, no build. (There is
+to see what they counter / are countered by, a ranked list of the best
+secondary types for the chosen primary, plus suggested aniimo for those
+types (filterable by role and stage). The secondary-type ranking
+(`rankSecondaries` in app.js: score = resist steps − weakness steps, ties →
+fewer ×2.56, fewer weaknesses, more distinct resists) reproduces section 7 of
+the source doc exactly (order 9/9, ratings 72/72) — re-check if you change it. All client-side, no build. (There is
 no matrix view any more — the user removed it; `MATRIX` in data.js is still
 the data behind every calculation.)
 

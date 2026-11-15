@@ -28,7 +28,7 @@
         state.aniimoUpdated = d.updatedAt || null;
       })
       .catch(() => { state.aniimoError = true; })
-      .finally(() => { if (state.primary) renderDetail(); });
+      .finally(() => { if (state.primary) { renderPairSuggest(); renderDetail(); } });
   }
 
   /* ---------- tiện ích tạo DOM ---------- */
@@ -138,6 +138,86 @@
         onclick: isPrimary ? null : () => selectSecondary(selected ? null : e.id),
       }, [h("img", { class: "chip-ic", src: IMG(e.id), alt: "" }), e.name]));
     });
+    renderPairSuggest();
+  }
+
+  /* ---------- gợi ý hệ phụ nên ghép ----------
+   * Chấm theo hồ sơ PHÒNG THỦ khi ghép 2 hệ (giống mục 7 "Gợi ý hệ phụ nên ghép" trong tài liệu gốc):
+   *   W = số lần bị khắc (yếu kép ×2.56 tính 2), R = số lần kháng (kháng mạnh ×0.39 tính 2), Điểm = R − W.
+   *   Bằng điểm → ít yếu kép hơn → ít bị khắc hơn → kháng được nhiều hệ khác nhau hơn.
+   * Công thức này tái tạo đúng 100% thứ hạng & nhãn đánh giá của tài liệu (đã kiểm chứng cho cả 9 hệ chính).
+   */
+  const RATINGS = [
+    { min: 4, label: "Rất tốt", cls: "rt-5" }, { min: 3, label: "Tốt", cls: "rt-4" }, { min: 2, label: "Khá", cls: "rt-3" },
+    { min: 1, label: "Trung bình", cls: "rt-2" }, { min: 0, label: "Kém", cls: "rt-1" }, { min: -99, label: "Nên tránh", cls: "rt-0" },
+  ];
+  const ratingOf = (score) => RATINGS.find((r) => score >= r.min);
+  const steps = (v) => Math.round(Math.log(v) / Math.log(S)); // ×1.6→1, ×2.56→2, ×0.625→−1, ×0.39→−2
+
+  function pairProfile(p, s) {
+    const weak = [], resist = [];
+    let Wt = 0, R = 0, W2 = 0;
+    for (const a of ELEMENTS) {
+      const k = steps(mult(a.id, p) * mult(a.id, s));
+      if (k > 0) { Wt += k; if (k === 2) W2++; weak.push({ id: a.id, x2: k === 2 }); }
+      else if (k < 0) { R -= k; resist.push({ id: a.id, x2: k === -2 }); }
+    }
+    return { s, W: Wt, R, W2, score: R - Wt, weak, resist };
+  }
+  function rankSecondaries(p) {
+    return ELEMENTS.filter((e) => e.id !== p).map((e) => pairProfile(p, e.id))
+      .sort((a, b) => b.score - a.score || a.W2 - b.W2 || a.W - b.W || b.resist.length - a.resist.length);
+  }
+
+  function renderPairSuggest() {
+    const box = document.getElementById("pair-suggest");
+    if (!box) return;
+    clear(box);
+    if (!state.primary) return;
+    const p = BY_ID[state.primary];
+    const ranked = rankSecondaries(p.id);
+    const shown = state.showAllPairs ? ranked : ranked.slice(0, 4);
+    const pairCount = (s) => (state.aniimo
+      ? state.aniimo.filter((a) => a.elements.length === 2 && a.elements.includes(p.id) && a.elements.includes(s)).length
+      : null);
+    const icons = (list) => list.length
+      ? list.map((x) => h("span", { class: "ps-ic" + (x.x2 ? " x2" : ""), title: `${BY_ID[x.id].name}${x.x2 ? " (kép)" : ""}` }, [
+        h("img", { src: IMG(x.id), alt: BY_ID[x.id].name }), x.x2 ? h("sup", null, "²") : null,
+      ]))
+      : [h("span", { class: "ps-none" }, "—")];
+
+    box.appendChild(h("div", { class: "pair-suggest", style: `--sel:${p.color}` }, [
+      h("div", { class: "ps-head" }, [
+        h("span", { class: "ps-title" }, `💡 Hệ phụ nên ghép với ${p.name}`),
+        h("span", { class: "ps-note" }, "xếp theo khả năng phòng thủ khi ghép: kháng nhiều, yếu ít, tránh yếu kép (²)"),
+      ]),
+      h("div", { class: "ps-grid" }, shown.map((x, i) => {
+        const e = BY_ID[x.s];
+        const rt = ratingOf(x.score);
+        const selected = state.secondary === x.s;
+        const n = pairCount(x.s);
+        return h("button", {
+          type: "button", class: `ps-card ${rt.cls}` + (selected ? " is-selected" : ""), style: `--el:${e.color}`,
+          "aria-pressed": selected ? "true" : "false",
+          title: selected ? "Bỏ chọn hệ phụ này" : `Chọn ${p.name} / ${e.name} để xem chi tiết`,
+          onclick: () => selectSecondary(selected ? null : x.s),
+        }, [
+          h("span", { class: "ps-top" }, [
+            h("span", { class: "ps-rank" }, `#${ranked.indexOf(x) + 1}`),
+            h("img", { class: "ps-el", src: IMG(e.id), alt: "" }),
+            h("span", { class: "ps-name" }, e.name),
+            h("span", { class: "ps-rating" }, rt.label),
+          ]),
+          h("span", { class: "ps-row ps-weak" }, [h("span", { class: "ps-lbl" }, "Yếu"), ...icons(x.weak)]),
+          h("span", { class: "ps-row ps-res" }, [h("span", { class: "ps-lbl" }, "Kháng"), ...icons(x.resist)]),
+          h("span", { class: "ps-count" }, n == null ? "" : n ? `${n} aniimo mang cặp hệ này` : "chưa có aniimo nào mang cặp hệ này"),
+        ]);
+      })),
+      h("button", {
+        type: "button", class: "link-btn ps-more",
+        onclick: () => { state.showAllPairs = !state.showAllPairs; renderPairSuggest(); },
+      }, state.showAllPairs ? "Thu gọn" : `Xem cả ${ranked.length} hệ phụ`),
+    ]));
   }
 
   /* ---------- render chi tiết ---------- */
