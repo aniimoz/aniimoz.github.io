@@ -158,6 +158,64 @@ main { max-width: 1040px; margin: 0 auto; }
 .rel-chip .ic { width: 22px; height: 22px; display: block; }
 .rel-chip.none { color: var(--text-dim); font-style: italic; border-style: dashed; background: transparent; }
 
+/* ---------- Gợi ý aniimo ---------- */
+.suggest {
+  margin-top: 20px; padding: 16px;
+  border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-elev);
+}
+.suggest-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 4px; }
+.suggest-title { margin: 0; font-size: 1.05rem; display: flex; align-items: center; gap: 8px; }
+.suggest .count {
+  font-size: 0.75rem; font-weight: 800; padding: 1px 8px; border-radius: 999px;
+  background: color-mix(in srgb, var(--sel) 25%, transparent); color: var(--text);
+}
+.sort-switch { display: inline-flex; gap: 2px; padding: 3px; background: var(--bg); border: 1px solid var(--border); border-radius: 999px; }
+.sort-btn {
+  appearance: none; border: 0; cursor: pointer; background: transparent; color: var(--text-dim);
+  font: inherit; font-size: 0.8rem; font-weight: 600; padding: 5px 12px; border-radius: 999px;
+}
+.sort-btn.is-active { background: var(--bg-elev-2); color: var(--text); }
+.suggest-group {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  margin: 16px 0 10px; font-size: 0.85rem; font-weight: 700; color: var(--text-dim);
+  text-transform: uppercase; letter-spacing: 0.6px;
+}
+.suggest-group .hint { text-transform: none; letter-spacing: 0; font-weight: 400; }
+.suggest .empty-state { margin-top: 12px; padding: 24px 16px; }
+
+.ani-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+.ani-card {
+  position: relative; display: flex; flex-direction: column;
+  border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+  background: var(--bg-elev-2);
+  transition: transform 0.12s, border-color 0.15s, box-shadow 0.15s;
+}
+.ani-card.is-pairable { cursor: pointer; }
+.ani-card.is-pairable:hover, .ani-card.is-pairable:focus-visible {
+  transform: translateY(-2px); border-color: color-mix(in srgb, var(--sel) 60%, var(--border)); box-shadow: var(--shadow); outline: none;
+}
+.ani-img-wrap {
+  height: 120px; display: flex; align-items: flex-end; justify-content: center;
+  background: radial-gradient(120px 90px at 50% 70%, color-mix(in srgb, var(--sel) 22%, transparent), transparent 70%);
+}
+.ani-img { height: 110px; width: 100%; object-fit: contain; display: block; }
+.ani-body { padding: 8px 10px 10px; display: flex; flex-direction: column; gap: 4px; }
+.ani-name { font-weight: 700; font-size: 0.92rem; line-height: 1.25; }
+.ani-no { color: var(--text-dim); font-weight: 600; font-size: 0.75rem; margin-right: 5px; font-variant-numeric: tabular-nums; }
+.ani-types { display: flex; gap: 4px; }
+.ani-types img { width: 20px; height: 20px; display: block; }
+.ani-meta { color: var(--text-dim); font-size: 0.76rem; line-height: 1.3; }
+.ani-stat { font-size: 0.76rem; color: var(--text-dim); }
+.ani-stat b { color: var(--text); font-variant-numeric: tabular-nums; }
+.ani-wiki {
+  position: absolute; top: 6px; right: 6px; font-size: 0.7rem; font-weight: 700; text-decoration: none;
+  padding: 2px 7px; border-radius: 999px; color: var(--text-dim);
+  background: color-mix(in srgb, var(--bg) 75%, transparent); border: 1px solid var(--border);
+}
+.ani-wiki:hover { color: var(--text); border-color: var(--text-dim); }
+.suggest-src { margin: 14px 0 0; font-size: 0.75rem; color: var(--text-dim); }
+.suggest-src a { color: inherit; }
+
 /* ---------- Ma trận ---------- */
 .matrix-legend { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; color: var(--text-dim); margin-bottom: 8px; }
 .matrix-legend .sym { font-size: 1.1rem; }
@@ -195,6 +253,10 @@ td.diag { outline: 1px dashed var(--border); outline-offset: -4px; }
   .el-card { padding: 14px 4px 10px; }
   .el-card .el-icon { width: 52px; height: 52px; }
   .hero .hero-imgs img { width: 60px; height: 60px; }
+  .suggest { padding: 12px; }
+  .ani-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .ani-img-wrap { height: 104px; }
+  .ani-img { height: 96px; }
   /* Ma trận: chỉ icon, ô nhỏ để vừa đủ 9 cột trên điện thoại */
   .matrix-table td { min-width: 33px; width: 33px; height: 34px; font-size: 0.85rem; }
   .matrix-table thead th:not(.corner) { min-width: 33px; }

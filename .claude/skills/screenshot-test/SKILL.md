@@ -28,6 +28,8 @@ node .claude/skills/screenshot-test/screenshot.mjs http://localhost:8000 --only 
 
 Options: `--out DIR` · `--only desktop|mobile` · `--full` (whole page height) · `--eval "JS"` (run before capture: click, open the matrix tab, pick a secondary type…) · `--wait MS` (default 800, for images) · `--chrome PATH`.
 
+Before capturing, the script forces every `loading="lazy"` image to load and waits for them (max 8 s) — otherwise full-page shots show empty boxes below the first screen. If the page fetches data after load (e.g. `aniimo.json`), give `--eval` a promise that waits, e.g. `"…click(); new Promise(r => setTimeout(r, 1500))"`.
+
 Needs only **Node ≥ 22** (built-in `fetch`/`WebSocket`) and Chrome or Edge — no npm install. Each line it prints reports the **actual** viewport, e.g. `viewport 390x844`; if that number isn't the target, the shot isn't valid.
 
 Then: `Read` the PNGs to inspect them yourself, and `SendUserFile` them (desktop + mobile together) so the user can review. Write outputs to the scratchpad, never into the repo (a push publishes everything).

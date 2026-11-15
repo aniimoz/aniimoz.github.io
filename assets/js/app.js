@@ -3,7 +3,27 @@
   "use strict";
 
   const IMG = (id) => `assets/icons/${id}.png`;
-  const state = { primary: null, secondary: null };
+  const state = { primary: null, secondary: null, aniimo: null, aniimoError: false, aniimoUpdated: null, sort: "power" };
+
+  /* ---------- dữ liệu aniimo (crawl từ wiki bởi workflow "Crawl") ---------- */
+  const WIKI_HOST = "https://wiki.aniimo.com/";
+  const CDN_HOST = "https://worldx-website-cdn.aniimo.com/";
+  // Nhãn vai trò: wiki chỉ có mã (position-dps…), nhãn tiếng Việt do trang này đặt.
+  const ROLE_LABEL = { dps: "Sát thương", break: "Phá thế", energy: "Năng lượng", heal: "Hồi máu", sup: "Hỗ trợ" };
+  const safeUrl = (u, host) => (typeof u === "string" && u.startsWith(host) ? u : null);
+  // Ảnh gốc ~450KB; CDN (Alibaba OSS) thu nhỏ + đổi sang WebP ngay trên máy chủ (~9KB).
+  const thumb = (u) => u + "?x-oss-process=image/resize,h_220/format,webp";
+
+  function loadAniimo() {
+    fetch("assets/data/aniimo.json", { cache: "no-cache" })
+      .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then((d) => {
+        state.aniimo = (d.aniimo || []).filter((a) => Array.isArray(a.elements) && a.elements.every((e) => BY_ID[e]));
+        state.aniimoUpdated = d.updatedAt || null;
+      })
+      .catch(() => { state.aniimoError = true; })
+      .finally(() => { if (state.primary) renderDetail(); });
+  }
 
   /* ---------- tiện ích tạo DOM ---------- */
   function h(tag, attrs, children) {
@@ -140,6 +160,109 @@
     const panels = s ? dualPanels(p, s) : singlePanels(p);
     box.appendChild(hero);
     box.appendChild(panels);
+    box.appendChild(renderSuggestions(p, s));
+  }
+
+  /* ---------- gợi ý aniimo mang hệ đã chọn ---------- */
+  function renderSuggestions(p, s) {
+    const sec = h("section", { class: "suggest", style: `--sel:${p.color}` });
+    const title = s ? `Aniimo mang hệ ${p.name} / ${s.name}` : `Aniimo mang hệ ${p.name}`;
+
+    if (state.aniimoError) {
+      sec.appendChild(h("h3", { class: "suggest-title" }, `🐾 ${title}`));
+      sec.appendChild(h("div", { class: "empty-state" }, "Không tải được dữ liệu aniimo. Hãy mở trang qua http(s), không mở trực tiếp file."));
+      return sec;
+    }
+    if (!state.aniimo) {
+      sec.appendChild(h("h3", { class: "suggest-title" }, `🐾 ${title}`));
+      sec.appendChild(h("div", { class: "empty-state" }, "Đang tải danh sách aniimo…"));
+      return sec;
+    }
+
+    const has = (a, id) => a.elements.includes(id);
+    let groups;
+    if (s) {
+      groups = [{ label: null, items: state.aniimo.filter((a) => a.elements.length === 2 && has(a, p.id) && has(a, s.id)) }];
+    } else {
+      groups = [
+        { label: `Chỉ hệ ${p.name}`, items: state.aniimo.filter((a) => a.elements.length === 1 && has(a, p.id)) },
+        { label: `${p.name} + hệ khác`, hint: "bấm để tính theo cặp hệ", items: state.aniimo.filter((a) => a.elements.length === 2 && has(a, p.id)) },
+      ];
+    }
+    const total = groups.reduce((n, g) => n + g.items.length, 0);
+
+    const sortBtn = (key, label) => h("button", {
+      class: "sort-btn" + (state.sort === key ? " is-active" : ""), type: "button",
+      onclick: () => { state.sort = key; renderDetail(); },
+    }, label);
+    sec.appendChild(h("div", { class: "suggest-head" }, [
+      h("h3", { class: "suggest-title" }, [`🐾 ${title}`, h("span", { class: "count" }, String(total))]),
+      h("div", { class: "sort-switch", role: "group", "aria-label": "Sắp xếp" }, [sortBtn("power", "Mạnh nhất"), sortBtn("no", "Số hiệu")]),
+    ]));
+
+    if (!total) {
+      sec.appendChild(h("div", { class: "empty-state" }, s
+        ? `Chưa có aniimo nào mang đúng cặp hệ ${p.name} / ${s.name} trên wiki.`
+        : `Chưa có aniimo nào mang hệ ${p.name} trên wiki.`));
+    }
+
+    const byPower = (a, b) => ((b.stats && b.stats.total) || 0) - ((a.stats && a.stats.total) || 0) || a.name.localeCompare(b.name);
+    const byNo = (a, b) => a.no.localeCompare(b.no, "en", { numeric: true }) || a.name.localeCompare(b.name);
+    groups.forEach((g) => {
+      if (!g.items.length) return;
+      if (g.label) sec.appendChild(h("div", { class: "suggest-group" }, [
+        g.label, h("span", { class: "count" }, String(g.items.length)), g.hint ? h("span", { class: "hint" }, `— ${g.hint}`) : null,
+      ]));
+      const grid = h("div", { class: "ani-grid" });
+      g.items.slice().sort(state.sort === "no" ? byNo : byPower).forEach((a) => grid.appendChild(aniCard(a, p, s)));
+      sec.appendChild(grid);
+    });
+
+    const upd = state.aniimoUpdated ? new Date(state.aniimoUpdated).toLocaleDateString("vi-VN") : null;
+    sec.appendChild(h("p", { class: "suggest-src" }, [
+      "Dữ liệu từ ", h("a", { href: "https://wiki.aniimo.com/vi", target: "_blank", rel: "noopener" }, "Aniimo Wiki"),
+      upd ? ` · cập nhật ${upd}` : "", " · bản quyền hình ảnh thuộc nhà phát hành Aniimo.",
+    ]));
+    return sec;
+  }
+
+  function aniCard(a, p, s) {
+    const others = a.elements.filter((e) => e !== p.id);
+    // Bấm vào aniimo hệ kép (khi đang xem hệ đơn) → điền hệ còn lại làm hệ phụ.
+    const canPair = !s && a.elements.length === 2 && others.length === 1;
+    const img = safeUrl(a.image, CDN_HOST);
+    const wiki = safeUrl(a.url, WIKI_HOST);
+    const meta = [
+      ...a.roles.map((r) => ROLE_LABEL[r] || r),
+      a.form && a.form !== "Basic Form" ? (a.formVi || a.form).replace(/^Hình Thái\s*/i, "") : null,
+    ].filter(Boolean);
+    const pair = () => {
+      selectSecondary(others[0]);
+      document.getElementById("detail").scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+
+    return h("article", {
+      class: "ani-card" + (canPair ? " is-pairable" : ""),
+      title: canPair ? `Tính tương khắc cho cặp ${a.elements.map((e) => BY_ID[e].name).join(" / ")}` : null,
+      tabindex: canPair ? "0" : null,
+      role: canPair ? "button" : null,
+      onclick: canPair ? (ev) => { if (!ev.target.closest("a")) pair(); } : null,
+      onkeydown: canPair ? (ev) => { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); pair(); } } : null,
+    }, [
+      h("div", { class: "ani-img-wrap" }, img ? h("img", {
+        class: "ani-img", src: thumb(img), alt: a.name, loading: "lazy", decoding: "async",
+        onerror: (ev) => { if (!ev.target.dataset.fb) { ev.target.dataset.fb = "1"; ev.target.src = img; } },
+      }) : null),
+      h("div", { class: "ani-body" }, [
+        h("div", { class: "ani-name" }, [
+          a.no && !a.no.startsWith("999") ? h("span", { class: "ani-no" }, `#${a.no}`) : null, a.name,
+        ]),
+        h("div", { class: "ani-types" }, a.elements.map((e) => h("img", { src: IMG(e), alt: BY_ID[e].name, title: BY_ID[e].name }))),
+        meta.length ? h("div", { class: "ani-meta" }, meta.join(" · ")) : null,
+        a.stats && a.stats.total ? h("div", { class: "ani-stat" }, [h("b", null, String(a.stats.total)), " tổng chỉ số"]) : null,
+      ]),
+      wiki ? h("a", { class: "ani-wiki", href: wiki, target: "_blank", rel: "noopener", title: "Xem trên Aniimo Wiki" }, "Wiki ↗") : null,
+    ]);
   }
 
   function singlePanels(p) {
@@ -282,6 +405,7 @@
     renderSecondaryGrid();
     renderDetail();
     renderMatrix();
+    loadAniimo();
     document.getElementById("tab-lookup").addEventListener("click", () => setMode("lookup"));
     document.getElementById("tab-matrix").addEventListener("click", () => setMode("matrix"));
   }

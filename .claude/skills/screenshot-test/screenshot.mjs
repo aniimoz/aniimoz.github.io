@@ -122,6 +122,19 @@ try {
       await c.send("Emulation.setDeviceMetricsOverride", { width: s.width, height, deviceScaleFactor: s.dpr, mobile: s.mobile });
       await sleep(300);
     }
+    // Ảnh loading="lazy" ngoài màn hình chưa tải → ép tải ngay và đợi xong (tối đa 8s)
+    await c.send("Runtime.evaluate", {
+      awaitPromise: true,
+      expression: `(async () => {
+        const imgs = [...document.images];
+        imgs.forEach((i) => { i.loading = "eager"; });
+        await Promise.race([
+          Promise.all(imgs.map((i) => (i.complete && i.naturalWidth) ? 0 : new Promise((r) => { i.addEventListener("load", r, { once: true }); i.addEventListener("error", r, { once: true }); }))),
+          new Promise((r) => setTimeout(r, 8000)),
+        ]);
+      })()`,
+    });
+    await sleep(200);
     const shot = await c.send("Page.captureScreenshot", { format: "png" });
     const file = path.join(opt.out, `${s.name}${opt.full ? "-full" : ""}.png`);
     fs.writeFileSync(file, Buffer.from(shot.data, "base64"));
