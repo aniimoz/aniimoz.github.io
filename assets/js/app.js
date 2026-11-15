@@ -154,11 +154,12 @@
   const ratingOf = (score) => RATINGS.find((r) => score >= r.min);
   const steps = (v) => Math.round(Math.log(v) / Math.log(S)); // ×1.6→1, ×2.56→2, ×0.625→−1, ×0.39→−2
 
+  // s = null → hồ sơ của HỆ ĐƠN (không thêm hệ phụ), dùng làm mốc so sánh
   function pairProfile(p, s) {
     const weak = [], resist = [];
     let Wt = 0, R = 0, W2 = 0;
     for (const a of ELEMENTS) {
-      const k = steps(mult(a.id, p) * mult(a.id, s));
+      const k = steps(mult(a.id, p) * (s ? mult(a.id, s) : 1));
       if (k > 0) { Wt += k; if (k === 2) W2++; weak.push({ id: a.id, x2: k === 2 }); }
       else if (k < 0) { R -= k; resist.push({ id: a.id, x2: k === -2 }); }
     }
@@ -177,6 +178,11 @@
     const p = BY_ID[state.primary];
     const ranked = rankSecondaries(p.id);
     const shown = state.showAllPairs ? ranked : ranked.slice(0, 4);
+    const mono = pairProfile(p.id, null);           // mốc: không thêm hệ phụ
+    const monoRt = ratingOf(mono.score);
+    const nBetter = ranked.filter((x) => x.score > mono.score).length;
+    const nSame = ranked.filter((x) => x.score === mono.score).length;
+    const nWorse = ranked.length - nBetter - nSame;
     const pairCount = (s) => (state.aniimo
       ? state.aniimo.filter((a) => a.elements.length === 2 && a.elements.includes(p.id) && a.elements.includes(s)).length
       : null);
@@ -191,13 +197,40 @@
         h("span", { class: "ps-title" }, `💡 Hệ phụ nên ghép với ${p.name}`),
         h("span", { class: "ps-note" }, "xếp theo khả năng phòng thủ khi ghép: kháng nhiều, yếu ít, tránh yếu kép (²)"),
       ]),
+      // Mốc so sánh: giữ hệ đơn, không thêm hệ phụ
+      h("button", {
+        type: "button", class: `ps-mono ${monoRt.cls}` + (state.secondary ? "" : " is-selected"),
+        "aria-pressed": state.secondary ? "false" : "true",
+        title: state.secondary ? `Bỏ hệ phụ, quay về ${p.name} đơn` : "Đang xem hệ đơn",
+        onclick: () => selectSecondary(null),
+      }, [
+        h("span", { class: "ps-mono-head" }, [
+          h("span", { class: "ps-mono-title" }, `📌 Không thêm hệ phụ (${p.name} đơn)`),
+          h("span", { class: "ps-rating" }, monoRt.label),
+        ]),
+        h("span", { class: "ps-mono-body" }, [
+          h("span", { class: "ps-row ps-weak" }, [h("span", { class: "ps-lbl" }, "Yếu"), ...icons(mono.weak)]),
+          h("span", { class: "ps-row ps-res" }, [h("span", { class: "ps-lbl" }, "Kháng"), ...icons(mono.resist)]),
+        ]),
+        h("span", { class: "ps-mono-sum" }, [
+          `So với giữ hệ đơn: `,
+          h("b", { class: "d-up" }, `${nBetter} hệ phụ tốt hơn`), " · ",
+          h("b", { class: "d-same" }, `${nSame} ngang`), " · ",
+          h("b", { class: "d-down" }, `${nWorse} kém hơn`),
+          nWorse ? ` — thêm ${ranked.filter((x) => x.score < mono.score).map((x) => BY_ID[x.s].name).join(", ")} còn tệ hơn để ${p.name} đơn.` : ".",
+        ]),
+      ]),
       h("div", { class: "ps-grid" }, shown.map((x, i) => {
         const e = BY_ID[x.s];
         const rt = ratingOf(x.score);
         const selected = state.secondary === x.s;
         const n = pairCount(x.s);
+        const d = x.score - mono.score;
+        const delta = d > 0 ? { cls: "d-up", text: `▲ Tốt hơn hệ đơn (+${d})` }
+          : d < 0 ? { cls: "d-down", text: `▼ Kém hơn hệ đơn (${d}) — không nên thêm` }
+          : { cls: "d-same", text: "= Ngang hệ đơn — thêm vào không lợi về phòng thủ" };
         return h("button", {
-          type: "button", class: `ps-card ${rt.cls}` + (selected ? " is-selected" : ""), style: `--el:${e.color}`,
+          type: "button", class: `ps-card ${rt.cls}` + (selected ? " is-selected" : "") + (d < 0 ? " is-worse" : ""), style: `--el:${e.color}`,
           "aria-pressed": selected ? "true" : "false",
           title: selected ? "Bỏ chọn hệ phụ này" : `Chọn ${p.name} / ${e.name} để xem chi tiết`,
           onclick: () => selectSecondary(selected ? null : x.s),
@@ -210,6 +243,7 @@
           ]),
           h("span", { class: "ps-row ps-weak" }, [h("span", { class: "ps-lbl" }, "Yếu"), ...icons(x.weak)]),
           h("span", { class: "ps-row ps-res" }, [h("span", { class: "ps-lbl" }, "Kháng"), ...icons(x.resist)]),
+          h("span", { class: `ps-delta ${delta.cls}` }, delta.text),
           h("span", { class: "ps-count" }, n == null ? "" : n ? `${n} aniimo mang cặp hệ này` : "chưa có aniimo nào mang cặp hệ này"),
         ]);
       })),
@@ -240,6 +274,14 @@
         h("h2", null, s ? `${p.name} / ${s.name}` : p.name),
         h("p", { class: "sub" }, s ? "Hệ kép — đòn tính với cả hai hệ (nhân hệ số khi phòng thủ)." : `${p.en} · hệ đơn`),
         tags,
+        s ? (() => {
+          // So sánh phòng thủ với việc giữ hệ đơn
+          const d = pairProfile(p.id, s.id).score - pairProfile(p.id, null).score;
+          const [cls, txt] = d > 0 ? ["d-up", `▲ Phòng thủ tốt hơn ${p.name} đơn (+${d})`]
+            : d < 0 ? ["d-down", `▼ Phòng thủ kém hơn ${p.name} đơn (${d}) — thêm hệ phụ này còn tệ hơn không thêm`]
+            : ["d-same", `= Phòng thủ ngang ${p.name} đơn — hệ phụ này không thêm lợi thế phòng thủ`];
+          return h("p", { class: `hero-compare ${cls}` }, txt);
+        })() : null,
       ]),
     ]);
 
