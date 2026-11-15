@@ -195,6 +195,27 @@ main { max-width: 1040px; margin: 0 auto; }
   transform: translateY(-2px); border-color: color-mix(in srgb, var(--sel) 60%, var(--border)); box-shadow: var(--shadow); outline: none;
 }
 .suggest-note { margin: 2px 0 0; font-size: 0.8rem; color: var(--text-dim); }
+.role-filter { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 12px; }
+.role-filter-label { font-size: 0.8rem; font-weight: 700; color: var(--text-dim); margin-right: 2px; }
+.role-chip {
+  appearance: none; cursor: pointer; font: inherit; font-size: 0.82rem; font-weight: 600;
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 10px; border-radius: 999px;
+  border: 1.5px solid var(--border); background: var(--bg-elev-2); color: var(--text);
+  transition: border-color 0.15s, background 0.15s, opacity 0.15s;
+}
+.role-chip:hover { border-color: var(--text-dim); }
+.role-chip.is-active { border-color: var(--sel); background: color-mix(in srgb, var(--sel) 24%, var(--bg-elev-2)); }
+.role-chip.is-empty { opacity: 0.4; }
+.role-chip .rc-count {
+  font-size: 0.7rem; font-weight: 800; min-width: 18px; text-align: center;
+  padding: 0 5px; border-radius: 999px; background: var(--bg); color: var(--text-dim);
+}
+.role-chip.is-active .rc-count { color: var(--text); }
+.link-btn {
+  appearance: none; border: 0; background: none; padding: 0; cursor: pointer;
+  font: inherit; color: var(--text); text-decoration: underline;
+}
 .ani-form {
   position: absolute; top: 6px; left: 6px; max-width: calc(100% - 64px);
   font-size: 0.68rem; font-weight: 800; padding: 2px 7px; border-radius: 999px;

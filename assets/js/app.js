@@ -3,13 +3,16 @@
   "use strict";
 
   const IMG = (id) => `assets/icons/${id}.png`;
-  const state = { primary: null, secondary: null, aniimo: null, aniimoError: false, aniimoUpdated: null, sort: "power" };
+  // roles: vai trò đang lọc (rỗng = tất cả); giữ nguyên khi đổi hệ
+  const state = { primary: null, secondary: null, aniimo: null, aniimoError: false, aniimoUpdated: null, sort: "power", roles: new Set() };
 
   /* ---------- dữ liệu aniimo (crawl từ wiki bởi workflow "Crawl") ---------- */
   const WIKI_HOST = "https://wiki.aniimo.com/";
   const CDN_HOST = "https://worldx-website-cdn.aniimo.com/";
   // Nhãn vai trò: wiki chỉ có mã (position-dps…), nhãn tiếng Việt do trang này đặt.
   const ROLE_LABEL = { dps: "Sát thương", break: "Phá thế", energy: "Năng lượng", heal: "Hồi máu", sup: "Hỗ trợ" };
+  const ROLE_ORDER = ["dps", "break", "sup", "heal", "energy"];
+  const ROLE_ICON = { dps: "⚔️", break: "💥", sup: "🛡️", heal: "💚", energy: "🔋" };
   const safeUrl = (u, host) => (typeof u === "string" && u.startsWith(host) ? u : null);
   // Ảnh gốc ~450KB; CDN (Alibaba OSS) thu nhỏ + đổi sang WebP ngay trên máy chủ (~9KB).
   const thumb = (u) => u + "?x-oss-process=image/resize,h_220/format,webp";
@@ -189,6 +192,14 @@
         { label: `${p.name} + hệ khác`, hint: "bấm để tính theo cặp hệ", items: state.aniimo.filter((a) => a.elements.length === 2 && has(a, p.id)) },
       ];
     }
+    // ---- lọc theo vai trò (nhiều lựa chọn, kiểu "hoặc"; rỗng = tất cả) ----
+    const allItems = groups.flatMap((g) => g.items);
+    const totalAll = allItems.length;
+    const roleCount = {};
+    allItems.forEach((a) => a.roles.forEach((r) => { roleCount[r] = (roleCount[r] || 0) + 1; }));
+    const roleOn = state.roles.size > 0;
+    const roleMatch = (a) => !roleOn || a.roles.some((r) => state.roles.has(r));
+    groups = groups.map((g) => ({ ...g, items: g.items.filter(roleMatch) }));
     const total = groups.reduce((n, g) => n + g.items.length, 0);
 
     const sortBtn = (key, label) => h("button", {
@@ -196,15 +207,43 @@
       onclick: () => { state.sort = key; renderDetail(); },
     }, label);
     sec.appendChild(h("div", { class: "suggest-head" }, [
-      h("h3", { class: "suggest-title" }, [`🐾 ${title}`, h("span", { class: "count" }, String(total))]),
+      h("h3", { class: "suggest-title" }, [`🐾 ${title}`, h("span", { class: "count" }, roleOn ? `${total}/${totalAll}` : String(total))]),
       h("div", { class: "sort-switch", role: "group", "aria-label": "Sắp xếp" }, [sortBtn("power", "Mạnh nhất"), sortBtn("no", "Số hiệu")]),
     ]));
     sec.appendChild(h("p", { class: "suggest-note" }, "Mỗi hình thái tính là một aniimo riêng — nhiều hình thái (Cao Nguyên, Ban Đêm, Prismana…) mang thêm hệ khác bản cơ bản."));
 
-    if (!total) {
+    if (totalAll) {
+      const knownRoles = ROLE_ORDER.concat(Object.keys(roleCount).filter((r) => !ROLE_ORDER.includes(r)));
+      const toggleRole = (r) => { state.roles.has(r) ? state.roles.delete(r) : state.roles.add(r); renderDetail(); };
+      sec.appendChild(h("div", { class: "role-filter", role: "group", "aria-label": "Lọc theo vai trò" }, [
+        h("span", { class: "role-filter-label" }, "Vai trò:"),
+        h("button", {
+          class: "role-chip" + (roleOn ? "" : " is-active"), type: "button", "aria-pressed": roleOn ? "false" : "true",
+          onclick: () => { state.roles.clear(); renderDetail(); },
+        }, ["Tất cả", h("span", { class: "rc-count" }, String(totalAll))]),
+        ...knownRoles.map((r) => {
+          const n = roleCount[r] || 0;
+          const active = state.roles.has(r);
+          return h("button", {
+            class: "role-chip" + (active ? " is-active" : "") + (n ? "" : " is-empty"), type: "button",
+            "aria-pressed": active ? "true" : "false",
+            title: n ? `Lọc ${ROLE_LABEL[r] || r}` : `Không có aniimo ${ROLE_LABEL[r] || r} cho lựa chọn này`,
+            onclick: () => toggleRole(r),
+          }, [`${ROLE_ICON[r] || "•"} ${ROLE_LABEL[r] || r}`, h("span", { class: "rc-count" }, String(n))]);
+        }),
+      ]));
+    }
+
+    if (!totalAll) {
       sec.appendChild(h("div", { class: "empty-state" }, s
         ? `Chưa có aniimo nào mang đúng cặp hệ ${p.name} / ${s.name} trên wiki.`
         : `Chưa có aniimo nào mang hệ ${p.name} trên wiki.`));
+    } else if (!total) {
+      const names = [...state.roles].map((r) => ROLE_LABEL[r] || r).join(", ");
+      sec.appendChild(h("div", { class: "empty-state" }, [
+        `Không có aniimo ${s ? `${p.name} / ${s.name}` : p.name} nào có vai trò ${names}. `,
+        h("button", { class: "link-btn", type: "button", onclick: () => { state.roles.clear(); renderDetail(); } }, "Bỏ lọc vai trò"),
+      ]));
     }
 
     const byPower = (a, b) => ((b.stats && b.stats.total) || 0) - ((a.stats && a.stats.total) || 0) || a.name.localeCompare(b.name);
