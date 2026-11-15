@@ -166,6 +166,23 @@
     return { s, W: Wt, R, W2, score: R - Wt, weak, resist };
   }
   const cmpProfile = (a, b) => b.score - a.score || a.W2 - b.W2 || a.W - b.W || b.resist.length - a.resist.length;
+  // Hệ "khắc chế hoàn toàn" một cặp: đánh cặp đó ×2.56 (yếu kép) VÀ kháng cả hai đòn của cặp
+  // (cả hai hệ đánh nó đều ×0.625) → gặp là không chịu nổi đòn, cũng không đánh trả được.
+  function hardCounters(p, s) {
+    if (!s) return [];
+    return ELEMENTS.filter((x) => mult(x.id, p) * mult(x.id, s) > 2.5 && Math.max(mult(p, x.id), mult(s, x.id)) < 0.7)
+      .map((x) => x.id);
+  }
+  function hardCounterWarn(p, s, cls) {
+    const hc = hardCounters(p, s);
+    if (!hc.length) return null;
+    return h("span", { class: cls, role: "note" }, [
+      "⛔ Bị ",
+      ...hc.flatMap((id, i) => [i ? ", " : null, h("img", { src: IMG(id), alt: "" }), h("b", null, BY_ID[id].name)]).filter(Boolean),
+      " khắc chế hoàn toàn: nhận ×2.56 mà cả hai đòn đều bị kháng (×0.625)",
+    ]);
+  }
+
   // So một cặp hệ với việc giữ hệ đơn — nhất quán với thứ hạng (cùng điểm → phân hạng phụ quyết định)
   function compareToMono(x, mono) {
     const d = x.score - mono.score;
@@ -252,7 +269,8 @@
         const selected = state.secondary === x.s;
         const delta = compareToMono(x, mono);
         return h("button", {
-          type: "button", class: `ps-card ${rt.cls}` + (selected ? " is-selected" : "") + (delta.better === false ? " is-worse" : ""), style: `--el:${e.color}`,
+          type: "button", class: `ps-card ${rt.cls}` + (selected ? " is-selected" : "") + (delta.better === false ? " is-worse" : "")
+            + (hardCounters(p.id, x.s).length ? " has-counter" : ""), style: `--el:${e.color}`,
           "aria-pressed": selected ? "true" : "false",
           title: selected ? "Bỏ chọn hệ phụ này" : `Chọn ${p.name} / ${e.name} để xem chi tiết`,
           onclick: () => selectSecondary(selected ? null : x.s),
@@ -266,6 +284,7 @@
           h("span", { class: "ps-row ps-weak" }, [h("span", { class: "ps-lbl" }, "Yếu"), ...icons(x.weak)]),
           h("span", { class: "ps-row ps-res" }, [h("span", { class: "ps-lbl" }, "Kháng"), ...icons(x.resist)]),
           h("span", { class: `ps-delta ${delta.cls}` }, delta.text),
+          hardCounterWarn(p.id, x.s, "ps-warn"),
           h("span", { class: "ps-count" }, n == null ? "" : n ? `${n} aniimo mang cặp hệ này` : "chưa có aniimo nào mang cặp hệ này"),
         ]);
       })),
@@ -305,6 +324,7 @@
             : base;
           return h("p", { class: `hero-compare ${c.cls}` }, txt);
         })() : null,
+        s ? hardCounterWarn(p.id, s.id, "hero-warn") : null,
       ]),
     ]);
 

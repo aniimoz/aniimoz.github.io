@@ -134,6 +134,18 @@ main { max-width: 1040px; margin: 0 auto; }
 }
 .d-up { color: #4ade80; } .d-same { color: #9aa6bd; } .d-down { color: #f87171; }
 .ps-delta { font-size: 0.74rem; font-weight: 700; }
+/* Cảnh báo bị khắc chế hoàn toàn */
+.ps-card.has-counter { box-shadow: inset 3px 0 0 #f87171; }
+.ps-warn, .hero-warn {
+  display: block;
+  font-size: 0.74rem; font-weight: 600; line-height: 1.35; color: #fecaca;
+  padding: 5px 8px; border-radius: 8px;
+  background: color-mix(in srgb, #ef4444 16%, transparent); border: 1px solid color-mix(in srgb, #ef4444 45%, transparent);
+}
+.ps-warn img, .hero-warn img { width: 16px; height: 16px; display: inline-block; vertical-align: -3px; margin: 0 3px 0 2px; }
+.ps-warn b, .hero-warn b { color: #fff; }
+.hero-warn { margin-top: 8px; font-size: 0.84rem; width: fit-content; max-width: 100%; }
+.hero-warn img { width: 18px; height: 18px; }
 .ps-card.is-worse { opacity: 0.6; }
 .ps-card.is-worse:hover, .ps-card.is-worse.is-selected { opacity: 1; }
 .hero-compare { margin: 8px 0 0; font-size: 0.85rem; font-weight: 700; }

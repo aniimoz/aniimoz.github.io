@@ -41,7 +41,10 @@ fewer ×2.56, fewer weaknesses, more distinct resists) reproduces section 7 of
 the source doc exactly (order 9/9, ratings 72/72) — re-check if you change it.
 "Không hệ phụ" (the single type, `pairProfile(p, null)`) is ranked in the same
 list with the same comparator; secondaries below it are labelled ▼ worse
-(`compareToMono`), full ties are "= ngang" and placed after it. All client-side, no build. (There is
+(`compareToMono`), full ties are "= ngang" and placed after it.
+Pair cards and the dual-type hero warn "⛔ khắc chế hoàn toàn" (`hardCounters`)
+when some type hits the pair ×2.56 AND resists both of its types (×0.625) —
+5 of 36 pairs (e.g. Lửa/Thổ by Nước). Warning only; it does not change ranking. All client-side, no build. (There is
 no matrix view any more — the user removed it; `MATRIX` in data.js is still
 the data behind every calculation.)
 
