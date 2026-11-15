@@ -57,26 +57,36 @@ main { max-width: 1040px; margin: 0 auto; }
 /* ---------- Lưới hệ chính ---------- */
 .element-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  gap: 10px;
 }
 .el-card {
-  position: relative; cursor: pointer; overflow: hidden;
+  position: relative; cursor: pointer;
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
   border: 2px solid var(--border); border-radius: var(--radius);
-  background: var(--bg-elev); padding: 0;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--sel) 10%, var(--bg-elev)), var(--bg-elev));
+  padding: 16px 6px 12px;
   transition: transform 0.12s, border-color 0.15s, box-shadow 0.15s;
 }
-.el-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
-.el-card .thumb { aspect-ratio: 16 / 9; width: 100%; object-fit: cover; display: block; background: #0a0e17; }
-.el-card .cap {
-  display: flex; align-items: center; gap: 7px;
-  padding: 9px 11px; font-weight: 700;
+.el-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: color-mix(in srgb, var(--sel) 55%, var(--border)); }
+.el-card:focus-visible { outline: 2px solid var(--sel); outline-offset: 2px; }
+.el-card .el-icon {
+  width: 60px; height: 60px; display: block; margin-bottom: 8px;
+  filter: drop-shadow(0 4px 10px color-mix(in srgb, var(--sel) 35%, transparent));
+  transition: transform 0.15s;
 }
-.el-card .cap .en { color: var(--text-dim); font-weight: 500; font-size: 0.8rem; margin-left: auto; }
-.el-card.is-selected { border-color: var(--sel, #ffb020); box-shadow: 0 0 0 3px color-mix(in srgb, var(--sel) 35%, transparent); }
+.el-card:hover .el-icon { transform: scale(1.06); }
+.el-card .el-name { font-weight: 700; font-size: 0.95rem; text-align: center; line-height: 1.2; }
+.el-card .el-en { color: var(--text-dim); font-size: 0.74rem; }
+.el-card.is-selected {
+  border-color: var(--sel);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--sel) 26%, var(--bg-elev)), var(--bg-elev));
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--sel) 30%, transparent), 0 8px 26px color-mix(in srgb, var(--sel) 25%, transparent);
+}
 .el-card .badge-primary {
-  position: absolute; top: 8px; left: 8px; font-size: 0.72rem; font-weight: 800;
-  padding: 3px 8px; border-radius: 999px; background: #ffb020; color: #1a1205;
+  position: absolute; top: -9px; left: 50%; transform: translateX(-50%);
+  font-size: 0.66rem; font-weight: 800; white-space: nowrap;
+  padding: 2px 8px; border-radius: 999px; background: var(--sel); color: #10141f;
   opacity: 0; transition: opacity 0.15s;
 }
 .el-card.is-selected .badge-primary { opacity: 1; }
@@ -93,7 +103,7 @@ main { max-width: 1040px; margin: 0 auto; }
 .chip:hover { border-color: var(--text-dim); }
 .chip.is-selected { border-color: var(--sel, #ffb020); background: color-mix(in srgb, var(--sel) 22%, var(--bg-elev)); }
 .chip.is-disabled { opacity: 0.3; pointer-events: none; }
-.chip .dot { width: 11px; height: 11px; border-radius: 50%; background: var(--sel); }
+.chip .chip-ic { width: 22px; height: 22px; margin-left: -6px; }
 .chip.chip-none { font-style: italic; color: var(--text-dim); }
 
 /* ---------- Khối chi tiết ---------- */
@@ -112,14 +122,14 @@ main { max-width: 1040px; margin: 0 auto; }
 }
 .hero .hero-imgs { display: flex; gap: 10px; }
 .hero .hero-imgs img {
-  width: 128px; height: 72px; object-fit: cover; border-radius: 10px;
-  border: 2px solid var(--border);
+  width: 72px; height: 72px; display: block;
+  filter: drop-shadow(0 6px 14px color-mix(in srgb, var(--sel) 40%, transparent));
 }
 .hero .hero-text h2 { margin: 0; font-size: 1.5rem; }
 .hero .hero-text .sub { color: var(--text-dim); margin: 2px 0 0; }
 .hero .type-tags { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
 .type-tag { display: inline-flex; align-items: center; gap: 6px; padding: 4px 11px; border-radius: 999px; font-weight: 700; font-size: 0.88rem; }
-.type-tag .dot { width: 10px; height: 10px; border-radius: 50%; }
+.type-tag .tag-ic { width: 18px; height: 18px; margin-left: -5px; }
 
 .panels { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .panel {
@@ -145,7 +155,7 @@ main { max-width: 1040px; margin: 0 auto; }
   padding: 5px 11px 5px 6px; border-radius: 999px; font-weight: 600; font-size: 0.86rem;
   border: 1px solid var(--border); background: var(--bg-elev-2);
 }
-.rel-chip .ic { width: 22px; height: 22px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border); }
+.rel-chip .ic { width: 22px; height: 22px; display: block; }
 .rel-chip.none { color: var(--text-dim); font-style: italic; border-style: dashed; background: transparent; }
 
 /* ---------- Ma trận ---------- */
@@ -154,16 +164,17 @@ main { max-width: 1040px; margin: 0 auto; }
 .matrix-note { text-align: center; color: var(--text-dim); font-size: 0.88rem; margin: 0 0 16px; }
 .sym.s { color: var(--s); } .sym.w { color: var(--w); } .sym.n { color: var(--n); }
 
-.matrix-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); }
-.matrix-table { border-collapse: collapse; margin: 0 auto; min-width: 560px; width: 100%; }
+.matrix-scroll { overflow-x: auto; width: fit-content; max-width: 100%; margin: 0 auto; border: 1px solid var(--border); border-radius: var(--radius); }
+.matrix-table { border-collapse: collapse; width: auto; }
 .matrix-table th, .matrix-table td { text-align: center; padding: 0; }
 .matrix-table thead th { position: sticky; top: 0; background: var(--bg-elev-2); z-index: 2; }
 .matrix-table th.corner { background: var(--bg-elev); font-size: 0.68rem; color: var(--text-dim); font-weight: 600; line-height: 1.15; padding: 6px; position: sticky; left: 0; z-index: 3; }
 .m-head { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 7px 4px; font-size: 0.72rem; }
-.m-head img { width: 30px; height: 30px; border-radius: 6px; object-fit: cover; }
+.m-head img { width: 28px; height: 28px; display: block; }
 .matrix-table th.rowhead { position: sticky; left: 0; background: var(--bg-elev-2); z-index: 1; }
 .rowhead .m-head { flex-direction: row; gap: 6px; padding: 6px 10px 6px 8px; white-space: nowrap; }
-.matrix-table td { border: 1px solid var(--border); width: 46px; height: 46px; font-size: 1.15rem; font-weight: 700; cursor: default; }
+.matrix-table td { border: 1px solid var(--border); min-width: 52px; width: 52px; height: 50px; font-size: 1.15rem; font-weight: 700; cursor: default; }
+.matrix-table thead th:not(.corner) { min-width: 52px; }
 td.c-s { background: color-mix(in srgb, var(--s) 16%, transparent); color: var(--s); }
 td.c-w { background: color-mix(in srgb, var(--w) 16%, transparent); color: var(--w); }
 td.c-n { color: var(--n); }
@@ -175,12 +186,21 @@ td.diag { outline: 1px dashed var(--border); outline-offset: -4px; }
 .site-footer { max-width: 760px; margin: 40px auto 0; text-align: center; color: var(--text-dim); font-size: 0.82rem; }
 
 /* ---------- Responsive ---------- */
+@media (max-width: 1000px) {
+  .element-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
 @media (max-width: 680px) {
   .panels { grid-template-columns: 1fr; }
-  .element-grid { grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: 9px; }
-  .el-card .cap { font-size: 0.9rem; padding: 7px 9px; }
-  .el-card .cap .en { display: none; }
-  .hero .hero-imgs img { width: 96px; height: 54px; }
+  .element-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; row-gap: 14px; }
+  .el-card { padding: 14px 4px 10px; }
+  .el-card .el-icon { width: 52px; height: 52px; }
+  .hero .hero-imgs img { width: 60px; height: 60px; }
+  /* Ma trận: chỉ icon, ô nhỏ để vừa đủ 9 cột trên điện thoại */
+  .matrix-table td { min-width: 33px; width: 33px; height: 34px; font-size: 0.85rem; }
+  .matrix-table thead th:not(.corner) { min-width: 33px; }
+  .m-head, .rowhead .m-head { font-size: 0; gap: 0; padding: 6px 4px; }
+  .m-head img { width: 24px; height: 24px; }
+  .matrix-table th.corner { font-size: 0.55rem; padding: 3px; }
 }
 
 /* ---------- Giao diện sáng (nếu hệ thống ưu tiên) ---------- */

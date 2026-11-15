@@ -36,7 +36,7 @@ index.html              ← the app (homepage)
 assets/css/styles.css   ← styles
 assets/js/data.js       ← ELEMENTS + 9×9 MATRIX + mult() (source of truth)
 assets/js/app.js        ← UI logic (vanilla, IIFE)
-assets/elements/*.png   ← 9 element images (ASCII slugs)
+assets/icons/*.png      ← 9 round element icons (128px, transparent), cut from game art
 ```
 
 Data is derived from `D:\Projects\aniimo\Aniimo-He-Tuong-Khac.md` (the game's

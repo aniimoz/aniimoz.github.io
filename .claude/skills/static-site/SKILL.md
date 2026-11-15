@@ -15,24 +15,29 @@ assets/
   css/styles.css           ← all styles
   js/data.js               ← data as plain JS objects/arrays
   js/app.js                ← behaviour (IIFE, vanilla DOM, no deps)
-  elements/<slug>.png      ← images
+  icons/<slug>.png         ← round element icons, 128px, transparent background
 ```
 
 New pages go at root (`about.html`) or in a folder with its own `index.html` (`/guide/` → `guide/index.html`). Reuse `assets/` rather than duplicating.
 
 ## Hard rules
 
-1. **Relative paths only — never a leading `/`.** Use `assets/css/styles.css`, `assets/elements/lua.png`. (This is a user root site so `/assets/...` happens to work, but relative keeps pages portable into subfolders and local file opening working.)
+1. **Relative paths only — never a leading `/`.** Use `assets/css/styles.css`, `assets/icons/lua.png`. (This is a user root site so `/assets/...` happens to work, but relative keeps pages portable into subfolders and local file opening working.)
 2. **Asset filenames: lowercase ASCII slugs, no spaces, no Vietnamese diacritics.** `anh-sang.png`, not `ánh sáng.png`. URLs with spaces/accents break or need escaping. When importing assets with Vietnamese names, rename to slugs first (see below).
 3. **No external CDN/build tooling unless the user asks.** Vanilla JS keeps it zero-dependency and instantly previewable by opening `index.html`.
 4. **Data lives in `assets/js/data.js`** as JS literals, not fetched JSON (avoids `fetch` + CORS issues on `file://` and keeps it one push). Derive views from the data; don't hardcode what can be computed.
 
-## Importing images with Vietnamese filenames (gotcha we hit)
+## Element icons — cut from game screenshots, never ship the screenshots
 
-Source art often has names like `ánh sáng.png`, `nước.png`. Rename to ASCII slugs. On this Windows machine:
+The source art (`D:\Projects\aniimo\*.png`, 1920×1080) is **screenshots of the game's "Tra Cứu Tương Khắc" screen**, not usable as-is. The web uses only the round element icon cut out of each one:
 
-- **Rename/copy reliably** with Python matching on NFC-normalized names (filenames are unicode). Run `python` **without** `-I` if you need `PYTHONUTF8`/`PYTHONIOENCODING` — isolated mode ignores env vars; instead call `sys.stdout.reconfigure(encoding="utf-8")` inside the script and print only ASCII.
-- **Shrink oversized art** (these were 1920×1080, ~850 KB each). Keep the page light (aim < ~200 KB/image). PIL isn't installed here; use PowerShell `System.Drawing` to resize (max ~512px) and re-save PNG. Add `loading="lazy"` on `<img>`.
+- Each screenshot shows its own element as the big filled-colour icon in the middle of the **"Phe Công"** panel, centred near **(714, 596)**, ~53 px across. That is the sharpest copy (the top-row icons are smaller, white-background style).
+- **`extract_icons.ps1`** (in this folder) finds that circle automatically (bounding box of saturated pixels near the centre), crops it slightly inside the edge so no white halo remains, upscales to 128 px and applies an antialiased circular alpha mask. Run: `powershell -File .claude/skills/static-site/extract_icons.ps1` → writes `assets/icons/<slug>.png`.
+- After extracting, render a contact sheet on dark and light backgrounds and look at it (white fringe? off-centre?) before committing.
+- Element colours in `data.js` (`color`) were **sampled from these icons**, so the UI matches the game. Re-sample them if icons change.
+- Source filenames are Vietnamese (`ánh sáng.png`, `thảo.png` = Cỏ). The script maps by sorted name order: ám, ánh sáng, băng, điện, lửa, nước, phong, thảo, thổ → `am, anh-sang, bang, dien, lua, nuoc, phong, co, tho`. If a file is added/renamed, fix that mapping.
+
+Tooling notes for this Windows machine: PIL isn't installed — use PowerShell `System.Drawing`. Python with `-I` ignores `PYTHONUTF8`; call `sys.stdout.reconfigure(encoding="utf-8")` and print ASCII only when handling unicode filenames.
 
 ## Local testing before you push
 

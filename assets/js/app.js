@@ -2,7 +2,7 @@
 (function () {
   "use strict";
 
-  const IMG = (id) => `assets/elements/${id}.png`;
+  const IMG = (id) => `assets/icons/${id}.png`;
   const state = { primary: null, secondary: null };
 
   /* ---------- tiện ích tạo DOM ---------- */
@@ -44,9 +44,9 @@
 
   /* ---------- các mảnh giao diện dùng lại ---------- */
   function typeTag(e) {
-    return h("span", { class: "type-tag", style: `background:color-mix(in srgb, ${e.color} 24%, transparent); color:${e.color}` }, [
-      h("span", { class: "dot", style: `background:${e.color}` }),
-      `${e.emoji} ${e.name}`,
+    return h("span", { class: "type-tag", style: `background:color-mix(in srgb, ${e.color} 22%, transparent); color:${e.color}` }, [
+      h("img", { class: "tag-ic", src: IMG(e.id), alt: "" }),
+      e.name,
     ]);
   }
   function relChip(e) {
@@ -82,11 +82,9 @@
         onkeydown: (ev) => { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); selectPrimary(selected ? null : e.id); } },
       }, [
         h("span", { class: "badge-primary" }, "Hệ chính"),
-        h("img", { class: "thumb", src: IMG(e.id), alt: e.name, loading: "lazy" }),
-        h("div", { class: "cap" }, [
-          h("span", null, `${e.emoji} ${e.name}`),
-          h("span", { class: "en" }, e.en),
-        ]),
+        h("img", { class: "el-icon", src: IMG(e.id), alt: "", width: "64", height: "64" }),
+        h("div", { class: "el-name" }, e.name),
+        h("div", { class: "el-en" }, e.en),
       ]);
       grid.appendChild(card);
     });
@@ -112,7 +110,7 @@
         class: "chip" + (selected ? " is-selected" : "") + (isPrimary ? " is-disabled" : ""),
         style: `--sel:${e.color}`,
         onclick: isPrimary ? null : () => selectSecondary(selected ? null : e.id),
-      }, [h("span", { class: "dot" }), `${e.emoji} ${e.name}`]));
+      }, [h("img", { class: "chip-ic", src: IMG(e.id), alt: "" }), e.name]));
     });
   }
 
@@ -128,7 +126,7 @@
     const s = state.secondary ? BY_ID[state.secondary] : null;
 
     // Hero
-    const imgs = h("div", { class: "hero-imgs" }, [p, s].filter(Boolean).map((e) => h("img", { src: IMG(e.id), alt: e.name })));
+    const imgs = h("div", { class: "hero-imgs" }, [p, s].filter(Boolean).map((e) => h("img", { src: IMG(e.id), alt: e.name, style: `--sel:${e.color}` })));
     const tags = h("div", { class: "type-tags" }, [p, s].filter(Boolean).map(typeTag));
     const hero = h("div", { class: "hero" }, [
       imgs,

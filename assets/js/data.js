@@ -7,15 +7,16 @@
 const S = 1.6, N = 1.0, W = 0.625;
 
 const ELEMENTS = [
-  { id: 'bang',     name: 'Băng',     en: 'Ice',      emoji: '❄️', color: '#7dd3fc' },
-  { id: 'nuoc',     name: 'Nước',     en: 'Water',    emoji: '💧', color: '#2563eb' },
-  { id: 'dien',     name: 'Điện',     en: 'Electric', emoji: '⚡', color: '#eab308' },
-  { id: 'lua',      name: 'Lửa',      en: 'Fire',     emoji: '🔥', color: '#ef4444' },
-  { id: 'co',       name: 'Cỏ',       en: 'Grass',    emoji: '🍃', color: '#22c55e' },
-  { id: 'tho',      name: 'Thổ',      en: 'Earth',    emoji: '⛰️', color: '#b5831f' },
-  { id: 'phong',    name: 'Phong',    en: 'Wind',     emoji: '🌀', color: '#2dd4bf' },
-  { id: 'am',       name: 'Ám',       en: 'Dark',     emoji: '🟣', color: '#a855f7' },
-  { id: 'anh-sang', name: 'Ánh sáng', en: 'Light',    emoji: '☀️', color: '#f59e0b' },
+  // color = màu thật của icon hệ trong game (lấy mẫu từ assets/icons/*.png)
+  { id: 'bang',     name: 'Băng',     en: 'Ice',      emoji: '❄️', color: '#62c9da' },
+  { id: 'nuoc',     name: 'Nước',     en: 'Water',    emoji: '💧', color: '#4c9cea' },
+  { id: 'dien',     name: 'Điện',     en: 'Electric', emoji: '⚡', color: '#dcc025' },
+  { id: 'lua',      name: 'Lửa',      en: 'Fire',     emoji: '🔥', color: '#e17272' },
+  { id: 'co',       name: 'Cỏ',       en: 'Grass',    emoji: '🍃', color: '#4fae78' },
+  { id: 'tho',      name: 'Thổ',      en: 'Earth',    emoji: '⛰️', color: '#bba67a' },
+  { id: 'phong',    name: 'Phong',    en: 'Wind',     emoji: '🌀', color: '#54c2ac' },
+  { id: 'am',       name: 'Ám',       en: 'Dark',     emoji: '🟣', color: '#9154ce' },
+  { id: 'anh-sang', name: 'Ánh sáng', en: 'Light',    emoji: '☀️', color: '#e8a23e' },
 ];
 
 /*
